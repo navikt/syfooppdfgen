@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        @page {
+            margin: 1cm;
+        }
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+        }
+
+        td {
+            font-size: 0.9em;
+        }
+
+        table {
+            width: 100%;
+            border: 1px black solid;
+            margin-bottom: 0.5cm;
+        }
+
+        td {
+            vertical-align: top;
+            word-wrap: break-word;
+        }
+
+        table thead {
+            background-color: lightblue;
+        }
+
+        table thead td {
+            border: none;
+        }
+
+        td h5 {
+            margin: 0;
+        }
+
+        td h4 {
+            margin: 0;
+        }
+
+        td h3 {
+            margin: 0;
+        }
+
+        td p {
+            margin: 0;
+        }
+
+        body {
+            page-break-inside: avoid;
+        }
+
+        .header {
+
+        }
+
+        .tr5 {
+            width: 5%;
+        }
+
+        .tr10 {
+            width: 10%;
+        }
+
+        .tr15 {
+            width: 15%;
+        }
+
+        .tr20 {
+            width: 20%;
+        }
+
+        .tr25 {
+            width: 25%;
+        }
+
+        .tr30 {
+            width: 30%;
+        }
+
+        .tr60 {
+            width: 60%;
+        }
+
+        .tr65 {
+            width: 65%;
+        }
+
+        .tr75 {
+            width: 75%;
+        }
+
+        .infoblock {
+        }
+    </style>
+    <title>{{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}Oppfolgingsplan </title>
+</head>
+<body>
+<table class="header">
+    <thead>
+    <tr>
+        <td class="tr75">{{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}Oppfolgingsplan fra LPS</td>
+    </tr>
+    </thead>
+</table>
+
+<table class="infoblock">
+    <thead>
+    <tr>
+        <td class="tr25"><h4>Oppfolgingsplan Avsender</h4></td>
+        <td class="tr65"></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><h4>Virksomhetsnavn</h4></td>
+        <td>{{ oppfolgingsplan.nokkelopplysninger.virksomhetensnavn }}</td>
+    </tr>
+    <tr>
+        <td><h4>Organisasjonsnummer</h4></td>
+        <td>{{ oppfolgingsplan.nokkelopplysninger.organiasjonsnr }}</td>
+    </tr>
+    <tr>
+        <td><h4>Nærmeste leder navn</h4></td>
+        <td>{{ oppfolgingsplan.nokkelopplysninger.nearmestelederFornavnEtternavn.fornavn }}
+            {{ oppfolgingsplan.nokkelopplysninger.nearmestelederFornavnEtternavn.etternavn }}</td>
+    </tr>
+    <tr>
+        <td><h4>Nærmeste leder telefonnummer</h4></td>
+        <td>{{ oppfolgingsplan.nokkelopplysninger.tlfnearmesteleder }}</td>
+    </tr>
+</table>
+
+<table class="infoblock">
+    <thead>
+    <tr>
+        <td class="tr25"><h4>Arbeidstaker</h4></td>
+        <td class="tr65"></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><h4>Navn</h4></td>
+        <td>{{ oppfolgingsplan.opplysningerOmArbeidstakeren.arbeidstakerenFornavnEtternavn.fornavn }}
+            {{ oppfolgingsplan.opplysningerOmArbeidstakeren.arbeidstakerenFornavnEtternavn.etternavn }}</td>
+    </tr>
+    <tr>
+        <td><h4>Fødselsnummer</h4></td>
+        <td>{{ oppfolgingsplan.opplysningerOmArbeidstakeren.fodselsnummer }}</td>
+    </tr>
+    <tr>
+        <td><h4>Telefonnummer</h4></td>
+        <td>{{ oppfolgingsplan.opplysningerOmArbeidstakeren.tlf }}</td>
+    </tr>
+    <tr>
+        <td><h4>Stilling avdeling</h4></td>
+        <td>{{ oppfolgingsplan.opplysningerOmArbeidstakeren.stillingAvdeling }}</td>
+    </tr>
+    <tr>
+        <td><h4>Ordinære arbeidsoppgaver</h4></td>
+        <td>{{ oppfolgingsplan.opplysningerOmArbeidstakeren.ordineareArbeidsoppgaver }}</td>
+    </tr>
+</table>
+
+{{#eq validationResult.status "INVALID" }}
+<table>
+    <thead>
+    <tr>
+        <td class="tr60"><h4>Begrunnelse for avvising</h4></td>
+    </tr>
+    </thead>
+    <tr>
+        <td>
+            <ul>{{#each validationResult.ruleHits}}
+                <li>{{messageForSender}}</li>
+                {{/each}}
+            </ul>
+        </td>
+    </tr>
+    </tbody>
+</table>
+{{/eq}}
+</body>
+</html>

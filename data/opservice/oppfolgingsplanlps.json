@@ -1,0 +1,74 @@
+{
+  "oppfolgingsplan": {
+    "nokkelopplysninger": {
+      "virksomhetensnavn": "Virksom Virksomhet",
+      "organiasjonsnr": "1987654321",
+      "nearmestelederFornavnEtternavn": {
+        "fornavn": "Leder",
+        "etternavn": "Ledersen"
+      },
+      "tlfnearmesteleder": "99887766",
+      "annenKontaktPersonFornavnEtternavn": {
+        "fornavn": "Leder",
+        "etternavn": "Ledersen"
+      },
+      "tlfkontatkperson": "99887766",
+      "virksomhetenerIAVirksomhet": false,
+      "virksomhetenHarBedrifsHelseTjeneste": false
+    },
+    "opplysningerOmArbeidstakeren": {
+      "arbeidstakerenFornavnEtternavn": {
+        "fornavn": "Arbeid",
+        "etternavn": "Arbeidstaker"
+      },
+      "fodselsnummer": "01010112345",
+      "tlf": "99887766",
+      "stillingAvdeling": "Avdeling",
+      "ordineareArbeidsoppgaver": "Arbeidsoppgaver"
+    },
+    "opplysingerOmSykefravaeret": {
+      "forsteFravearsdag": "2017-01-12",
+      "sykmeldingsDato": "2017-01-12",
+      "sykmeldingsProsentVedSykmeldDato": "100"
+    },
+    "tiltak": [
+      {
+        "ordineareArbeidsoppgaverSomKanIkkeKanUtfores": "Flytte tunge ting",
+        "beskrivelseAvTiltak": "Navn har fått en avtale med en spesialist den 9. Januar. Etter den datoen får han vite mer om behandlingen han skal få og sannsynligvis vet han da også litt mer om hvor lang tid dette kan ta.",
+        "maalMedTiltaket": "Navn har vært 100% sykmeldt i 2 uker nå. Vi har snakket sammen om det er mulig å utføre noen arbeidsoppgaver.",
+        "tiltaketGjennonforesIPerioden": {
+          "fraDato": "2014-12-30",
+          "tilDato": "2015-01-13"
+        },
+        "sykmeldingsprosendIPerioden": "100",
+        "behovForBistandFraNav": {
+          "raadOgVeiledning": true,
+          "dialogmoteMed": true,
+          "arbeidsrettedeTiltak": true,
+          "hjelpemidler": true
+        },
+        "behovForBistandFraAndre": {
+          "bedriftsHelsetjenesten": true,
+          "andre": true,
+          "andreFritekts": "Behov for bistand fra andre"
+        },
+        "behovForAvklaringMedLegeSykmeleder": null,
+        "tilrettelagtArbeidIkkeMulig": null,
+        "vurderingEffektAvTiltak": {
+          "vurderingEffektAvTiltakFritekst": null,
+          "behovForNyeTiltak": true
+        },
+        "fremdrift": null,
+        "underskrift": {
+          "datoforUnderskift": "2017-01-12",
+          "signertPapirkopiForeliggerPaaArbeidsplasssen": true
+        }
+      }
+    ],
+    "arbeidstakersDeltakelse": {
+      "arbeidstakerMedvirkGjeonnforingOppfolginsplan": false,
+      "hvorforHarIkkeArbeidstakerenMedvirket": "Vet ikke"
+    },
+    "utfyllendeInfo": "Utfyllende info"
+  }
+}
