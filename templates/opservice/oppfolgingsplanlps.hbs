@@ -117,40 +117,57 @@
 <table class="infoblock">
     <thead>
     <tr>
-        <td class="tr25"><h4>Oppfolgingsplan Avsender</h4></td>
-        <td class="tr65"></td>
+        <td class="tr40"><h4>Opplysninger om virksomheten</h4></td>
+        <td class="tr60"></td>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td><h4>Virksomhetsnavn</h4></td>
+        <td><h4>Virksomhetens navn</h4></td>
         <td>{{ oppfolgingsplan.nokkelopplysninger.virksomhetensnavn }}</td>
     </tr>
     <tr>
-        <td><h4>Organisasjonsnummer</h4></td>
+        <td><h4>Bedriftsnr</h4></td>
         <td>{{ oppfolgingsplan.nokkelopplysninger.organiasjonsnr }}</td>
     </tr>
     <tr>
-        <td><h4>Nærmeste leder navn</h4></td>
+        <td><h4>Nærmeste leder - Navn</h4></td>
         <td>{{ oppfolgingsplan.nokkelopplysninger.nearmestelederFornavnEtternavn.fornavn }}
             {{ oppfolgingsplan.nokkelopplysninger.nearmestelederFornavnEtternavn.etternavn }}</td>
     </tr>
     <tr>
-        <td><h4>Nærmeste leder telefonnummer</h4></td>
+        <td><h4>Telefon nærmeste leder</h4></td>
         <td>{{ oppfolgingsplan.nokkelopplysninger.tlfnearmesteleder }}</td>
+    </tr>
+    <tr>
+        <td><h4>Annen kontaktperson - Navn</h4></td>
+        <td>{{ oppfolgingsplan.nokkelopplysninger.annenKontaktPersonFornavnEtternavn.fornavn }}
+            {{ oppfolgingsplan.nokkelopplysninger.annenKontaktPersonFornavnEtternavn.etternavn }}</td>
+    </tr>
+    <tr>
+        <td><h4>Telefon kontaktperson</h4></td>
+        <td>{{ oppfolgingsplan.nokkelopplysninger.tlfnearmesteleder }}</td>
+    </tr>
+    <tr>
+        <td><h4>Virksomheten er IA-virksomhet</h4></td>
+        <td>{{#if oppfolgingsplan.nokkelopplysninger.virksomhetenerIAVirksomhet }}Ja{{else}}Nei{{/if}}</td>
+    </tr>
+    <tr>
+        <td><h4>Virksomheten har bedriftshelsetjeneste</h4></td>
+        <td>{{#if oppfolgingsplan.nokkelopplysninger.virksomhetenHarBedrifsHelseTjeneste }}Ja{{else}}Nei{{/if}}</td>
     </tr>
 </table>
 
 <table class="infoblock">
     <thead>
     <tr>
-        <td class="tr25"><h4>Arbeidstaker</h4></td>
-        <td class="tr65"></td>
+        <td class="tr50"><h4>Opplysninger om arbeidstakeren</h4></td>
+        <td class="tr60"></td>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td><h4>Navn</h4></td>
+        <td><h4>Arbeidstaker - Navn</h4></td>
         <td>{{ oppfolgingsplan.opplysningerOmArbeidstakeren.arbeidstakerenFornavnEtternavn.fornavn }}
             {{ oppfolgingsplan.opplysningerOmArbeidstakeren.arbeidstakerenFornavnEtternavn.etternavn }}</td>
     </tr>
@@ -159,11 +176,11 @@
         <td>{{ oppfolgingsplan.opplysningerOmArbeidstakeren.fodselsnummer }}</td>
     </tr>
     <tr>
-        <td><h4>Telefonnummer</h4></td>
+        <td><h4>Telefon</h4></td>
         <td>{{ oppfolgingsplan.opplysningerOmArbeidstakeren.tlf }}</td>
     </tr>
     <tr>
-        <td><h4>Stilling avdeling</h4></td>
+        <td><h4>Stilling / avdeling</h4></td>
         <td>{{ oppfolgingsplan.opplysningerOmArbeidstakeren.stillingAvdeling }}</td>
     </tr>
     <tr>
@@ -175,8 +192,8 @@
 <table class="infoblock">
     <thead>
     <tr>
-        <td class="tr25"><h4>Sykefraværet</h4></td>
-        <td class="tr65"></td>
+        <td class="tr40"><h4>Opplysninger om sykefraværet</h4></td>
+        <td class="tr60"></td>
     </tr>
     </thead>
     <tbody>
@@ -189,7 +206,7 @@
         <td>{{ iso_to_date oppfolgingsplan.opplysingerOmSykefravaeret.sykmeldingsDato }}</td>
     </tr>
     <tr>
-        <td><h4>Sykmeldingsprosent</h4></td>
+        <td><h4>Sykmeldingsprosent ved sykmeldingsdato</h4></td>
         <td>{{ oppfolgingsplan.opplysingerOmSykefravaeret.sykmeldingsProsentVedSykmeldDato }}</td>
     </tr>
 </table>
@@ -198,92 +215,104 @@
 <table class="infoblock">
     <thead>
     <tr>
-        <td class="tr25"><h4>Tiltak {{inc @index}}</h4></td>
-        <td class="tr65"></td>
+        <td class="tr40"><h4>Tiltak {{inc @index}}</h4></td>
+        <td class="tr60"></td>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td><h4>Arbeidsoppgaver kan ikke utføres</h4></td>
-        <td>{{ this.ordineareArbeidsoppgaverSomKanIkkeKanUtfores }}</td>
+        <td colspan="2">
+            <h4>Ordinære arbeidsoppgaver som kan / kan ikke utføres</h4>
+            {{ this.ordineareArbeidsoppgaverSomKanIkkeKanUtfores }}
+        </td>
     </tr>
     <tr>
-        <td><h4>Beskrivelse</h4></td>
-        <td>{{ this.beskrivelseAvTiltak }}</td>
+        <td colspan="2">
+            <h4>Beskrivelse av tiltak</h4>
+            {{ this.beskrivelseAvTiltak }}
+        </td>
     </tr>
     <tr>
-        <td><h4>Mål</h4></td>
-        <td>{{ this.maalMedTiltaket }}</td>
+        <td colspan="2">
+            <h4>Mål med tiltaket</h4>
+            {{ this.maalMedTiltaket }}
+        </td>
     </tr>
     <tr>
-        <td><h4>Periode</h4></td>
-        <td>{{ iso_to_date this.tiltaketGjennonforesIPerioden.fraDato }} - {{ iso_to_date this.tiltaketGjennonforesIPerioden.tilDato }}</td>
+        <td colspan="2">
+            <h4>Tiltaket gjennomføres i perioden</h4>
+            {{ iso_to_date this.tiltaketGjennonforesIPerioden.fraDato }} - {{ iso_to_date this.tiltaketGjennonforesIPerioden.tilDato }}
+        </td>
     </tr>
      <tr>
-        <td><h4>Sykmeldingsprosent i periode</h4></td>
-        <td>{{ this.sykmeldingsprosendIPerioden }}</td>
+        <td colspan="2">
+            <h4>Sykmeldingsprosent i periode</h4>
+            {{ this.sykmeldingsprosendIPerioden }}
+        </td>
     </tr>
     <tr>
-        <td><h4>Behov for råd og veiledning</h4></td>
-        <td>{{ this.behovForBistandFraNav.raadOgVeiledning }}</td>
+        <td colspan="2">
+            <h4>Ønsker bistand fra NAV</h4>
+        </td>
     </tr>
     <tr>
-        <td><h4>BISTAND FRA NAV:</h4></td>
+        <td><h5>Råd og veiledning</h5></td>
+        <td>{{#if this.behovForBistandFraNav.raadOgVeiledningt }}Ja{{else}}Nei{{/if}}</td>
     </tr>
     <tr>
-        <td><h4>Behov for dialogmote</h4></td>
-        <td>{{ this.behovForBistandFraNav.dialogmoteMed }}</td>
+        <td><h5>Dialogmøte i regi av NAV</h5></td>
+        <td>{{#if this.behovForBistandFraNav.dialogmoteMed }}Ja{{else}}Nei{{/if}}</td>
     </tr>
     <tr>
-        <td><h4>Behov for arbeidsrettede tiltak</h4></td>
-        <td>{{ this.behovForBistandFraNav.arbeidsrettedeTiltak }}</td>
+        <td><h5>Arbeidsrettede tiltak og virkemidler</h5></td>
+        <td>{{#if this.behovForBistandFraNav.arbeidsrettedeTiltak }}Ja{{else}}Nei{{/if}}</td>
     </tr>
     <tr>
-        <td><h4>Behov for hjelpemidler</h4></td>
-        <td>{{ this.behovForBistandFraNav.hjelpemidler }}</td>
+        <td><h5>Hjelpemidler</h5></td>
+        <td>{{#if this.behovForBistandFraNav.hjelpemidler }}Ja{{else}}Nei{{/if}}</td>
     </tr>
     <tr>
-        <td><h4>BISTAND FRA ANDRE:</h4></td>
+        <td colspan="2">
+            <h4>Behov for bistand fra andre</h4>
+        </td>
     </tr>
     <tr>
-        <td><h4>Bedriftshelsetjenesten</h4></td>
-        <td>{{ this.behovForBistandFraAndre.bedriftsHelsetjenesten }}</td>
+        <td><h5>Bedriftshelsetjenesten</h5></td>
+        <td>{{#if this.behovForBistandFraAndre.bedriftsHelsetjenesten }}Ja{{else}}Nei{{/if}}</td>
     </tr>
     <tr>
-        <td><h4>Andre</h4></td>
-        <td>{{ this.behovForBistandFraAndre.andre }}</td>
+        <td><h5>Andre</h5></td>
+        <td>{{#if this.behovForBistandFraAndre.andre }}Ja{{else}}Nei{{/if}}</td>
     </tr>
     <tr>
         <td><h4>Fritekst</h4></td>
         <td>{{ this.behovForBistandFraAndre.andreFritekts }}</td>
     </tr>
     <tr>
-        <td><h4>behovForAvklaringMedLegeSykmeleder</h4></td>
-        <td>{{ this.behovForAvklaringMedLegeSykmeleder }}</td>
+        <td colspan="2">
+            <h4>Behov for avklaring med lege/sykmelder</h4>
+            {{ this.behovForAvklaringMedLegeSykmeleder }}
+        </td>
     </tr>
     <tr>
-        <td><h4>tilrettelagtArbeidIkkeMulig</h4></td>
-        <td>{{ this.tilrettelagtArbeidIkkeMulig }}</td>
+        <td colspan="2">
+            <h4>Tilrettelagt arbeid ikke mulig</h4>
+            {{ this.tilrettelagtArbeidIkkeMulig }}
+        </td>
     </tr>
     <tr>
-        <td><h4>vurderingEffektAvTiltakFritekst</h4></td>
-        <td>{{ this.vurderingEffektAvTiltak.vurderingEffektAvTiltakFritekst }}</td>
+        <td colspan="2">
+            <h4>Vurdering - effekt av tiltak ikke mulig</h4>
+            {{ this.vurderingEffektAvTiltak.vurderingEffektAvTiltakFritekst }}
+        </td>
     </tr>
     <tr>
-        <td><h4>behovForNyeTiltak</h4></td>
+        <td><h4>Befor for nye tiltak</h4></td>
         <td>{{ this.vurderingEffektAvTiltak.behovForNyeTiltak }}</td>
     </tr>
     <tr>
-        <td><h4>fremdrift</h4></td>
+        <td><h4>Fremdrift</h4></td>
         <td>{{ this.fremdrift }}</td>
-    </tr>
-    <tr>
-        <td><h4>datoforUnderskift</h4></td>
-        <td>{{ iso_to_date this.underskrift.datoforUnderskift }}</td>
-    </tr>
-    <tr>
-        <td><h4>signertPapirkopiForeliggerPaaArbeidsplasssen</h4></td>
-        <td>{{ this.underskrift.signertPapirkopiForeliggerPaaArbeidsplasssen }}</td>
     </tr>
 </table>
 {{/each}}
@@ -291,31 +320,35 @@
 <table class="infoblock">
     <thead>
     <tr>
-        <td class="tr25"><h4>Arbeidstakers deltakelse</h4></td>
-        <td class="tr65"></td>
+        <td class="tr40"><h4>Arbeidstakers deltakelse</h4></td>
+        <td class="tr60"></td>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td><h4>Arbeidstaker medvirket gjennomføring av oppfolgingsplan</h4></td>
-        <td>{{ oppfolgingsplan.arbeidstakersDeltakelse.arbeidstakerMedvirkGjeonnforingOppfolginsplan }}</td>
+        <td colspan="2">
+            <h4>Arbeidstaker medvirket gjennomføring av oppfolgingsplan</h4>
+            {{ oppfolgingsplan.arbeidstakersDeltakelse.arbeidstakerMedvirkGjeonnforingOppfolginsplan }}
+        </td>
     </tr>
     <tr>
-        <td><h4>Begrunnelse arbeidstaker ikke medvirket</h4></td>
-        <td>{{ oppfolgingsplan.arbeidstakersDeltakelse.hvorforHarIkkeArbeidstakerenMedvirket }}</td>
+        <td colspan="2">
+            <h4>Begrunnelse arbeidstaker ikke medvirket</h4>
+            {{ oppfolgingsplan.arbeidstakersDeltakelse.hvorforHarIkkeArbeidstakerenMedvirket }}
+        </td>
     </tr>
 </table>
 
 <table class="infoblock">
     <thead>
     <tr>
-        <td class="tr25"><h4>Utfyllende info</h4></td>
-        <td class="tr65"></td>
+        <td class="tr40"><h4>Utfyllende info</h4></td>
+        <td class="tr60"></td>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td>{{ oppfolgingsplan.utfyllendeInfo }}</td>
+        <td colspan="2">{{ oppfolgingsplan.utfyllendeInfo }}</td>
     </tr>
 </table>
 

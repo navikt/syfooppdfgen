@@ -14,7 +14,7 @@
       },
       "tlfkontatkperson": "99887766",
       "virksomhetenerIAVirksomhet": false,
-      "virksomhetenHarBedrifsHelseTjeneste": false
+      "virksomhetenHarBedrifsHelseTjeneste": true
     },
     "opplysningerOmArbeidstakeren": {
       "arbeidstakerenFornavnEtternavn": {
