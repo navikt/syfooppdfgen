@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="no">
 <head>
@@ -95,6 +96,12 @@
 
         .infoblock {
         }
+
+        .checkbox {
+            width: 11px;
+            height: 11px;
+            display: inline-block;
+        }
     </style>
     <title>{{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}Oppfolgingsplan </title>
 </head>
@@ -164,6 +171,154 @@
         <td>{{ oppfolgingsplan.opplysningerOmArbeidstakeren.ordineareArbeidsoppgaver }}</td>
     </tr>
 </table>
+
+<table class="infoblock">
+    <thead>
+    <tr>
+        <td class="tr25"><h4>Sykefraværet</h4></td>
+        <td class="tr65"></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><h4>Første fraværsdag</h4></td>
+        <td>{{ iso_to_date oppfolgingsplan.opplysingerOmSykefravaeret.forsteFravearsdag }}</td>
+    </tr>
+    <tr>
+        <td><h4>Sykmeldingsdato</h4></td>
+        <td>{{ iso_to_date oppfolgingsplan.opplysingerOmSykefravaeret.sykmeldingsDato }}</td>
+    </tr>
+    <tr>
+        <td><h4>Sykmeldingsprosent</h4></td>
+        <td>{{ oppfolgingsplan.opplysingerOmSykefravaeret.sykmeldingsProsentVedSykmeldDato }}</td>
+    </tr>
+</table>
+
+{{#each oppfolgingsplan.tiltak}}
+<table class="infoblock">
+    <thead>
+    <tr>
+        <td class="tr25"><h4>Tiltak {{inc @index}}</h4></td>
+        <td class="tr65"></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><h4>Arbeidsoppgaver kan ikke utføres</h4></td>
+        <td>{{ this.ordineareArbeidsoppgaverSomKanIkkeKanUtfores }}</td>
+    </tr>
+    <tr>
+        <td><h4>Beskrivelse</h4></td>
+        <td>{{ this.beskrivelseAvTiltak }}</td>
+    </tr>
+    <tr>
+        <td><h4>Mål</h4></td>
+        <td>{{ this.maalMedTiltaket }}</td>
+    </tr>
+    <tr>
+        <td><h4>Periode</h4></td>
+        <td>{{ iso_to_date this.tiltaketGjennonforesIPerioden.fraDato }} - {{ iso_to_date this.tiltaketGjennonforesIPerioden.tilDato }}</td>
+    </tr>
+     <tr>
+        <td><h4>Sykmeldingsprosent i periode</h4></td>
+        <td>{{ this.sykmeldingsprosendIPerioden }}</td>
+    </tr>
+    <tr>
+        <td><h4>Behov for råd og veiledning</h4></td>
+        <td>{{ this.behovForBistandFraNav.raadOgVeiledning }}</td>
+    </tr>
+    <tr>
+        <td><h4>BISTAND FRA NAV:</h4></td>
+    </tr>
+    <tr>
+        <td><h4>Behov for dialogmote</h4></td>
+        <td>{{ this.behovForBistandFraNav.dialogmoteMed }}</td>
+    </tr>
+    <tr>
+        <td><h4>Behov for arbeidsrettede tiltak</h4></td>
+        <td>{{ this.behovForBistandFraNav.arbeidsrettedeTiltak }}</td>
+    </tr>
+    <tr>
+        <td><h4>Behov for hjelpemidler</h4></td>
+        <td>{{ this.behovForBistandFraNav.hjelpemidler }}</td>
+    </tr>
+    <tr>
+        <td><h4>BISTAND FRA ANDRE:</h4></td>
+    </tr>
+    <tr>
+        <td><h4>Bedriftshelsetjenesten</h4></td>
+        <td>{{ this.behovForBistandFraAndre.bedriftsHelsetjenesten }}</td>
+    </tr>
+    <tr>
+        <td><h4>Andre</h4></td>
+        <td>{{ this.behovForBistandFraAndre.andre }}</td>
+    </tr>
+    <tr>
+        <td><h4>Fritekst</h4></td>
+        <td>{{ this.behovForBistandFraAndre.andreFritekts }}</td>
+    </tr>
+    <tr>
+        <td><h4>behovForAvklaringMedLegeSykmeleder</h4></td>
+        <td>{{ this.behovForAvklaringMedLegeSykmeleder }}</td>
+    </tr>
+    <tr>
+        <td><h4>tilrettelagtArbeidIkkeMulig</h4></td>
+        <td>{{ this.tilrettelagtArbeidIkkeMulig }}</td>
+    </tr>
+    <tr>
+        <td><h4>vurderingEffektAvTiltakFritekst</h4></td>
+        <td>{{ this.vurderingEffektAvTiltak.vurderingEffektAvTiltakFritekst }}</td>
+    </tr>
+    <tr>
+        <td><h4>behovForNyeTiltak</h4></td>
+        <td>{{ this.vurderingEffektAvTiltak.behovForNyeTiltak }}</td>
+    </tr>
+    <tr>
+        <td><h4>fremdrift</h4></td>
+        <td>{{ this.fremdrift }}</td>
+    </tr>
+    <tr>
+        <td><h4>datoforUnderskift</h4></td>
+        <td>{{ iso_to_date this.underskrift.datoforUnderskift }}</td>
+    </tr>
+    <tr>
+        <td><h4>signertPapirkopiForeliggerPaaArbeidsplasssen</h4></td>
+        <td>{{ this.underskrift.signertPapirkopiForeliggerPaaArbeidsplasssen }}</td>
+    </tr>
+</table>
+{{/each}}
+
+<table class="infoblock">
+    <thead>
+    <tr>
+        <td class="tr25"><h4>Arbeidstakers deltakelse</h4></td>
+        <td class="tr65"></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><h4>Arbeidstaker medvirket gjennomføring av oppfolgingsplan</h4></td>
+        <td>{{ oppfolgingsplan.arbeidstakersDeltakelse.arbeidstakerMedvirkGjeonnforingOppfolginsplan }}</td>
+    </tr>
+    <tr>
+        <td><h4>Begrunnelse arbeidstaker ikke medvirket</h4></td>
+        <td>{{ oppfolgingsplan.arbeidstakersDeltakelse.hvorforHarIkkeArbeidstakerenMedvirket }}</td>
+    </tr>
+</table>
+
+<table class="infoblock">
+    <thead>
+    <tr>
+        <td class="tr25"><h4>Utfyllende info</h4></td>
+        <td class="tr65"></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ oppfolgingsplan.utfyllendeInfo }}</td>
+    </tr>
+</table>
+
 
 {{#eq validationResult.status "INVALID" }}
 <table>
