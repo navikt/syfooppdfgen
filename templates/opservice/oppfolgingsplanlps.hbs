@@ -308,7 +308,7 @@
     </tr>
     <tr>
         <td><h4>Befor for nye tiltak</h4></td>
-        <td>{{ this.vurderingEffektAvTiltak.behovForNyeTiltak }}</td>
+        <td>{{#if this.vurderingEffektAvTiltak.behovForNyeTiltak }}Ja{{else}}Nei{{/if}}</td>
     </tr>
     <tr>
         <td><h4>Fremdrift</h4></td>
@@ -328,7 +328,7 @@
     <tr>
         <td colspan="2">
             <h4>Arbeidstaker medvirket gjennomføring av oppfolgingsplan</h4>
-            {{ oppfolgingsplan.arbeidstakersDeltakelse.arbeidstakerMedvirkGjeonnforingOppfolginsplan }}
+            {{#if oppfolgingsplan.arbeidstakersDeltakelse.arbeidstakerMedvirkGjeonnforingOppfolginsplan }}Ja{{else}}Nei{{/if}}
         </td>
     </tr>
     <tr>
