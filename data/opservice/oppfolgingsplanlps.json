@@ -52,13 +52,13 @@
           "andre": true,
           "andreFritekts": "Behov for bistand fra andre"
         },
-        "behovForAvklaringMedLegeSykmeleder": null,
-        "tilrettelagtArbeidIkkeMulig": null,
+        "behovForAvklaringMedLegeSykmeleder": "Jeg har behov for avklaring med min lege",
+        "tilrettelagtArbeidIkkeMulig": "Vi kan ikke tilrettelegge for slikt arbeid",
         "vurderingEffektAvTiltak": {
-          "vurderingEffektAvTiltakFritekst": null,
+          "vurderingEffektAvTiltakFritekst": "Tiltaker kan gi en effekt.",
           "behovForNyeTiltak": true
         },
-        "fremdrift": null,
+        "fremdrift": "Fremdriften er i gang for dette tiltaket.",
         "underskrift": {
           "datoforUnderskift": "2017-01-12",
           "signertPapirkopiForeliggerPaaArbeidsplasssen": true
@@ -101,6 +101,6 @@
       "arbeidstakerMedvirkGjeonnforingOppfolginsplan": false,
       "hvorforHarIkkeArbeidstakerenMedvirket": "Vet ikke"
     },
-    "utfyllendeInfo": "Utfyllende info"
+    "utfyllendeInfo": "Utfyllende info om alt man trenger å vite. Utfyllende info om alt man trenger å vite."
   }
 }
