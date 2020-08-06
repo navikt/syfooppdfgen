@@ -314,11 +314,13 @@
         </td>
     </tr>
     {{/if}}
+    {{#if this.behovForBistandFraNav }}
     <tr>
         <td colspan="2">
             <h4>Ønsker bistand fra NAV</h4>
         </td>
     </tr>
+    {{/if}}
     {{#if this.behovForBistandFraNav.raadOgVeiledningt }}
     <tr>
         <td><h5>Råd og veiledning</h5></td>
@@ -343,11 +345,13 @@
         <td>{{#if this.behovForBistandFraNav.hjelpemidler }}Ja{{else}}Nei{{/if}}</td>
     </tr>
     {{/if}}
+    {{#if this.behovForBistandFraAndre }}
     <tr>
         <td colspan="2">
             <h4>Behov for bistand fra andre</h4>
         </td>
     </tr>
+    {{/if}}
     {{#if this.behovForBistandFraAndre.bedriftsHelsetjenesten }}
     <tr>
         <td><h5>Bedriftshelsetjenesten</h5></td>
