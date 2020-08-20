@@ -322,28 +322,36 @@
     </tr>
     {{/if}}
     {{#if this.behovForBistandFraNav.raadOgVeiledning }}
+    {{#if this.behovForBistandFraNav.raadOgVeiledningBeskrivelse }}
     <tr>
         <td><h5>Råd og veiledning</h5></td>
-        <td>{{#if this.behovForBistandFraNav.raadOgVeiledning }}Ja{{else}}Nei{{/if}}</td>
+        <td>{{#if this.behovForBistandFraNav.raadOgVeiledning }}Ja. {{ this.behovForBistandFraNav.raadOgVeiledningBeskrivelse }}{{else}}Nei{{/if}}</td>
     </tr>
+    {{/if}}
     {{/if}}
     {{#if this.behovForBistandFraNav.dialogmoteMed }}
+    {{#if this.behovForBistandFraNav.dialogmoteMedBeskrivelse }}
     <tr>
         <td><h5>Dialogmøte i regi av NAV</h5></td>
-        <td>{{#if this.behovForBistandFraNav.dialogmoteMed }}Ja{{else}}Nei{{/if}}</td>
+        <td>{{#if this.behovForBistandFraNav.dialogmoteMed }}Ja. {{ this.behovForBistandFraNav.dialogmoteMedBeskrivelse}}{{else}}Nei{{/if}}</td>
     </tr>
+    {{/if}}
     {{/if}}
     {{#if this.behovForBistandFraNav.arbeidsrettedeTiltak }}
+    {{#if this.behovForBistandFraNav.arbeidsrettedeTiltakBeskrivelse }}
     <tr>
         <td><h5>Arbeidsrettede tiltak og virkemidler</h5></td>
-        <td>{{#if this.behovForBistandFraNav.arbeidsrettedeTiltak }}Ja{{else}}Nei{{/if}}</td>
+        <td>{{#if this.behovForBistandFraNav.arbeidsrettedeTiltak }}Ja. {{ this.behovForBistandFraNav.arbeidsrettedeTiltakBeskrivelse }}{{else}}Nei{{/if}}</td>
     </tr>
     {{/if}}
+    {{/if}}
     {{#if this.behovForBistandFraNav.hjelpemidler }}
+    {{#if this.behovForBistandFraNav.hjelpemidlerBeskrivelse }}
     <tr>
         <td><h5>Hjelpemidler</h5></td>
-        <td>{{#if this.behovForBistandFraNav.hjelpemidler }}Ja{{else}}Nei{{/if}}</td>
+        <td>{{#if this.behovForBistandFraNav.hjelpemidler }}Ja. {{ this.behovForBistandFraNav.hjelpemidlerBeskrivelse }}{{else}}Nei{{/if}}</td>
     </tr>
+    {{/if}}
     {{/if}}
     {{#if this.behovForBistandFraAndre }}
     <tr>
@@ -359,10 +367,10 @@
     </tr>
     {{/if}}
     {{#if this.behovForBistandFraAndre.andre }}
-    {{#if this.behovForBistandFraAndre.andreFritekts }}
+    {{#if this.behovForBistandFraAndre.andreFritekst }}
     <tr>
         <td><h5>Andre</h5></td>
-        <td>{{#if this.behovForBistandFraAndre.andre }}Ja. {{ this.behovForBistandFraAndre.andreFritekts }}{{else}}Nei{{/if}}</td>
+        <td>{{#if this.behovForBistandFraAndre.andre }}Ja. {{ this.behovForBistandFraAndre.andreFritekst }}{{else}}Nei{{/if}}</td>
     </tr>
     {{/if}}
     {{/if}}
