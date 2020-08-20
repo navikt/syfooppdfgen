@@ -321,10 +321,10 @@
         </td>
     </tr>
     {{/if}}
-    {{#if this.behovForBistandFraNav.raadOgVeiledningt }}
+    {{#if this.behovForBistandFraNav.raadOgVeiledning }}
     <tr>
         <td><h5>Råd og veiledning</h5></td>
-        <td>{{#if this.behovForBistandFraNav.raadOgVeiledningt }}Ja{{else}}Nei{{/if}}</td>
+        <td>{{#if this.behovForBistandFraNav.raadOgVeiledning }}Ja{{else}}Nei{{/if}}</td>
     </tr>
     {{/if}}
     {{#if this.behovForBistandFraNav.dialogmoteMed }}
@@ -399,7 +399,26 @@
     {{#if this.fremdrift }}
     <tr>
         <td><h4>Fremdrift</h4></td>
-        <td>{{ this.fremdrift }}</td>b
+        <td>{{ this.fremdrift }}</td>
+    </tr>
+    {{/if}}
+    {{#if this.underskrift }}
+    <tr>
+        <td colspan="2">
+            <h4 >Underskrift</h4>
+        </td>
+    </tr>
+    {{/if}}
+    {{#if this.underskrift.signertPapirkopiForeliggerPaaArbeidsplasssen}}
+    <tr>
+        <td><h5>Signert papirkopi foreligger på arbeidsplassen</h5></td>
+        <td>{{#if this.underskrift.signertPapirkopiForeliggerPaaArbeidsplasssen }}Ja{{else}}Nei{{/if}}</td>
+    </tr>
+    {{/if}}
+    {{#if this.underskrift.datoforUnderskift}}
+    <tr>
+        <td><h5>Dato for underskrift</h5></td>
+        <td>{{ iso_to_date this.underskrift.datoforUnderskift }}</td>
     </tr>
     {{/if}}
 </table>
