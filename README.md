@@ -1,5 +1,5 @@
 # Syfooppdfgen
-Repository for templates for generating PDF's from Oppfolginsplaner.
+Repository for templates for generating PDF's from Oppfolgingsplaner.
 
 ## Technologies & Tools
 

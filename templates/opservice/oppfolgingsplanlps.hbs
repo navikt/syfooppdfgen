@@ -321,29 +321,37 @@
         </td>
     </tr>
     {{/if}}
-    {{#if this.behovForBistandFraNav.raadOgVeiledningt }}
+    {{#if this.behovForBistandFraNav.raadOgVeiledning }}
+    {{#if this.behovForBistandFraNav.raadOgVeiledningBeskrivelse }}
     <tr>
         <td><h5>Råd og veiledning</h5></td>
-        <td>{{#if this.behovForBistandFraNav.raadOgVeiledningt }}Ja{{else}}Nei{{/if}}</td>
+        <td>{{#if this.behovForBistandFraNav.raadOgVeiledning }}Ja. {{ this.behovForBistandFraNav.raadOgVeiledningBeskrivelse }}{{else}}Nei{{/if}}</td>
     </tr>
+    {{/if}}
     {{/if}}
     {{#if this.behovForBistandFraNav.dialogmoteMed }}
+    {{#if this.behovForBistandFraNav.dialogmoteMedBeskrivelse }}
     <tr>
         <td><h5>Dialogmøte i regi av NAV</h5></td>
-        <td>{{#if this.behovForBistandFraNav.dialogmoteMed }}Ja{{else}}Nei{{/if}}</td>
+        <td>{{#if this.behovForBistandFraNav.dialogmoteMed }}Ja. {{ this.behovForBistandFraNav.dialogmoteMedBeskrivelse}}{{else}}Nei{{/if}}</td>
     </tr>
+    {{/if}}
     {{/if}}
     {{#if this.behovForBistandFraNav.arbeidsrettedeTiltak }}
+    {{#if this.behovForBistandFraNav.arbeidsrettedeTiltakBeskrivelse }}
     <tr>
         <td><h5>Arbeidsrettede tiltak og virkemidler</h5></td>
-        <td>{{#if this.behovForBistandFraNav.arbeidsrettedeTiltak }}Ja{{else}}Nei{{/if}}</td>
+        <td>{{#if this.behovForBistandFraNav.arbeidsrettedeTiltak }}Ja. {{ this.behovForBistandFraNav.arbeidsrettedeTiltakBeskrivelse }}{{else}}Nei{{/if}}</td>
     </tr>
     {{/if}}
+    {{/if}}
     {{#if this.behovForBistandFraNav.hjelpemidler }}
+    {{#if this.behovForBistandFraNav.hjelpemidlerBeskrivelse }}
     <tr>
         <td><h5>Hjelpemidler</h5></td>
-        <td>{{#if this.behovForBistandFraNav.hjelpemidler }}Ja{{else}}Nei{{/if}}</td>
+        <td>{{#if this.behovForBistandFraNav.hjelpemidler }}Ja. {{ this.behovForBistandFraNav.hjelpemidlerBeskrivelse }}{{else}}Nei{{/if}}</td>
     </tr>
+    {{/if}}
     {{/if}}
     {{#if this.behovForBistandFraAndre }}
     <tr>
@@ -359,10 +367,10 @@
     </tr>
     {{/if}}
     {{#if this.behovForBistandFraAndre.andre }}
-    {{#if this.behovForBistandFraAndre.andreFritekts }}
+    {{#if this.behovForBistandFraAndre.andreFritekst }}
     <tr>
         <td><h5>Andre</h5></td>
-        <td>{{#if this.behovForBistandFraAndre.andre }}Ja. {{ this.behovForBistandFraAndre.andreFritekts }}{{else}}Nei{{/if}}</td>
+        <td>{{#if this.behovForBistandFraAndre.andre }}Ja. {{ this.behovForBistandFraAndre.andreFritekst }}{{else}}Nei{{/if}}</td>
     </tr>
     {{/if}}
     {{/if}}
@@ -399,7 +407,26 @@
     {{#if this.fremdrift }}
     <tr>
         <td><h4>Fremdrift</h4></td>
-        <td>{{ this.fremdrift }}</td>b
+        <td>{{ this.fremdrift }}</td>
+    </tr>
+    {{/if}}
+    {{#if this.underskrift }}
+    <tr>
+        <td colspan="2">
+            <h4 >Underskrift</h4>
+        </td>
+    </tr>
+    {{/if}}
+    {{#if this.underskrift.signertPapirkopiForeliggerPaaArbeidsplasssen}}
+    <tr>
+        <td><h5>Signert papirkopi foreligger på arbeidsplassen</h5></td>
+        <td>{{#if this.underskrift.signertPapirkopiForeliggerPaaArbeidsplasssen }}Ja{{else}}Nei{{/if}}</td>
+    </tr>
+    {{/if}}
+    {{#if this.underskrift.datoforUnderskift}}
+    <tr>
+        <td><h5>Dato for underskrift</h5></td>
+        <td>{{ iso_to_date this.underskrift.datoforUnderskift }}</td>
     </tr>
     {{/if}}
 </table>

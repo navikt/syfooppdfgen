@@ -50,7 +50,7 @@
         "behovForBistandFraAndre": {
           "bedriftsHelsetjenesten": true,
           "andre": true,
-          "andreFritekts": "Behov for bistand fra andre"
+          "andreFritekst": "Behov for bistand fra andre"
         },
         "behovForAvklaringMedLegeSykmeleder": "Jeg har behov for avklaring med min lege",
         "tilrettelagtArbeidIkkeMulig": "Vi kan ikke tilrettelegge for slikt arbeid",
@@ -75,14 +75,18 @@
         "sykmeldingsprosendIPerioden": "100",
         "behovForBistandFraNav": {
           "raadOgVeiledning": true,
+          "raadOgVeiledningBeskrivelse": "Beskrivelse for råd og veiledning",
           "dialogmoteMed": true,
+          "dialogmoteMedBeskrivelse": "Beskrivelse for dialogmøte",
           "arbeidsrettedeTiltak": true,
-          "hjelpemidler": true
+          "arbeidsrettedeTiltakBeskrivelse": "Beskrivelse for arbeidsrettede tiltak",
+          "hjelpemidler": true,
+          "hjelpemidlerBeskrivelse": "Beskrivelse for hjelpemidler"
         },
         "behovForBistandFraAndre": {
           "bedriftsHelsetjenesten": true,
           "andre": true,
-          "andreFritekts": "Behov for bistand fra andre"
+          "andreFritekst": "Behov for bistand fra andre"
         },
         "behovForAvklaringMedLegeSykmeleder": null,
         "tilrettelagtArbeidIkkeMulig": null,
