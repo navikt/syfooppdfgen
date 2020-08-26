@@ -52,7 +52,7 @@
           "andre": true,
           "andreFritekst": "Behov for bistand fra andre"
         },
-        "behovForAvklaringMedLegeSykmeleder": "Jeg har behov for avklaring med min lege",
+        "behovForAvklaringMedLegeSykmelder": "Jeg har behov for avklaring med min lege",
         "tilrettelagtArbeidIkkeMulig": "Vi kan ikke tilrettelegge for slikt arbeid",
         "vurderingEffektAvTiltak": {
           "vurderingEffektAvTiltakFritekst": "Tiltaker kan gi en effekt.",
@@ -88,7 +88,7 @@
           "andre": true,
           "andreFritekst": "Behov for bistand fra andre"
         },
-        "behovForAvklaringMedLegeSykmeleder": null,
+        "behovForAvklaringMedLegeSykmelder": null,
         "tilrettelagtArbeidIkkeMulig": null,
         "vurderingEffektAvTiltak": {
           "vurderingEffektAvTiltakFritekst": null,
