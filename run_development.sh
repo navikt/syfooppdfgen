@@ -2,7 +2,7 @@
 
 CURRENT_PATH="$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"
 
-docker pull navikt/pdfgen
+docker pull docker.pkg.github.com/navikt/pdfgen/pdfgen:72efbbafa20fb858d206894de67ae077876a9cc2
 docker run \
         -v "$CURRENT_PATH/templates:/app/templates" \
         -v "$CURRENT_PATH/fonts:/app/fonts" \
@@ -12,4 +12,4 @@ docker run \
         -e DISABLE_PDF_GET=false \
         -it \
         --rm \
-        navikt/pdfgen
+        docker.pkg.github.com/navikt/pdfgen/pdfgen:72efbbafa20fb858d206894de67ae077876a9cc2
