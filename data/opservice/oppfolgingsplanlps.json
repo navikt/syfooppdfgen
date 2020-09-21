@@ -13,7 +13,7 @@
         "etternavn": "Ledersen"
       },
       "tlfkontatkperson": "99887766",
-      "virksomhetenerIAVirksomhet": false,
+      "virksomhetenerIAVirksomhet": true,
       "virksomhetenHarBedrifsHelseTjeneste": true
     },
     "opplysningerOmArbeidstakeren": {
@@ -22,9 +22,9 @@
         "etternavn": "Arbeidstaker"
       },
       "fodselsnummer": "01010112345",
-      "tlf": "99887766",
-      "stillingAvdeling": "Avdeling",
-      "ordineareArbeidsoppgaver": "Arbeidsoppgaver"
+      "tlf": "99008844",
+      "stillingAvdeling": "Avdeling A",
+      "ordineareArbeidsoppgaver": "Helt vanlige arbeidsoppgaver. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     "opplysingerOmSykefravaeret": {
       "forsteFravearsdag": "2017-01-12",
@@ -43,9 +43,10 @@
         "sykmeldingsprosendIPerioden": "100",
         "behovForBistandFraNav": {
           "raadOgVeiledning": true,
+          "raadOgVeiledningBeskrivelse": "Lorem ipsum dolor sit amet",
           "dialogmoteMed": true,
           "arbeidsrettedeTiltak": true,
-          "hjelpemidler": true
+          "hjelpemidler": false
         },
         "behovForBistandFraAndre": {
           "bedriftsHelsetjenesten": true,
