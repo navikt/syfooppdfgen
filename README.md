@@ -24,7 +24,7 @@ docker run \
         navikt/pdfgen
 ```
 
-Or you can use the convenience script `./run_development.sh`
+Or you can use the convenience script `./run_development.sh` or `./run_development_windows.sh`
 
 When running the application you can use the env var `DISABLE_PDF_GET` to enable GET requests at
 `/api/v1/genpdf/<application>/<template>` which looks for test data at `data/<application>/<template>.json` and outputs
@@ -32,7 +32,10 @@ a PDF to your browser. Additionally, the template folder will be fetched on ever
 since the last GET, making this ideal for developing new templates for your application.
 
 The template and data directory structure both follow the `<application>/<template>` structure.
-Example url: `http://localhost:8080/api/v1/genpdf/opservice/oppfolgingsplanlps`
+Example url: 
+
+`http://localhost:8080/api/v1/genpdf/opservice/oppfolgingsplanlps` <br>
+`http://localhost:8080/api/v1/genpdf/oppfolging/mer_veiledning`
 
 ### Run in development mode windows
 For running on windows: `./run_development_windows.sh`
