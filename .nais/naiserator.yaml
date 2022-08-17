@@ -26,7 +26,6 @@ spec:
     failureThreshold: 30
   leaderElection: false
   prometheus:
-    enabled: true
     path: /prometheus
   istio:
     enabled: false
@@ -37,3 +36,5 @@ spec:
     requests:
       cpu: 50m
       memory: 128Mi
+  ingresses:
+    - {{ingress}}
