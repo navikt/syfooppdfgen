@@ -39,5 +39,6 @@ spec:
   inbound:
     rules:
       - application: syfooppfolgingsplanservice
+        namespace: team-esyfo
   ingresses:
     - {{ingress}}
