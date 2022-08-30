@@ -36,5 +36,8 @@ spec:
     requests:
       cpu: 50m
       memory: 128Mi
+  inbound:
+    rules:
+      - application: syfooppfolgingsplanservice
   ingresses:
     - {{ingress}}
