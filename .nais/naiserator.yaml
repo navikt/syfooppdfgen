@@ -40,5 +40,6 @@ spec:
     rules:
       - application: syfooppfolgingsplanservice
         namespace: team-esyfo
+        cluster: {{cluster}}
   ingresses:
     - {{ingress}}
