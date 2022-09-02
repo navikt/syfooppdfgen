@@ -36,5 +36,10 @@ spec:
     requests:
       cpu: 50m
       memory: 128Mi
+  inbound:
+    rules:
+      - application: syfooppfolgingsplanservice
+        namespace: team-esyfo
+        cluster: {{cluster}}
   ingresses:
     - {{ingress}}
