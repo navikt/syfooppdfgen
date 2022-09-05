@@ -1,4 +1,4 @@
-name: main
+name: main-gcp
 
 on: push
 
@@ -24,9 +24,9 @@ jobs:
           docker push ${IMAGE}
           echo ${IMAGE}
 
-  deploy-dev:
+  deploy-dev-gcp:
     if: github.ref == 'refs/heads/master'
-    name: Deploy to NAIS Dev-fss
+    name: Deploy to NAIS Dev-gcp
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -34,7 +34,7 @@ jobs:
       - uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: dev-fss
+          CLUSTER: dev-gcp
           RESOURCE: .nais/naiserator.yaml
           VARS: .nais/dev.json
 
@@ -44,22 +44,22 @@ jobs:
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_TITLE: 'Unsuccesful deployment - `dev` :crying_cat_face:'
-          SLACK_MESSAGE: '`${{ github.event.repository.name }}` failed to deploy to dev.'
+          SLACK_MESSAGE: '`${{ github.event.repository.name }}` failed to deploy to dev-gcp.'
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           MSG_MINIMAL: commit
           SLACK_COLOR: ${{ job.status }}
 
-  deploy-prod:
+  deploy-prod-gcp:
     if: github.ref == 'refs/heads/master'
-    name: Deploy to NAIS Prod-fss
-    needs: deploy-dev
+    name: Deploy to NAIS Prod-gcp
+    needs: deploy-dev-gcp
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: prod-fss
+          CLUSTER: prod-gcp
           RESOURCE: .nais/naiserator.yaml
           VARS: .nais/prod.json
 
