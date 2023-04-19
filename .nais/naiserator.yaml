@@ -38,6 +38,7 @@ spec:
       memory: 128Mi
   inbound:
     rules:
+      - application: esyfovarsel
       - application: syfooppfolgingsplanservice
         namespace: team-esyfo
         cluster: {{cluster}}
