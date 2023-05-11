@@ -1,4 +1,4 @@
 {
   "syfooppfolgingsplanservice_cluster": "dev-fss",
-  "ingress": "https://syfooppdfgen.dev.intern.nav.no"
+  "ingress": "https://syfooppdfgen.intern.dev.nav.no"
 }
