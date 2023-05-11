@@ -41,6 +41,6 @@ spec:
       - application: esyfovarsel
       - application: syfooppfolgingsplanservice
         namespace: team-esyfo
-        cluster: {{cluster}}
+        cluster: {{syfooppfolgingsplanservice_cluster}}
   ingresses:
     - {{ingress}}
