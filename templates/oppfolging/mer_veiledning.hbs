@@ -61,6 +61,10 @@
         sykepenger er <p class="text--inline text--bold">{{ brevdata.maxdato }} </p> Datoen gjelder hvis du er sykmeldt
         uten opphold. Den vil flytte seg hvis du for eksempel jobber noen perioder, eller hvis du tar ferie. Du kan få
         sykepenger i maksimalt 52 uker, og for deg vil det si at denne datoen nå nærmer seg.
+    {{else}}
+        Etter <p class="text--inline text--bold">{{ brevdata.maxdato }} </p> får du ikke lenger sykepenger.
+        Du kan få sykepenger i maksimalt 52 uker, og for deg vil det si at denne datoen nå nærmer seg.
+        Datoen kan forskyves, for eksempel hvis du tar ferie mens du er sykmeldt.
     {{/if}}
 {{/if}}
 </p>
