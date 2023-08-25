@@ -56,10 +56,17 @@
 
 <p>
 {{#if brevdata.maxdato}}
+    {{#if brevdata.utbetaltTom}}
+        Per <p class="text--inline text--bold">{{ brevdata.utbetaltTom }} </p> er det beregnet at din siste dag med
+        sykepenger er <p class="text--inline text--bold">{{ brevdata.maxdato }} </p> Datoen gjelder hvis du er sykmeldt
+        uten opphold. Den vil flytte seg hvis du for eksempel jobber noen perioder, eller hvis du tar ferie. Du kan få
+        sykepenger i maksimalt 52 uker, og for deg vil det si at denne datoen nå nærmer seg.
+    {{else}}
         Etter <p class="text--inline text--bold">{{ brevdata.maxdato }} </p> får du ikke lenger sykepenger.
+        Du kan få sykepenger i maksimalt 52 uker, og for deg vil det si at denne datoen nå nærmer seg.
+        Datoen kan forskyves, for eksempel hvis du tar ferie mens du er sykmeldt.
+    {{/if}}
 {{/if}}
-Du kan få sykepenger i maksimalt 52 uker, og for deg vil det si at denne datoen nå nærmer seg. Datoen kan
-forskyves, for eksempel hvis du tar ferie mens du er sykmeldt.
 </p>
 
 <p> Hvis du er usikker på om du er tilbake i arbeid innen sykepengene tar slutt, er det viktig at du planlegger
@@ -110,7 +117,7 @@ forskyves, for eksempel hvis du tar ferie mens du er sykmeldt.
 
 <p>Snakk med en veileder om mulighetene dine videre, eller om du har krav på økonomisk støtte.</p>
 <ul>
-    <li> Ring oss på 55 55 33 33. <br> Åpningstiden på telefon er hverdager fra klokken 09.00–15.00.</li>
+    <li> Ring oss på 55 55 33 33. <br/> Åpningstiden på telefon er hverdager fra klokken 09.00–15.00.</li>
     <li> Du kan besøke oss på nav.no/kontaktoss for å ta kontakt på andre måter.</li>
 </ul>
 
