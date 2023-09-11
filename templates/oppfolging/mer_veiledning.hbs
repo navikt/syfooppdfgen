@@ -29,10 +29,6 @@
             margin-bottom: 36px;
         }
 
-        .text--inline {
-            display: inline;
-        }
-
         .text--bold {
             font-weight: bold;
         }
@@ -57,12 +53,12 @@
 <p>
 {{#if brevdata.maxdato}}
     {{#if brevdata.utbetaltTom}}
-        Per <p class="text--inline text--bold">{{ brevdata.utbetaltTom }} </p> er det beregnet at din siste dag med
-        sykepenger er <p class="text--inline text--bold">{{ brevdata.maxdato }} </p> Datoen gjelder hvis du er sykmeldt
+        Per <p class="text--bold"> {{ brevdata.utbetaltTom }} </p> er det beregnet at din siste dag med
+        sykepenger er <p class="text--bold"> {{ brevdata.maxdato }}. </p> Datoen gjelder hvis du er sykmeldt
         uten opphold. Den vil flytte seg hvis du for eksempel jobber noen perioder, eller hvis du tar ferie. Du kan få
         sykepenger i maksimalt 52 uker, og for deg vil det si at denne datoen nå nærmer seg.
     {{else}}
-        Etter <p class="text--inline text--bold">{{ brevdata.maxdato }} </p> får du ikke lenger sykepenger.
+        Etter <p class="text--bold">{{ brevdata.maxdato }} </p> får du ikke lenger sykepenger.
         Du kan få sykepenger i maksimalt 52 uker, og for deg vil det si at denne datoen nå nærmer seg.
         Datoen kan forskyves, for eksempel hvis du tar ferie mens du er sykmeldt.
     {{/if}}
@@ -113,19 +109,37 @@
     <li> Snakk gjerne med en av våre veiledere om hva du kan gjøre hvis du fortsatt er syk.</li>
 </ul>
 
-<h1> Ta gjerne kontakt med NAV </h1>
+{{#if brevdata.isBrukerReservert}}
+    <h1> Ta gjerne kontakt med NAV </h1>
 
-<p>Snakk med en veileder om mulighetene dine videre, eller om du har krav på økonomisk støtte.</p>
-<ul>
-    <li> Ring oss på 55 55 33 33. <br/> Åpningstiden på telefon er hverdager fra klokken 09.00–15.00.</li>
-    <li> Du kan besøke oss på nav.no/kontaktoss for å ta kontakt på andre måter.</li>
-</ul>
+    <p>Snakk med en veileder om mulighetene dine videre, eller om du har krav på økonomisk støtte.</p>
+    <ul>
+        <li> Ring oss på 55 55 33 33. <br/> Åpningstiden på telefon er hverdager fra klokken 09.00–15.00.</li>
+        <li> Du kan besøke oss på nav.no/kontaktoss for å ta kontakt på andre måter.</li>
+    </ul>
 
-<div style="margin: 62px 0 62px 0;">
-    Vennlig hilsen <br/> NAV
-</div>
+    <div style="margin: 62px 0 62px 0;">
+        Vennlig hilsen <br/> NAV
+    </div>
 
-<p> Du får denne informasjonen i et brev fordi du har reservert deg mot digital kommunikasjon fra NAV. </p>
+    <p> Du får denne informasjonen i et brev fordi du har reservert deg mot digital kommunikasjon fra NAV. </p>
+
+    {{else}}
+    <h1> Ønsker du mer veiledning? </h1>
+
+        <p> Hvis du tror at du fortsatt vil være syk etter at sykepengene tar slutt, må du registrere deg for mer veiledning.</p>
+        <ul>
+            <li> Du kan snakke med veilederen din om mulighetene dine fremover</li>
+            <li> Du får informasjon om du har krav på annen økonomisk støtte</li>
+        </ul>
+
+        <div style="margin: 62px 0 62px 0;">
+            Vennlig hilsen <br/> NAV
+        </div>
+        <div>
+            Besøk <p class="text--bold"> <a href="https://www.nav.no/arbeid/registrering/"> https://www.nav.no/arbeid/registrering </a> </p> for å be om mer veiledning.
+        </div>
+{{/if}}
 
 </body>
 </html>
