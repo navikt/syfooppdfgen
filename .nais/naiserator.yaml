@@ -13,20 +13,20 @@ spec:
     max: 2
     cpuThresholdPercentage: 70
   liveness:
-    path: /is_alive
+    path: /internal/is_alive
     timeout: 1
     initialDelay: 5
     periodSeconds: 5
     failureThreshold: 30
   readiness:
-    path: /is_ready
+    path: /internal/is_ready
     timeout: 1
     initialDelay: 5
     periodSeconds: 5
     failureThreshold: 30
   leaderElection: false
   prometheus:
-    path: /prometheus
+    path: /internal/prometheus
   istio:
     enabled: false
   resources:
