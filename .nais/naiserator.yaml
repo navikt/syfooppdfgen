@@ -27,8 +27,6 @@ spec:
   leaderElection: false
   prometheus:
     path: /internal/prometheus
-  istio:
-    enabled: false
   resources:
     limits:
       cpu: 400m
