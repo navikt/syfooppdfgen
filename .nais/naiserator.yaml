@@ -36,11 +36,12 @@ spec:
     requests:
       cpu: 50m
       memory: 128Mi
-  inbound:
-    rules:
-      - application: esyfovarsel
-      - application: syfooppfolgingsplanservice
-        namespace: team-esyfo
-        cluster: {{syfooppfolgingsplanservice_cluster}}
+  accessPolicy:
+    inbound:
+      rules:
+        - application: esyfovarsel
+        - application: syfooppfolgingsplanservice
+          namespace: team-esyfo
+          cluster: {{syfooppfolgingsplanservice_cluster}}
   ingresses:
     - {{ingress}}
