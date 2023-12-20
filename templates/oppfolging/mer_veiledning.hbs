@@ -2,7 +2,7 @@
 <html lang="no">
 <head>
     <meta charset="UTF-8"/>
-    <style>
+      <style>
         * {
             font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
             color: #262626;
@@ -33,11 +33,6 @@
             font-weight: bold;
         }
 
-        li {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
     </style>
 
     <title> Snart slutt på sykepenger </title>
@@ -51,21 +46,56 @@
 <p style="margin-bottom: 36px">Hei {{#if brevdata.navn}}{{ brevdata.navn }}{{/if}}</p>
 
 <p>
-{{#if brevdata.maxdato}}
-    {{#if brevdata.utbetaltTom}}
-        Per <p class="text--bold"> {{ brevdata.utbetaltTom }} </p> er det beregnet at din siste dag med
-        sykepenger er <p class="text--bold"> {{ brevdata.maxdato }}. </p> Datoen gjelder hvis du er sykmeldt
-        uten opphold. Den vil flytte seg hvis du for eksempel jobber noen perioder, eller hvis du tar ferie. Du kan få
-        sykepenger i maksimalt 52 uker, og for deg vil det si at denne datoen nå nærmer seg.
-    {{else}}
-        Etter <p class="text--bold">{{ brevdata.maxdato }} </p> får du ikke lenger sykepenger.
-        Du kan få sykepenger i maksimalt 52 uker, og for deg vil det si at denne datoen nå nærmer seg.
-        Datoen kan forskyves, for eksempel hvis du tar ferie mens du er sykmeldt.
+{{#if brevdata.isBrukerReservert}}
+    {{#if brevdata.maxdato}}
+        {{#if brevdata.utbetaltTom}}
+            Per <span class="text--bold"> {{ brevdata.utbetaltTom }} </span> er det beregnet at din siste dag med
+            sykepenger er <span class="text--bold"> {{ brevdata.maxdato }}. </span> Datoen gjelder hvis du er sykmeldt
+            uten opphold. Den vil flytte seg hvis du for eksempel jobber noen perioder, eller hvis du tar ferie. Du kan få
+            sykepenger i maksimalt 52 uker, og for deg vil det si at denne datoen nå nærmer seg.
+        {{else}}
+            Etter <span class="text--bold">{{ brevdata.maxdato }} </span> får du ikke lenger sykepenger.
+            Du kan få sykepenger i maksimalt 52 uker, og for deg vil det si at denne datoen nå nærmer seg.
+            Datoen kan forskyves, for eksempel hvis du tar ferie mens du er sykmeldt.
+        {{/if}}
+        {{else}}
+            <div style="border-style: solid; padding-left: 16px">
+                <p class="text--bold">Obs!</p>
+                <p>På grunn av feil i systemene våre får vi ikke sendt deg datoen for siste dag med sykepenger.</p>
+
+                Ta Kontakt med oss for mer informasjon.
+                <ul style="padding-left: 16px; margin-top: 0">
+                    <li> Ring oss på 55 55 33 33. Åpningstiden på telefon er hverdager fra klokken 09.00–15.00.</li>
+                    <li> Du kan besøke oss på nav.no/kontaktoss for å ta kontakt på andre måter.</li>
+                </ul>
+
+            </div>
+    {{/if}}
+
+{{else}}
+    {{#if brevdata.maxdato}}
+        {{#if brevdata.utbetaltTom}}
+            Per <span class="text--bold"> {{ brevdata.utbetaltTom }} </span> er det beregnet at din siste dag med
+            sykepenger er <span class="text--bold"> {{ brevdata.maxdato }}. </span> Datoen gjelder hvis du er sykmeldt
+            uten opphold. Den vil flytte seg hvis du for eksempel jobber noen perioder, eller hvis du tar ferie. Du kan få
+            sykepenger i maksimalt 52 uker, og for deg vil det si at denne datoen nå nærmer seg.
+        {{/if}}
+        {{else}}
+            <div style="border-style: solid; padding-left: 16px">
+                <p class="text--bold">
+                    Beklager, teknisk feil
+                </p>
+                På grunn av feil i systemene våre får vi ikke vist deg beregnet siste dag med sykepenger.
+                <br/>
+                Vennligst prøv igjen litt senere.
+                <p>Kontakt teknisk brukerstøtte dersom problemene vedvarer.</p>
+            </div>
     {{/if}}
 {{/if}}
 </p>
 
-<p> Hvis du er usikker på om du er tilbake i arbeid innen sykepengene tar slutt, er det viktig at du planlegger
+<p>
+    Hvis du er usikker på om du er tilbake i arbeid innen sykepengene tar slutt, er det viktig at du planlegger
     framover slik at du ikke risikerer å stå uten inntekt.
 </p>
 
@@ -118,7 +148,7 @@
         <li> Du kan besøke oss på nav.no/kontaktoss for å ta kontakt på andre måter.</li>
     </ul>
 
-    <div style="margin: 62px 0 62px 0;">
+    <div style="margin: 32px 0 24px 0;">
         Vennlig hilsen <br/> NAV
     </div>
 
@@ -133,11 +163,11 @@
             <li> Du får informasjon om du har krav på annen økonomisk støtte</li>
         </ul>
 
-        <div style="margin: 62px 0 62px 0;">
+        <div style="margin: 32px 0 32px 0;">
             Vennlig hilsen <br/> NAV
         </div>
         <div>
-            Besøk <p class="text--bold"> <a href="https://www.nav.no/syk/meroppfolging/reg/0"> https://www.nav.no/syk/meroppfolging/reg/0 </a> </p> for å be om mer veiledning.
+            Besøk <span class="text--bold"> <a href="https://www.nav.no/syk/meroppfolging/reg/0"> https://www.nav.no/syk/meroppfolging/reg/0 </a> </span> for å be om mer veiledning.
         </div>
 {{/if}}
 
