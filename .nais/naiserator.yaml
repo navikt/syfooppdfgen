@@ -10,7 +10,7 @@ spec:
   port: 8080
   replicas:
     min: 1
-    max: 2
+    max: 3
     cpuThresholdPercentage: 70
   liveness:
     path: /internal/is_alive
@@ -29,11 +29,11 @@ spec:
     path: /internal/prometheus
   resources:
     limits:
-      cpu: 400m
+      cpu: 1000m
       memory: 512Mi
     requests:
-      cpu: 50m
-      memory: 128Mi
+      cpu: 500m
+      memory: 256Mi
   accessPolicy:
     inbound:
       rules:
