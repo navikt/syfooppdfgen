@@ -6,9 +6,7 @@ updates:
     schedule:
       interval: daily
 
-  - package-ecosystem: gradle
+  - package-ecosystem: docker
     directory: '/'
     schedule:
       interval: daily
-      time: '14:30'
-    open-pull-requests-limit: 20
