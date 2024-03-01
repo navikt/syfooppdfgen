@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Checkout code and create docker tag
+    name: build
     runs-on: ubuntu-latest
     permissions:
       contents: read
