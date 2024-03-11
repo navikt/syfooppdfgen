@@ -35,7 +35,8 @@ The template and data directory structure both follow the `<application>/<templa
 Example url: 
 
 `http://localhost:8080/api/v1/genpdf/opservice/oppfolgingsplanlps` <br>
-`http://localhost:8080/api/v1/genpdf/oppfolging/mer_veiledning`
+`http://localhost:8080/api/v1/genpdf/oppfolging/mer_veiledning` <br>
+`http://localhost:8080/api/v1/genpdf/oppfolging/oppfolgingsplan-lps` <br>
 
 ### Run in development mode windows
 For running on windows: `./run_development_windows.sh`

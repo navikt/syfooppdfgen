@@ -1,0 +1,25 @@
+{
+  "lpsPlanData": {
+    "employeeName": "employeeName employeeName",
+    "employeePhoneNumber": "String",
+    "employeeAddress": "String",
+    "employeeEmail": "String",
+    "typicalWorkday": "typicalWorkday",
+    "tasksThatCanStillBeDone": "tasksThatCanStillBeDone",
+    "tasksThatCanNotBeDone": "tasksThatCanNotBeDone",
+    "previousFacilitation": "previousFacilitation",
+    "plannedFacilitation": "plannedFacilitation",
+    "otherFacilitationOptions": "otherFacilitationOptions",
+    "followUp": "followUp",
+    "evaluationDate": "evaluationDate",
+    "sendPlanToString": "sendPlanTo",
+    "needsHelpFromNav": true,
+    "needsHelpFromNavDescription": "needsHelpFromNavDescription",
+    "messageToGeneralPractitioner": null,
+    "additionalInformation": null,
+    "employerContactPersonFullName": "employerContactPersonFullName employerContactPersonFullName",
+    "employerContactPersonPhoneNumber": "12121212",
+    "employeeHasContributedToPlan": true,
+    "employeeHasNotContributedToPlanDescription": null
+  }
+}
