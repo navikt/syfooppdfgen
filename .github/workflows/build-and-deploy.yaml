@@ -39,17 +39,6 @@ jobs:
           VARS: .nais/dev.json
           VAR: image=${{ needs.build.outputs.image }}
 
-      # Notify Slack
-      - name: Unsuccessful deploy notification dev
-        if: failure()
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_TITLE: 'Unsuccesful deployment - `dev` :crying_cat_face:'
-          SLACK_MESSAGE: '`${{ github.event.repository.name }}` failed to deploy to dev-gcp.'
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          MSG_MINIMAL: commit
-          SLACK_COLOR: ${{ job.status }}
-
   deploy-prod-gcp:
     if: github.ref == 'refs/heads/main'
     name: Deploy to NAIS Prod-gcp
@@ -63,14 +52,3 @@ jobs:
           RESOURCE: .nais/naiserator.yaml
           VARS: .nais/prod.json
           VAR: image=${{ needs.build.outputs.image }}
-
-      # Notify Slack
-      - name: Unsuccessful deploy notification prod
-        if: failure()
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_TITLE: 'Unsuccesful deployment :crying_cat_face:'
-          SLACK_MESSAGE: '`${{ github.event.repository.name }}` failed to deploy to prod.'
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          MSG_MINIMAL: commit
-          SLACK_COLOR: ${{ job.status }}
