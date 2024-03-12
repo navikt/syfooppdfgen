@@ -42,5 +42,7 @@ spec:
           namespace: team-esyfo
           cluster: {{syfooppfolgingsplanservice_cluster}}
         - application: lps-oppfolgingsplan-mottak
+          namespace: team-esyfo
+          cluster: dev-gcp
   ingresses:
     - {{ingress}}
