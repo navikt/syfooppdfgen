@@ -2,6 +2,9 @@ name: Deploy to preprod
 
 on: workflow_dispatch
 
+permissions:
+  id-token: write
+
 jobs:
   build:
     name: Checkout code and create docker tag
