@@ -50,6 +50,11 @@
         .avoidPageBreakInside {
             page-break-inside: avoid;
         }
+        
+        .horiszontal {
+            border-style: none; border-bottom:1px solid #ccc
+        }
+        
     </style>
     <title>Oppfølgingsplan</title>
 </head>
@@ -81,69 +86,69 @@
 
     <h3>Hvordan ser en vanlig arbeidshverdag ut?</h3>
     <p>{{ lpsPlanData.typicalWorkday }}</p>
-    <hr></hr>
+    <p class="horiszontal"></p>
     <h3>Hvilke ordinære arbeidsoppgaver kan fortsatt utføres?</h3>
     <p>{{ lpsPlanData.tasksThatCanStillBeDone }}</p>
-    <hr></hr>
+    <p class="horiszontal"></p>
     <h3>Hvilke ordinære arbeidsoppgaver kan ikke utføres?</h3>
     <p>{{ lpsPlanData.tasksThatCanNotBeDone }}</p>
-    <hr></hr>
+    <p class="horiszontal"></p>
 </div>
 <div class="avoidPageBreakInside">
     <h2>Tilrettelegging for å være i arbeid</h2>
 
     <h3>Tilrettelegging tidligere i sykefraværet</h3>
     <p>{{ lpsPlanData.previousFacilitation }}</p>
-    <hr></hr>
+    <p class="horiszontal"></p>
     <h3>Hvordan skal dere tilrettelegge arbeidshverdagen fremover?</h3>
     <p>{{ lpsPlanData.plannedFacilitation }}</p>
-    <hr></hr>
+    <p class="horiszontal"></p>
     {{#if lpsPlanData.otherFacilitationOptions }}
         <h3>Har dere andre muligheter for tilrettelegging som ikke prøves ut nå?</h3>
         <p>{{ lpsPlanData.previousFacilitation }}</p>
-        <hr></hr>
+        <p class="horiszontal"></p>
     {{/if}}
 </div>
 <div class="avoidPageBreakInside">
     <h2>Oppfølging</h2>
     <h3>Når skal dere evaluere denne oppfølgingsplanen?</h3>
     <p>{{ lpsPlanData.previousFacilitation }}</p>
-    <hr></hr>
+    <p class="horiszontal"></p>
     <h3>Hvordan skal dere følge opp avtalt tilrettelegging?</h3>
     <p>{{ lpsPlanData.followUp }}</p>
-    <hr></hr>
+    <p class="horiszontal"></p>
 </div>
 
 <div class="avoidPageBreakInside">
     <h2>Informasjon til NAV og fastlege</h2>
     <h3>Hvem vil dere sende planen til?</h3>
     <p>{{ lpsPlanData.sendPlanToString }}</p>
-    <hr></hr>
+    <p class="horiszontal"></p>
 
     <h3>Trenger dere hjelp fra NAV?</h3>
     {{#if lpsPlanData.needsHelpFromNav  }}
         <p>Ja</p>
-        <hr></hr>
+        <p class="horiszontal"></p>
         <h3>Hva trenger dere hjelp fra NAV med?</h3>
         <p>{{ lpsPlanData.needsHelpFromNavDescription }}</p>
-        <hr></hr>
+        <p class="horiszontal"></p>
     {{else}}
         <p>Nei</p>
-        <hr></hr>
+        <p class="horiszontal"></p>
     {{/if}}
     {{#if lpsPlanData.messageToGeneralPractitioner }}
         <h3>Beskjed til fastlegen</h3>
         <p>{{ lpsPlanData.messageToGeneralPractitioner }}</p>
-        <hr></hr>
+        <p class="horiszontal"></p>
     {{/if}}
 
     <h3>Har arbeidstakeren vært med å lage planen?</h3>
     <p>{{ lpsPlanData.employeeHasContributedToPlan }}</p>
-    <hr></hr>
+    <p class="horiszontal"></p>
     {{#if lpsPlanData.employeeHasNotContributedToPlanDescription}}
         <h3>Beskriv hvorfor arbeidstakeren ikke har vært med å lage planen</h3>
         <p>{{lpsPlanData.employeeHasNotContributedToPlanDescription}}</p>
-        <hr></hr>
+        <p class="horiszontal"></p>
     {{/if}}
 </div>
 
@@ -151,15 +156,15 @@
     <h2>Kontaktperson</h2>
     <h3>Navn til kontaktperson</h3>
     <p>{{ lpsPlanData.employerContactPersonFullName }}</p>
-    <hr></hr>
+    <p class="horiszontal"></p>
     <h3>Telefonnummer til kontaktperson</h3>
     <p>{{ lpsPlanData.employerContactPersonPhoneNumber }}</p>
-    <hr></hr>
+    <p class="horiszontal"></p>
 
     {{#if lpsPlanData.additionalInformation }}
         <h3>Eventuelle tilleggsopplysninger</h3>
         <p>{{ lpsPlanData.additionalInformation }}</p>
-        <hr></hr>
+        <p class="horiszontal"></p>
     {{/if}}
 </div>
 </body>
