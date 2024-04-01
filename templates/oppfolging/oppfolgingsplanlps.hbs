@@ -50,12 +50,13 @@
         .avoidPageBreakInside {
             page-break-inside: avoid;
         }
-        
+
         .horiszontal {
-            border-style: none; border-bottom:1px solid #ccc;
+            border-style: none;
+            border-bottom: 1px solid #ccc;
             width: 100%;
         }
-        
+
     </style>
     <title>Oppfølgingsplan</title>
 </head>
@@ -67,7 +68,7 @@
     <h1>Oppfølgingsplan for {{ lpsPlanData.employeeName }}</h1>
 {{else}}
     <h1>Oppfølgingsplan for {{ lpsPlanData.employeeFnr }}</h1>
-   {{/if}}
+{{/if}}
 
 
 
@@ -106,14 +107,14 @@
     <p class="horiszontal"></p>
     {{#if lpsPlanData.otherFacilitationOptions }}
         <h3>Har dere andre muligheter for tilrettelegging som ikke prøves ut nå?</h3>
-        <p>{{ lpsPlanData.previousFacilitation }}</p>
+        <p>{{ lpsPlanData.otherFacilitationOptions }}</p>
         <p class="horiszontal"></p>
     {{/if}}
 </div>
 <div class="avoidPageBreakInside">
     <h2>Oppfølging</h2>
     <h3>Når skal dere evaluere denne oppfølgingsplanen?</h3>
-    <p>{{ lpsPlanData.previousFacilitation }}</p>
+    <p>{{ lpsPlanData.evaluationDate }}</p>
     <p class="horiszontal"></p>
     <h3>Hvordan skal dere følge opp avtalt tilrettelegging?</h3>
     <p>{{ lpsPlanData.followUp }}</p>
@@ -131,7 +132,9 @@
         <p>Ja</p>
         <p class="horiszontal"></p>
         <h3>Hva trenger dere hjelp fra NAV med?</h3>
-        <p>{{ lpsPlanData.needsHelpFromNavDescription }}</p>
+        {{#if lpsPlanData.needsHelpFromNavDescription  }}
+            <p>{{ lpsPlanData.needsHelpFromNavDescription }}</p>
+        {{/if}}
         <p class="horiszontal"></p>
     {{else}}
         <p>Nei</p>
@@ -160,6 +163,9 @@
     <p class="horiszontal"></p>
     <h3>Telefonnummer til kontaktperson</h3>
     <p>{{ lpsPlanData.employerContactPersonPhoneNumber }}</p>
+    <p class="horiszontal"></p>
+    <h3>Epost til kontaktperson</h3>
+    <p>{{ lpsPlanData.employerContactPersonEmail }}</p>
     <p class="horiszontal"></p>
 
     {{#if lpsPlanData.additionalInformation }}
