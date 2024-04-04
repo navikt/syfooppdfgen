@@ -1,4 +1,5 @@
 {
   "syfooppfolgingsplanservice_cluster": "prod-fss",
+  "lpsoppfolgingsplanmottak_cluster": "prod-gcp",
   "ingress": "https://syfooppdfgen.intern.nav.no"
 }
