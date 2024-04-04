@@ -1,5 +1,5 @@
 {
   "syfooppfolgingsplanservice_cluster": "dev-fss",
-  "lpsoppfolgingsplanmottak_cluster_cluster": "dev-gcp",
+  "lpsoppfolgingsplanmottak_cluster": "dev-gcp",
   "ingress": "https://syfooppdfgen.intern.dev.nav.no"
 }
