@@ -38,14 +38,3 @@ jobs:
           RESOURCE: .nais/naiserator.yaml
           VARS: .nais/dev.json
           VAR: image=${{ needs.build.outputs.image }}
-
-      # Notify Slack
-      - name: Unsuccessful deploy notification dev
-        if: failure()
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_TITLE: 'Unsuccesful deployment - `dev` :crying_cat_face:'
-          SLACK_MESSAGE: '`${{ github.event.repository.name }}` failed to deploy to dev-gcp.'
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          MSG_MINIMAL: commit
-          SLACK_COLOR: ${{ job.status }}

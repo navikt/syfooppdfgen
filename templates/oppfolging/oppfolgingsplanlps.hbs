@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        @page {
+            margin: 46px;
+        }
+
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+            color: #3E3832;
+            font-style: normal;
+        }
+
+        h1, h2 {
+            font-weight: 500;
+            page-break-after: avoid;
+        }
+
+        h1 {
+            font-size: 24px;
+            line-height: 28px;
+        }
+
+        h2 {
+            font-size: 20px;
+            line-height: 25px;
+            margin-top: 50px;
+        }
+
+        h3 {
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: bolder;
+        }
+
+        p {
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-family: Source Sans Pro;
+            font-weight: normal;
+            font-size: 12px;
+            letter-spacing: 0.2px;
+            color: #3E3832;
+        }
+
+        .avoidPageBreakInside {
+            page-break-inside: avoid;
+        }
+
+        .horiszontal {
+            border-style: none;
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+        }
+
+    </style>
+    <title>Oppfølgingsplan</title>
+</head>
+
+<body>
+
+
+{{#if lpsPlanData.employeeName }}
+    <h1>Oppfølgingsplan for {{ lpsPlanData.employeeName }}</h1>
+{{else}}
+    <h1>Oppfølgingsplan for {{ lpsPlanData.employeeFnr }}</h1>
+{{/if}}
+
+
+
+{{#if lpsPlanData.employeeAddress }}
+    <div> {{ lpsPlanData.employeeAddress }}</div>
+{{/if}}
+{{#if lpsPlanData.employeeEmail }}
+    <div> {{ lpsPlanData.employeeEmail }}</div>
+{{/if}}
+{{#if lpsPlanData.employeePhoneNumber }}
+    <div> {{ lpsPlanData.employeePhoneNumber }}</div>
+{{/if}}
+
+
+<div class="avoidPageBreakInside">
+    <h2>Arbeidsoppgaver</h2>
+
+    <h3>Hvordan ser en vanlig arbeidshverdag ut?</h3>
+    <p>{{ lpsPlanData.typicalWorkday }}</p>
+    <p class="horiszontal"></p>
+    <h3>Hvilke ordinære arbeidsoppgaver kan fortsatt utføres?</h3>
+    <p>{{ lpsPlanData.tasksThatCanStillBeDone }}</p>
+    <p class="horiszontal"></p>
+    <h3>Hvilke ordinære arbeidsoppgaver kan ikke utføres?</h3>
+    <p>{{ lpsPlanData.tasksThatCanNotBeDone }}</p>
+    <p class="horiszontal"></p>
+</div>
+<div class="avoidPageBreakInside">
+    <h2>Tilrettelegging for å være i arbeid</h2>
+
+    <h3>Tilrettelegging tidligere i sykefraværet</h3>
+    <p>{{ lpsPlanData.previousFacilitation }}</p>
+    <p class="horiszontal"></p>
+    <h3>Hvordan skal dere tilrettelegge arbeidshverdagen fremover?</h3>
+    <p>{{ lpsPlanData.plannedFacilitation }}</p>
+    <p class="horiszontal"></p>
+    {{#if lpsPlanData.otherFacilitationOptions }}
+        <h3>Har dere andre muligheter for tilrettelegging som ikke prøves ut nå?</h3>
+        <p>{{ lpsPlanData.otherFacilitationOptions }}</p>
+        <p class="horiszontal"></p>
+    {{/if}}
+</div>
+<div class="avoidPageBreakInside">
+    <h2>Oppfølging</h2>
+    <h3>Når skal dere evaluere denne oppfølgingsplanen?</h3>
+    <p>{{ lpsPlanData.evaluationDate }}</p>
+    <p class="horiszontal"></p>
+    <h3>Hvordan skal dere følge opp avtalt tilrettelegging?</h3>
+    <p>{{ lpsPlanData.followUp }}</p>
+    <p class="horiszontal"></p>
+</div>
+
+<div class="avoidPageBreakInside">
+    <h2>Informasjon til NAV og fastlege</h2>
+    <h3>Hvem vil dere sende planen til?</h3>
+    <p>{{ lpsPlanData.sendPlanToString }}</p>
+    <p class="horiszontal"></p>
+
+    <h3>Trenger dere hjelp fra NAV?</h3>
+    {{#if lpsPlanData.needsHelpFromNav  }}
+        <p>Ja</p>
+        <p class="horiszontal"></p>
+        <h3>Hva trenger dere hjelp fra NAV med?</h3>
+        {{#if lpsPlanData.needsHelpFromNavDescription  }}
+            <p>{{ lpsPlanData.needsHelpFromNavDescription }}</p>
+        {{/if}}
+        <p class="horiszontal"></p>
+    {{else}}
+        <p>Nei</p>
+        <p class="horiszontal"></p>
+    {{/if}}
+    {{#if lpsPlanData.messageToGeneralPractitioner }}
+        <h3>Beskjed til fastlegen</h3>
+        <p>{{ lpsPlanData.messageToGeneralPractitioner }}</p>
+        <p class="horiszontal"></p>
+    {{/if}}
+
+    <h3>Har arbeidstakeren vært med å lage planen?</h3>
+    <p>{{ lpsPlanData.employeeHasContributedToPlan }}</p>
+    <p class="horiszontal"></p>
+    {{#if lpsPlanData.employeeHasNotContributedToPlanDescription}}
+        <h3>Beskriv hvorfor arbeidstakeren ikke har vært med å lage planen</h3>
+        <p>{{lpsPlanData.employeeHasNotContributedToPlanDescription}}</p>
+        <p class="horiszontal"></p>
+    {{/if}}
+</div>
+
+<div class="avoidPageBreakInside">
+    <h2>Kontaktperson</h2>
+    <h3>Navn til kontaktperson</h3>
+    <p>{{ lpsPlanData.employerContactPersonFullName }}</p>
+    <p class="horiszontal"></p>
+    <h3>Telefonnummer til kontaktperson</h3>
+    <p>{{ lpsPlanData.employerContactPersonPhoneNumber }}</p>
+    <p class="horiszontal"></p>
+    <h3>Epost til kontaktperson</h3>
+    <p>{{ lpsPlanData.employerContactPersonEmail }}</p>
+    <p class="horiszontal"></p>
+
+    {{#if lpsPlanData.additionalInformation }}
+        <h3>Eventuelle tilleggsopplysninger</h3>
+        <p>{{ lpsPlanData.additionalInformation }}</p>
+        <p class="horiszontal"></p>
+    {{/if}}
+</div>
+</body>
+</html>

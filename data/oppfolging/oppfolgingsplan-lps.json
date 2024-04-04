@@ -1,0 +1,27 @@
+{
+  "lpsPlanData": {
+    "employeeFnr": "String",
+    "employeeName": null,
+    "employeePhoneNumber": null,
+    "employeeAddress": null,
+    "employeeEmail": null,
+    "typicalWorkday": "String",
+    "tasksThatCanStillBeDone": "String",
+    "tasksThatCanNotBeDone": "String",
+    "previousFacilitation": "String",
+    "plannedFacilitation": "String",
+    "otherFacilitationOptions": null,
+    "followUp": "String",
+    "evaluationDate": "String",
+    "sendPlanToString": "String",
+    "needsHelpFromNav": true,
+    "needsHelpFromNavDescription": null,
+    "messageToGeneralPractitioner": null,
+    "additionalInformation": null,
+    "employerContactPersonFullName": "String",
+    "employerContactPersonPhoneNumber": "String",
+    "employerContactPersonEmail": "String",
+    "employeeHasContributedToPlan": "Ja",
+    "employeeHasNotContributedToPlanDescription": null
+  }
+}
