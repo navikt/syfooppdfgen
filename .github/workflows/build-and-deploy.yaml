@@ -1,4 +1,4 @@
-name: main-gcp
+name: Build & Deploy
 
 on:
   push:
@@ -10,6 +10,7 @@ permissions:
 jobs:
   build:
     name: build
+    if: ${{ github.actor != 'dependabot[bot]' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -18,7 +19,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Build and push docker image
+      - name:  Build and push docker image
         uses: nais/docker-build-push@v0
         id: docker-build-push
         with:
