@@ -52,7 +52,7 @@
         <div style="border-style: solid; padding-left: 16px">
             <h2>Beklager, teknisk feil</h2>
             <p>På grunn av feil i systemene våre får vi ikke vist deg beregnet siste dag med sykepenger.
-            <br/>Vennligst prøv igjen litt senere.
+                <br/>Vennligst prøv igjen litt senere.
             </p>
 
             <p>Kontakt teknisk brukerstøtte dersom problemene vedvarer.</p>
@@ -93,7 +93,6 @@
 </div>
 
 
-
 <hr style="color: lightgrey"/>
 <h2>
     <img alt="" src="{{ image "ChevronUp.png" }}"/> Bør du bytte jobb?
@@ -107,8 +106,18 @@
         <li> Du kan finne alle utlyste stillinger i landet på arbeidsplassen.no</li>
     </ul>
 </div>
-
-
 <hr style="color: lightgrey"/>
+
+{{#if brevdata.isSykmeldt}}
+    <div style="border-style: solid; border-radius: 8px; padding: 0 24px 28px;">
+        <h2>Trenger du oppfølging fra oss?</h2>
+        <p>Vi kan gi informasjon og veiledning om du har rett til andre økonomiske støtteordninger etter at sykepengene
+            tar slutt</p>
+
+        <span style="border-style: solid; padding: 8px">Ja, jeg trenger oppfølging</span>
+        <span style="border-style: solid; padding: 8px; margin-left: 1rem">Nei, jeg trenger ikke oppfølging</span>
+    </div>
+{{/if}}
+
 </body>
 </html>
