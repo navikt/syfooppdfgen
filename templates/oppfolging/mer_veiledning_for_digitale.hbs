@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+            color: #262626;
+            font-style: normal;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+        }
+
+        h1, h2 {
+            font-weight: 600;
+            page-break-after: avoid;
+        }
+
+        h1 {
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        h2 {
+            font-size: 24px;
+            line-height: 32px;
+
+        }
+
+        .text--bold {
+            font-weight: bold;
+        }
+
+    </style>
+
+    <title> Snart slutt på sykepenger </title>
+</head>
+
+<body style="page-break-inside: avoid;">
+{{#if brevdata.sendtdato}}
+    <p style="margin-bottom: 36px">Sendt {{ brevdata.sendtdato }}</p>
+{{/if}}
+
+<h1>Snart slutt på sykepenger</h1>
+
+{{#if brevdata.maxdato}}
+    {{#if brevdata.utbetaltTom}}
+        <p>Per {{ brevdata.utbetaltTom }} er din siste dag med sykepenger beregnet til å være <span
+                class="text--bold">{{ brevdata.maxdato }}</span>.</p>
+    {{else}}
+        <div style="border-style: solid; padding-left: 16px">
+            <h2>Beklager, teknisk feil</h2>
+            <p>På grunn av feil i systemene våre får vi ikke vist deg beregnet siste dag med sykepenger.
+                <br/>Vennligst prøv igjen litt senere.
+            </p>
+
+            <p>Kontakt teknisk brukerstøtte dersom problemene vedvarer.</p>
+        </div>
+    {{/if}}
+{{else}}
+    <div style="border-style: solid; padding-left: 16px">
+        <h2>Beklager, teknisk feil</h2>
+        <p>På grunn av feil i systemene våre får vi ikke vist deg beregnet siste dag med sykepenger.
+            <br/>Vennligst prøv igjen litt senere.
+        </p>
+
+        <p>Kontakt teknisk brukerstøtte dersom problemene vedvarer.</p>
+    </div>
+{{/if}}
+
+<h2>Er du fortsatt syk?</h2>
+<p>Hvis du ikke er frisk nok til å gå tilbake til jobb, kan du søke om arbeidsavklaringspenger (AAP) eller annen
+    økonomisk støtte.
+    <br/>Du må selv søke om dette i god tid før sykepengene tar slutt.
+    <br/>Du kan også ha rettigheter hos forsikringsselskapet eller pensjonskassen din.</p>
+
+<hr style="color: lightgrey"/>
+
+<h2>
+    <img alt="" src="{{ image "ChevronUp.png" }}"/> Kan du gå tilbake til jobben din?
+</h2>
+<div style="padding-left: 30px">
+    <p>
+        Arbeidsgiveren din skal, så langt det er mulig, tilpasse arbeidsplassen og oppgavene dine slik at du kan
+        jobbe.
+    </p>
+    <ul>
+        <li> Snakk med lederen din.</li>
+        <li> Det er arbeidsgiverens ansvar å legge til rette for at du kan jobbe.</li>
+        <li> Det er ditt ansvar å være med å finne løsninger slik at du kan komme tilbake til jobb.</li>
+    </ul>
+</div>
+
+
+<hr style="color: lightgrey"/>
+<h2>
+    <img alt="" src="{{ image "ChevronUp.png" }}"/> Bør du bytte jobb?
+</h2>
+<div style="padding-left: 30px">
+    <p> Av og til er det mulig å fungere bedre i en annen jobb enn den man ble sykmeldt fra. </p>
+    <ul>
+        <li> Er det vanskelig for deg å utføre oppgavene du hadde før du ble syk?</li>
+        <li> Er det andre forhold hos arbeidsgiveren din som gjør det vanskelig for deg å fungere i jobben?</li>
+        <li> Snakk gjerne med en av våre veiledere om en ny jobb kan være bedre for deg.</li>
+        <li> Du kan finne alle utlyste stillinger i landet på arbeidsplassen.no</li>
+    </ul>
+</div>
+<hr style="color: lightgrey"/>
+
+{{#if brevdata.isSykmeldt}}
+    <div style="border-style: solid; border-radius: 8px; padding: 0 24px 28px;">
+        <h2>Trenger du oppfølging fra oss?</h2>
+        <p>Vi kan gi informasjon og veiledning om du har rett til andre økonomiske støtteordninger etter at sykepengene
+            tar slutt</p>
+
+        <span style="border-style: solid; padding: 8px">Ja, jeg trenger oppfølging</span>
+        <span style="border-style: solid; padding: 8px; margin-left: 1rem">Nei, jeg trenger ikke oppfølging</span>
+    </div>
+{{/if}}
+
+</body>
+</html>
