@@ -25,6 +25,10 @@ spec:
     periodSeconds: 5
     failureThreshold: 30
   leaderElection: false
+  observability:
+    autoInstrumentation:
+      enabled: true
+      runtime: java
   prometheus:
     path: /internal/prometheus
   resources:
