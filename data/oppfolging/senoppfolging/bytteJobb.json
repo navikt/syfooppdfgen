@@ -1,0 +1,9 @@
+{
+  "senOppfolgingData": {
+    "fnr": "12121212121",
+    "maxDate": "10. april 2023",
+    "daysUntilMaxDate": "66",
+    "answerType": "BYTTE_JOBB",
+    "behovFrorOppfolging": "JA"
+  }
+}

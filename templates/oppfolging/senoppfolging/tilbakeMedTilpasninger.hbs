@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        @page {
+            margin: 46px;
+        }
+
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+            color: #3E3832;
+            font-style: normal;
+        }
+
+        h1, h2 {
+            font-weight: 500;
+            page-break-after: avoid;
+        }
+
+        h1 {
+            font-size: 24px;
+            line-height: 28px;
+        }
+
+        h2 {
+            font-size: 20px;
+            line-height: 25px;
+            margin-top: 50px;
+        }
+
+        h3 {
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: bolder;
+        }
+
+        p {
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-family: Source Sans Pro;
+            font-weight: normal;
+            font-size: 12px;
+            letter-spacing: 0.2px;
+            color: #3E3832;
+        }
+
+        .avoidPageBreakInside {
+            page-break-inside: avoid;
+        }
+    </style>
+    <title>Oppfølgingsplan</title>
+</head>
+
+<body>
+<div class="avoidPageBreakInside">
+    tilbakeMedTilpasninger pdf
+    FNR: {{senOppfolgingData.fnr}}
+
+    {{#if senOppfolgingData.maxDate }}
+        <h1>maxDate: {{ senOppfolgingData.maxDate }}</h1>
+    {{else}}
+        <h1> no data for maxDate</h1>
+    {{/if}}
+
+    {{#if senOppfolgingData.daysUntilMaxDate }}
+        <h1>daysUntilMaxDate: {{ senOppfolgingData.daysUntilMaxDate }}</h1>
+    {{else}}
+        <h1> no data for daysUntilMaxDate</h1>
+    {{/if}}
+
+    {{#if senOppfolgingData.answerType }}
+        <h1>answerType  {{ senOppfolgingData.answerType }}</h1>
+    {{else}}
+        <h1> no data for answersToQuestions</h1>
+    {{/if}}
+
+    {{#if senOppfolgingData.behovFrorOppfolging }}
+        <h1>behovFrorOppfolging  {{ senOppfolgingData.behovFrorOppfolging }}</h1>
+    {{else}}
+        <h1> no data for behovFrorOppfolging</h1>
+    {{/if}}
+
+</div>
+
+</body>
+</html>
