@@ -4,6 +4,6 @@
     "maxDate": "10. april 2023",
     "daysUntilMaxDate": "66",
     "answerType": "TILBAKE_MED_TILPASNINGER",
-    "behovFrorOppfolging": "NEI"
+    "behovForOppfolging": false
   }
 }
