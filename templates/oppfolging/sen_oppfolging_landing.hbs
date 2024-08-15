@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+            color: #262626;
+            font-style: normal;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+        }
+
+        h1, h2 {
+            font-weight: 600;
+            page-break-after: avoid;
+        }
+
+        h1 {
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        h2 {
+            font-size: 20px;
+            line-height: 20px;
+
+        }
+
+        .text--bold {
+            font-weight: bold;
+        }
+
+    </style>
+
+    <title> Snart slutt på sykepenger </title>
+</head>
+
+<body style="page-break-inside: avoid;">
+<h1>Vil du ha hjelp fra oss? </h1>
+
+{{#if brevdata.maxdato}}
+        <p>{{ brevdata.maxdato }} er den siste dagen du har rett på sykepenger. Det betyr at du har
+            <span class="text--bold">{{ brevdata.daysLeft }} dager med sykepenger igjen.</span></p>
+{{else}}
+    <div style="border-style: solid; padding-left: 16px">
+        <h2>Beklager, teknisk feil</h2>
+        <p>På grunn av feil i systemene våre får vi ikke vist deg beregnet siste dag med sykepenger.
+            <br/>Vennligst prøv igjen litt senere.
+        </p>
+
+        <p>Kontakt teknisk brukerstøtte dersom problemene vedvarer.</p>
+    </div>
+{{/if}}
+
+<p>Svar på disse spørsmålene så vi vet hvordan vi kan hjelpe deg med
+    <span class="text--bold">å sikre at du har en inntekt etter at sykepengene tar slutt.</span>
+</p>
+
+<h2>
+    Hvilken situasjon tror du at du er i når sykepengene har tatt slutt?
+</h2>
+<input type="radio"/>
+<label>Jeg er frisk og tilbake hos arbeidsgiver</label><br/>
+<input type="radio"/>
+<label>Jeg er tilbake i full jobb, men trenger tilrettelegging på arbeidsplassen</label><br/>
+<input type="radio"/>
+<label>Jeg er tilbake i jobb, men jobber i redusert stillingsprosent</label><br/>
+<input type="radio"/>
+<label>Jeg skal bytte jobb</label><br/>
+<input type="radio"/>
+<label>Jeg er for syk til å jobbe</label><br/>
+<input type="radio"/>
+<label>Jeg er usikker</label><br/>
+
+<h2>
+    Ønsker du å snakke med en veileder?
+</h2>
+<span>
+    En veileder kan hjelpe deg på veien videre. Sammen kan dere kartlegge mulighetene dine, og vurdere hvilken hjelp og støtte du kan få fra NAV.
+</span><br/>
+<input type="radio"/>
+<label>Ja, jeg vil snakke med en veileder</label><br/>
+<input type="radio"/>
+<label>Nei, jeg vil klare meg selv</label><br/><br/>
+
+<span style="border-style: solid; border-radius: 4px; padding: 8px; background-color: rgb(0, 103, 197); color: white">Send svarene</span>
+
+
+</body>
+</html>
