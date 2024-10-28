@@ -66,10 +66,10 @@
     <li> Er det andre forhold hos arbeidsgiveren din som gjør det vanskelig for deg å fungere i jobben?</li>
 </ul>
 <p>
-    {{#if brevdata.daysUntilMaxDate}}
-        Per {{ brevdata.sentDate }} har du {{ brevdata.daysUntilMaxDate }} dager med sykepenger igjen.
+    {{#if brevdata.maxdato}}
+        Siste dag du kan motta sykepenger er beregnet til å være {{ brevdata.maxdato }}.
     {{else}}
-        Det nærmer seg slutten på sykepengene dine.
+        Det nærmer seg siste dag du kan motta sykepenger.
     {{/if}}
     <span class="text--bold">Det er derfor lurt å tenke på jobbytte allerede nå.</span> Veilederen kan hjelpe deg med
     dette.
@@ -122,8 +122,8 @@
 
 {{#if brevdata.behovForOppfolging}}
 {{else}}
-    <h2>Hvis situasjonen din endrer seg </h2>
-    <p>Du kan alltid kontakte oss og be om å få snakke med en veileder hvis behovet ditt endrer seg. </p>
+    <h2>Hvis situasjonen din endrer seg</h2>
+    <p>Du kan når som helst ta kontakt med oss på tlf. 55 55 33 33 eller <a href='https://www.nav.no/kontaktoss#skriv-til-oss'>skriv til oss her på nav.no</a> (åpner i en ny fane). Har du en aktivitetsplan bruker du «dialog med veileder» der for å snakke med veilederen din.</p>
 {{/if}}
 
 <h2>Nyttige lenker </h2>

@@ -41,8 +41,27 @@
 <h1>Vil du ha hjelp fra oss? </h1>
 
 {{#if brevdata.maxdato}}
-        <p>{{ brevdata.maxdato }} er den siste dagen du har rett på sykepenger. Det betyr at du har
-            <span class="text--bold">{{ brevdata.daysLeft }} dager med sykepenger igjen.</span></p>
+        <p>{{ brevdata.maxdato }} er beregnet til å være siste dag du har rett på sykepenger.</p>
+
+        <div style="border-style: solid; padding-left: 16px; padding-right: 16px;">
+          <div>
+            <div style="float: right; margin: 16px;">
+              <img alt="" src="{{ image "ChevronUp.png" }}"/>
+            </div>
+            <div>
+              <h2>Beregnet slutt på sykepenger</h2>
+    {{#if brevdata.utbetaltTom }}
+              <p>Maksdato per {{ brevdata.utbetaltTom }} er {{ brevdata.maxdato }}. Åpne kortet for å lese mer.</p>
+    {{else}}
+              <p>Sist beregnede maksdato er {{ brevdata.maxdato }}. Åpne kortet for å lese mer.</p>
+    {{/if}}
+            </div>
+          </div>
+          <hr />
+          <p>Du kan maksimalt få sykepenger fra Nav i 52 uker. Grensen er den samme enten du er helt eller delvis sykmeldt.
+        Den siste datoen du kan få sykepenger kalles maksdato. Datoen gjelder hvis du er sammenhengende sykmeldt. Den
+        vil forskyve seg hvis du for eksempel ikke får sykepenger fra Nav i perioder, eller hvis du tar ferie.</p>
+        </div>
 {{else}}
     <div style="border-style: solid; padding-left: 16px">
         <h2>Beklager, teknisk feil</h2>
@@ -79,8 +98,8 @@
 </h2>
 <span>
     En veileder kan hjelpe deg på veien videre. Sammen kan dere kartlegge mulighetene dine, og vurdere hvilken hjelp og støtte du kan få fra NAV.
-    Har du andre spørsmål kan du når som helst ta kontakt med oss på tlf. 55 55 33 33 eller på <a href='https://www.nav.no/kontaktoss#skriv-til-oss'>skriv til oss på nav.no</a>.<br/>
-    Har du en aktivitetsplan, bruker du “dialog med veileder” for å snakke med veilederen din.
+    Har du andre spørsmål kan du når som helst ta kontakt med oss på tlf. 55 55 33 33 eller <a href='https://www.nav.no/kontaktoss#skriv-til-oss'>skriv til oss her på nav.no</a> (åpner i en ny fane).<br/>
+    Har du en aktivitetsplan bruker du «dialog med veileder» der for å snakke med veilederen din.
 </span><br/>
 <input type="radio"/>
 <label>Ja, jeg vil bli kontaktet av en veileder</label><br/>
