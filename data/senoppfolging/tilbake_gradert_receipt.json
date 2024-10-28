@@ -2,6 +2,7 @@
   "brevdata": {
     "sentDate": "5. april 2025",
     "daysUntilMaxDate": "77",
-    "behovForOppfolging": false
+    "behovForOppfolging": false,
+    "maxdato":"15. juli 2025"
   }
 }
