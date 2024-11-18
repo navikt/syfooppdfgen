@@ -41,7 +41,6 @@ spec:
   accessPolicy:
     inbound:
       rules:
-        - application: esyfovarsel
         - application: meroppfolging-backend
         - application: syfooppfolgingsplanservice
           namespace: team-esyfo
