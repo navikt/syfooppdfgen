@@ -34,15 +34,13 @@
 
     </style>
 
-    <title> Snart slutt på sykepenger </title>
+    <title> Registrering av mer oppfølging </title>
 </head>
 
 <body style="page-break-inside: avoid;">
-<h1>Vil du ha hjelp fra oss? </h1>
+<h1>Sykepengene dine tar snart slutt</h1>
 
 {{#if brevdata.maxdato}}
-        <p>{{ brevdata.maxdato }} er beregnet til å være siste dag du har rett på sykepenger.</p>
-
         <div style="border-style: solid; padding-left: 16px; padding-right: 16px;">
           <div>
             <div style="float: right; margin: 16px;">
@@ -51,7 +49,7 @@
             <div>
               <h2>Beregnet slutt på sykepenger</h2>
     {{#if brevdata.utbetaltTom }}
-              <p>Maksdato per {{ brevdata.utbetaltTom }} er {{ brevdata.maxdato }}. Åpne kortet for å lese mer.</p>
+              <p>Din maksdato er beregnet til å være {{ brevdata.maxdato }}. Åpne kortet for å lese mer.</p>
     {{else}}
               <p>Sist beregnede maksdato er {{ brevdata.maxdato }}. Åpne kortet for å lese mer.</p>
     {{/if}}
@@ -59,8 +57,10 @@
           </div>
           <hr />
           <p>Du kan maksimalt få sykepenger fra Nav i 52 uker. Grensen er den samme enten du er helt eller delvis sykmeldt.
-        Den siste datoen du kan få sykepenger kalles maksdato. Datoen gjelder hvis du er sammenhengende sykmeldt. Den
-        vil forskyve seg hvis du for eksempel ikke får sykepenger fra Nav i perioder, eller hvis du tar ferie.</p>
+              Den siste datoen du kan få sykepenger kalles maksdato. Din maksdato ble sist oppdatert {{ brevdata.utbetaltTom }}.
+              Maksdatoen gjelder fortsatt hvis du har vært sammenhengende sykmeldt og mottatt sykepenger siden da.
+              Den vil forskyve seg til en senere dato hvis du har perioder etter {{ brevdata.utbetaltTom }} der du ikke mottar sykepenger.
+              Det kan skje hvis du er frisk i perioder eller hvis du tar ferie.</p>
         </div>
 {{else}}
     <div style="border-style: solid; padding-left: 16px">
@@ -73,40 +73,11 @@
     </div>
 {{/if}}
 
-<p>Svar på disse spørsmålene så vi vet hvordan vi kan hjelpe deg med
-    <span class="text--bold">å sikre at du har en inntekt etter at sykepengene tar slutt.</span>
-</p>
+<p>Det er viktig at du tar stilling til din økonomiske situasjon i god tid før sykepengene tar slutt.</p>
 
-<h2>
-    Hvilken situasjon tror du at du er i når sykepengene har tatt slutt?
-</h2>
-<input type="radio"/>
-<label>Jeg er frisk og tilbake hos arbeidsgiver</label><br/>
-<input type="radio"/>
-<label>Jeg er tilbake i full jobb, men trenger tilrettelegging på arbeidsplassen</label><br/>
-<input type="radio"/>
-<label>Jeg er tilbake i jobb, men jobber i redusert stillingsprosent</label><br/>
-<input type="radio"/>
-<label>Jeg skal bytte jobb</label><br/>
-<input type="radio"/>
-<label>Jeg er for syk til å jobbe</label><br/>
-<input type="radio"/>
-<label>Jeg er usikker</label><br/>
+<p>Vi ber deg svare på to spørsmål, slik at vi best mulig kan gi deg informasjon som er relevant for deg. Du får også muligheten til å be om oppfølging fra en veileder.</p>
 
-<h2>
-    Ønsker du å snakke med en veileder?
-</h2>
-<span>
-    En veileder kan hjelpe deg på veien videre. Sammen kan dere kartlegge mulighetene dine, og vurdere hvilken hjelp og støtte du kan få fra Nav.
-    Har du andre spørsmål kan du når som helst ta kontakt med oss på tlf. 55 55 33 33 eller <a href='https://www.nav.no/kontaktoss#skriv-til-oss'>skriv til oss her på nav.no</a> (åpner i en ny fane).<br/>
-    Har du en aktivitetsplan bruker du «dialog med veileder» der for å snakke med veilederen din.
-</span><br/>
-<input type="radio"/>
-<label>Ja, jeg vil bli kontaktet av en veileder</label><br/>
-<input type="radio"/>
-<label>Nei, jeg trenger ikke å bli kontaktet nå</label><br/><br/>
-
-<span style="border-style: solid; border-radius: 4px; padding: 8px; background-color: rgb(0, 103, 197); color: white">Send svarene</span>
+<span style="border-style: solid; border-radius: 4px; padding: 8px; background-color: rgb(0, 103, 197); color: white">Gå videre</span>
 
 
 </body>
