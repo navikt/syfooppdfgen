@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8" />
+    <style>
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+            color: #262626;
+            font-style: normal;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+        }
+
+        h1,
+        h2 {
+            font-weight: 600;
+            page-break-after: avoid;
+        }
+
+        h1 {
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        h2 {
+            font-size: 20px;
+            line-height: 20px;
+
+        }
+
+        a {
+            color: rgb(0, 103, 197)
+        }
+
+        .text--bold {
+            font-weight: bold;
+        }
+    </style>
+
+    <title> Snart slutt på sykepenger - Kvittering for ditt svar</title>
+</head>
+
+<body style="page-break-inside: avoid;">
+    <div style="border-style: solid; border-radius: 4px; padding: 0.25rem 1rem; background-color: rgb(204, 241, 214)">
+        <p class="text--bold" style="margin-bottom: 0">Takk, svarene dine er sendt til Nav.</p>
+        {{#if brevdata.submissionDateISO}}
+        <p style="margin-top: 0">Sendt: {{ iso_to_long_date brevdata.submissionDateISO }}</p>
+        {{else}}
+        {{/if}}
+    </div>
+
+    <h2>Oppsummering av dine svar</h2>
+
+    <div style="border-radius: 4px; padding: 0.25rem 1rem; background-color: rgb(216, 249, 255)">
+        <p style="margin-bottom: 0.5rem">
+            <span class="text--bold">{{brevdata.questionTextFremtidigSituasjon}}</span><br />
+            {{brevdata.answerTextFremtidigSituasjon}}
+        </p>
+        <p>
+            <span class="text--bold">{{brevdata.questionTextBehovForOppfolging}}</span><br />
+            {{brevdata.answerTextBehovForOppfolging}}
+        </p>
+    </div>
+
+    <h2>Hva skjer videre?</h2>
+
+    {{#if brevdata.behovForOppfolging}}
+    <p>
+        Svarene dine deles med veilederen din som jobber med sykefraværsoppfølging. Svarene brukes til å vurdere behovet du har for oppfølging fra Nav. Du får beskjed når veilederen din har vurdert behovet ditt.
+    </p>
+    {{else}}
+    <p>
+        Du har svart at du ikke trenger oppfølging nå. Hvis du allerede har kontakt med en veileder, så vil du ikke miste den kontakten. Dersom du senere ønsker råd og veiledning kan du når som helst ta kontakt med oss på telefon 55 55 33 33 eller <a
+            href='https://www.nav.no/kontaktoss#skriv-til-oss'>skrive til oss her på nav.no</a>.
+    </p>
+    {{/if}}
+
+    {{> senoppfolging/partials/maxdato_info_card maxdatoISO=brevdata.maxdatoISO utbetaltTomISO=brevdata.utbetaltTomISO}}
+
+    <h2>Informasjon fra Nav som være nyttig for deg</h2>
+
+    <ul>
+        <li><a href="https://www.nav.no/syk-lenge">Når du har vært syk eller skadet lenge</a></li>
+        <li><a href="https://www.nav.no/aap">Arbeidsavklaringspenger (AAP)</a></li>
+        <li><a href="https://www.nav.no/arbeidsgiver/kompetansetiltak-sykmeldte">Kompetansetiltak for sykmeldte</a></li>
+        <li><a href="https://www.nav.no/friskmelding-arbeidsformidling">Friskmelding til arbeidsformidling</a></li>
+        <li><a href="https://www.nav.no/varig-sykdom-skade#pengestotte">Aktuelle pengestøtter når du ikke kan jobbe</a></li>
+    </ul>
+
+    <h2>Har du andre spørsmål?</h2>
+
+    <p>
+        Du kan når som helst ta kontakt med oss på telefon 55 55 33 33 eller ved å <a
+            href='https://www.nav.no/kontaktoss#skriv-til-oss'>skrive til oss</a>.
+    </p>
+
+</body>
+
+</html>

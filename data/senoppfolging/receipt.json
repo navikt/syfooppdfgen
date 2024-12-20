@@ -1,0 +1,13 @@
+{
+  "brevdata": {
+    "behovForOppfolging": true,
+    "questionTextFremtidigSituasjon": "Hvilken situasjon tror du at du er i når sykepengene har tatt slutt?",
+    "answerTextFremtidigSituasjon": "Jeg er for syk til å jobbe",
+    "questionTextBehovForOppfolging": "Ønsker du å be om oppfølging?",
+    "answerTextBehovForOppfolging": "Ja, jeg ønsker å be om oppfølging",
+    "submissionDateISO": "2024-12-11",
+    "maxdatoISO": "2025-03-12",
+    "utbetaltTomISO": "2024-12-06",
+    "daysUntilMaxDate": "77"
+  }
+}
