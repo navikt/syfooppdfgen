@@ -11,5 +11,4 @@ docker run \
         -e DISABLE_PDF_GET=false \
         -it \
         --rm \
-        syfopdfgen:latest
-
+        navikt/pdfgen
