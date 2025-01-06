@@ -1,0 +1,11 @@
+<div>
+  {{#eq value checkedIfValueEquals }}
+    <img alt="checked radio-button" class="radio-button-image" src="{{ image "radio-button-checked.svg" }} "/>
+  {{/eq}}
+  
+  {{#not_eq value checkedIfValueEquals }}
+    <img alt="unchecked radio-button" class="radio-button-image" src="{{ image "radio-button.svg" }} "/>
+  {{/not_eq}}
+
+  <span style="display: inline-block">{{ label }}</span>
+</div>
