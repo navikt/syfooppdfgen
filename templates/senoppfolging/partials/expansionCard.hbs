@@ -1,0 +1,18 @@
+<div style="border-style: solid; padding-left: 1rem; padding-right: 1rem; border-radius: 4px">
+    <div>
+        <div style="float: right; margin-right: 0.5rem; {{#if hasDescription}}margin-top: 1rem;{{/if}}">
+            <img alt="" src="{{ image "ChevronUp.png" }}" />
+        </div>
+        <div>
+            <h3 style="margin-top: 1.25rem; margin-bottom: 1.25rem; font-weight: bold">{{ title }}</h3>
+
+            {{#if hasDescription}}
+                <p>{{> description }}</p>
+            {{/if}}
+        </div>
+    </div>
+
+    <hr />
+
+    {{> content}}
+</div>

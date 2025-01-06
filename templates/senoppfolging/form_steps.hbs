@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Snart slutt på sykepenger - Din utfylling av skjema" />
+    <meta name="author" content="syfooppdfgen"/>
+    <meta name="subject" content="Snart slutt på sykepenger"/>
+    <style>
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+            color: #262626;
+            font-style: normal;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            page-break-after: avoid;
+        }
+
+        h1 {
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        a {
+            color: rgb(0, 103, 197)
+        }
+
+        strong, .text--bold {
+            font-weight: bold;
+        }
+
+        .radio-buttons-container > * {
+            margin-bottom: 0.75rem;
+        }
+
+        .radio-buttons-container img.radio-button-image {
+            height: 1.5rem;
+            float: left;
+            display: inline-block;
+            margin-right: 0.25rem;
+        }
+
+        .step-information {
+            float: right;
+            font-size: 16px;
+        }
+    </style>
+
+    <title>Snart slutt på sykepenger - Din utfylling av skjema</title>
+</head>
+
+<body>
+    <div class="step-information">Steg 1 av 3</div>
+
+    <h2>Din forventning til fremtidig situasjon</h2>
+
+    <h3>Hvilken situasjon tror du at du er i når sykepengene har tatt slutt?</h3>
+
+    <div class="radio-buttons-container">
+        {{> senoppfolging/partials/radioButton
+            value=brevdata.fremtidigSituasjonAnswer
+            checkedIfValueEquals="TILBAKE_HOS_ARBEIDSGIVER"
+            label="Jeg er frisk og tilbake hos arbeidsgiver"
+        }}
+    
+        {{> senoppfolging/partials/radioButton
+            value=brevdata.fremtidigSituasjonAnswer
+            checkedIfValueEquals="TILBAKE_GRADERT"
+            label="Jeg er fortsatt syk, men jobber redusert"
+        }}
+    
+        {{> senoppfolging/partials/radioButton
+            value=brevdata.fremtidigSituasjonAnswer
+            checkedIfValueEquals="FORTSATT_SYK"
+            label="Jeg er for syk til å jobbe"
+        }}
+  
+        {{> senoppfolging/partials/radioButton
+            value=brevdata.fremtidigSituasjonAnswer
+            checkedIfValueEquals="BYTTE_JOBB"
+            label="Jeg skal bytte jobb"
+        }}
+  
+        {{> senoppfolging/partials/radioButton
+            value=brevdata.fremtidigSituasjonAnswer
+            checkedIfValueEquals="USIKKER"
+            label="Ingen av alternativene passer"
+        }}
+    </div>
+
+    <hr style="margin-top: 1.25rem; margin-bottom: 1.25rem;" />
+
+    <div class="step-information">Steg 2 av 3</div>
+
+    {{#eq brevdata.fremtidigSituasjonAnswer "TILBAKE_HOS_ARBEIDSGIVER"}}
+        <h2>Informasjon – Når du skal tilbake til arbeidsgiver</h2>
+
+        <p>Hvis situasjonen din skulle endre seg og du får behov for tilrettelegging på arbeidsplassen, så skal arbeidsgiveren din, så langt det er mulig, tilpasse arbeidsplassen og oppgavene dine slik at du kan jobbe.</p>
+
+        <p>Husk at du alltid kan kontakte Nav dersom du trenger hjelp med noe eller hvis situasjonen din endrer seg.</p>
+
+        <p><a href="https://www.nav.no/tilrettelegging-jobb">Les mer om tilrettelegging på jobb, og hva Nav kan bistå med</a>.</p>
+    {{/eq}}
+
+    {{#eq brevdata.fremtidigSituasjonAnswer "TILBAKE_GRADERT"}}
+        <h2>Informasjon – Når du fortsatt er syk, men skal jobbe redusert</h2>
+
+        <p>Hvis du skal jobbe redusert fordi du har en sykdom eller skade, kan det hende at du har rett på <a href="https://www.nav.no/aap">arbeidsavklaringspenger (AAP)</a>, eller en annen økonomisk støtte.</p>
+
+        {{> senoppfolging/partials/alleredeSoktOmPengestotteExpansionCard}}
+    {{/eq}}
+
+    {{#eq brevdata.fremtidigSituasjonAnswer "FORTSATT_SYK"}}
+        <h2>Informasjon – Når du er for syk til å jobbe</h2>
+
+        <p>Hvis du ikke er frisk nok til å gå tilbake til jobb slik som før, kan det være riktig å søke om <a href="https://www.nav.no/aap">arbeidsavklaringspenger</a>, eller en annen økonomisk støtte.</p>
+
+        <p><strong>Du må selv søke om AAP eller annen økonomisk støtte.</strong> Dette skjer ikke automatisk.</p>
+
+        <div style="margin-bottom: 1rem; border-style: solid; padding: 1rem; border-radius: 4px">
+            <strong>Husk å søke tidlig nok!</strong>
+
+            <p>Her kan du se <a href="https://www.nav.no/saksbehandlingstider#arbeidsavklaringspenger-aap">forventet saksbehandlingstid for AAP-søknader</a>. Du kan se saksbehandlingstider for andre pengestøtter på samme side.</p>
+        </div>
+
+        {{> senoppfolging/partials/alleredeSoktOmPengestotteExpansionCard}}
+    {{/eq}}
+
+    {{#eq brevdata.fremtidigSituasjonAnswer "BYTTE_JOBB"}}
+        <h2>Informasjon – Når du skal bytte jobb</h2>
+
+        <ul>
+            <li>Er det vanskelig for deg å utføre oppgavene du hadde før du ble syk?</li>
+            <li>Er det andre forhold hos arbeidsgiveren din som gjør det vanskelig for deg å fungere i jobben?</li>
+        </ul>
+
+        <p>Av og til fungerer man bedre i en annen jobb enn den man er sykmeldt fra. Det nærmer seg slutten på sykepengene dine, og derfor kan det være lurt å tenke på å bytte jobb allerede nå.</p>
+
+        <p>Hvis du blir arbeidsledig eller permittert kan du ha rett på <a href="https://www.nav.no/dagpenger">dagpenger</a>.</p>
+    {{/eq}}
+
+    {{#eq brevdata.fremtidigSituasjonAnswer "USIKKER"}}
+        <h2>Informasjon – Kan dette hjelpe?</h2>
+
+        <p>Her har vi samlet litt informasjon som kan være relevant for deg.</p>
+
+        <h3>Jeg har allerede søkt om AAP eller en annen pengestøtte</h3>
+
+        <p>Dette skjemaet har ikke informasjon om du har søkt på andre pengestøtter.</p>
+
+        <p>Hvis du har søkt om en pengestøtte vil ikke svarene dine her ha noen innvirkning på behandlingen av søknaden din.</p>
+
+        <h3>Jeg planlegger å ta ut pensjon</h3>
+
+        <p>Mange kan ta ut pensjon fra de er 62 år. Tidlig uttak betyr at du fordeler pensjonen din over flere år, og dermed får mindre utbetalt hvert år. Pensjonen blir høyere hvis du fortsetter å jobbe samtidig som du tar ut pensjon. Du kan jobbe så mye du vil samtidig som du tar ut alderspensjon fra folketrygden.</p>
+
+        <p><a href="https://www.nav.no/planlegger-pensjon">På denne siden</a> kan du få oversikt over hvordan pensjonen din er bygget opp og sjekke pensjonskalkulatoren.</p>
+
+        <h3>Jeg skal i permisjon</h3>
+
+        <p>Skal du ta ut lovfestet permisjon i forbindelse med svangerskap, fødsel, omsorg eller foreldrepermisjon, er det viktig at dette avklares med arbeidsgiveren din.</p>
+
+        <p>En permisjon er midlertidig. Dette betyr at du fremdeles er ansatt og har rett og plikt til å komme tilbake til stillingen din når permisjonen er ferdig.</p>
+
+        <h3>Jeg venter på behandling og er usikker på min fremtidige situasjon</h3>
+
+        <p>Det kan være lange ventetider for å få nødvendig behandling fra helsevesenet. Hvis du ikke er ferdig med behandlingen din når sykepengerettighetene dine tar slutt, kan det hende du bør søke pengestøtte hos Nav. Dette kan for eksempel være arbeidsavklaringspenger (AAP).</p>
+
+        <p><a href="https://www.nav.no/aap">Les mer her om hvem som har rett på AAP</a>.</p>
+
+        <h3>Jeg har andre spørsmål</h3>
+
+        <p>Dersom du trenger hjelp til å finne ut av hvilke muligheter du har fremover, og hva Nav kan tilby av pengestøtter eller annen hjelp, kan du be om oppfølging på neste side. En sykefraværsveileder vil da motta henvendelsen din.</p>
+
+        <p>Dersom du lurer på noe annet, som f.eks. utbetaling av sykepenger eller generelle spørsmål, kan du når som helst ta kontakt med oss på tlf. 55 55 33 33 eller på <a href="https://www.nav.no/kontaktoss#skriv-til-oss">skriv til oss her på nav.no</a>.</p>
+    {{/eq}}
+    
+    {{#if brevdata.fremtidigSituasjonAnswer}}
+    {{else}}
+        <p>Beklager - Kan ikke hente ditt svar på spørsmål om fremtidig situasjon</p>
+    {{/if}}
+
+    <hr style="margin-top: 1.25rem; margin-bottom: 1.25rem;" />
+
+
+    <div style="page-break-after: avoid;">
+        <div class="step-information">Steg 3 av 3</div>
+        <h2>Oppfølging fra Nav</h2>
+    </div>
+
+    <h3>Ønsker du å be om oppfølging?</h3>
+
+    <p>En veileder kan hjelpe deg med å kartlegge mulighetene dine, og vurdere hvilken hjelp og støtte du kan få fra Nav. Er du allerede i kontakt med en veileder og får den oppfølgingen du trenger, kan du bare svare nei. Du mister ikke kontakten du allerede har med veileder.</p>
+
+    <div class="radio-buttons-container" style="page-break-inside: avoid;">
+        {{> senoppfolging/partials/radioButton
+            value=brevdata.behovForOppfolgingAnswer
+            checkedIfValueEquals="JA"
+            label="Ja, jeg ønsker å be om oppfølging"
+        }}
+    
+        {{> senoppfolging/partials/radioButton
+            value=brevdata.behovForOppfolgingAnswer
+            checkedIfValueEquals="NEI"
+            label="Nei, jeg trenger ikke oppfølging nå"
+        }}
+    </div>
+</body>
+
+</html>
