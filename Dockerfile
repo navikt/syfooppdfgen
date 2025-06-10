@@ -1,4 +1,4 @@
-FROM ghcr.io/navikt/pdfgen:2.0.81
+FROM ghcr.io/navikt/pdfgen:2.0.82
 LABEL org.opencontainers.image.source=https://github.com/navikt/syfooppdfgen
 
 COPY templates /app/templates
