@@ -1,0 +1,46 @@
+{
+  "oppfolgingsplan": {
+    "version": "1.0",
+    "sections": [
+      {
+        "id": "tilpassing",
+        "title": "Tilpasning av arbeidsoppgaver",
+        "description": "I denne delen av planen er det fint å kartlegge hvilke tilpasninger som er muligheter å gjøre i arbeidsoppgaver.",
+        "textInputFields": [
+          {
+            "id": "forsøktHittil",
+            "title": "Hva har dere forsøkt så langt i sykefraværet?",
+            "description": "Beskriv hva dere har forsøkt av tilrettelegging så langt i sykefraværet. Hva har fungert, og hva har ikke fungert?",
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec leo porta, rhoncus sem vel, molestie odio. Nunc dictum maximus diam, eu commodo elit ullamcorper eu. Nam hendrerit scelerisque hendrerit. Integer neque orci, finibus id elementum iaculis, posuere ut neque. Ut tristique eros ac mollis vestibulum. Mauris bibendum, neque et posuere blandit, velit urna dapibus ex, sed sagittis nunc lorem in felis. Donec sit amet mattis nunc, non venenatis arcu. Integer odio purus, gravida facilisis nibh ac, gravida porta dui. Curabitur a leo erat. Sed leo metus, interdum et nisi eu, rhoncus finibus mi. Vestibulum porttitor luctus congue. Pellentesque mollis consectetur neque, vel ultricies felis hendrerit vel. Ut aliquam fringilla ex, id hendrerit est ullamcorper id"
+          },
+          {
+            "id": "hvordanTilrettelegge",
+            "title": "Hvordan skal dere tilrettelegge arbeidshverdagen fremover?",
+            "description": "Beskriv hva dere skal gjøre for at arbeidstakeren kan være i noe jobb",
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec leo porta, rhoncus sem vel, molestie odio. Nunc dictum maximus diam, eu commodo elit ullamcorper eu. Nam hendrerit scelerisque hendrerit. Integer neque orci, finibus id elementum iaculis, posuere ut neque. Ut tristique eros ac mollis vestibulum. Mauris bibendum, neque et posuere blandit, velit urna dapibus ex, sed sagittis nunc lorem in felis. Donec sit amet mattis nunc, non venenatis arcu. Integer odio purus, gravida facilisis nibh ac, gravida porta dui. Curabitur a leo erat. Sed leo metus, interdum et nisi eu, rhoncus finibus mi. Vestibulum porttitor luctus congue. Pellentesque mollis consectetur neque, vel ultricies felis hendrerit vel. Ut aliquam fringilla ex, id hendrerit est ullamcorper id"
+          }
+        ]
+      },
+      {
+        "id": "arbeidsoppgaver",
+        "title": "Arbeidsoppgaver",
+        "description": "Viktige opplysninger om arbeidstaker og arbeidsgiver.",
+        "textInputFields": [
+          {
+            "id": "arbeidsdag",
+            "title": "Hvordan ser en vanlig arbeidsdag ut?",
+            "description": "Beskriv en vanlig arbeidsdag og hvilke oppgaver arbeidstaker gjør på jobben",
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec leo porta, rhoncus sem vel, molestie odio. Nunc dictum maximus diam, eu commodo elit ullamcorper eu. Nam hendrerit scelerisque hendrerit. Integer neque orci, finibus id elementum iaculis, posuere ut neque. Ut tristique eros ac mollis vestibulum. Mauris bibendum, neque et posuere blandit, velit urna dapibus ex, sed sagittis nunc lorem in felis. Donec sit amet mattis nunc, non venenatis arcu. Integer odio purus, gravida facilisis nibh ac, gravida porta dui. Curabitur a leo erat. Sed leo metus, interdum et nisi eu, rhoncus finibus mi. Vestibulum porttitor luctus congue. Pellentesque mollis consectetur neque, vel ultricies felis hendrerit vel. Ut aliquam fringilla ex, id hendrerit est ullamcorper id"
+          },
+          {
+            "id": "kanUtføres",
+            "title": "Hvilke ordinære arbeidsoppgaver kan forstatt utføres? ",
+            "description": "Er det noen oppgaver som er helt umulige å utføre?",
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec leo porta, rhoncus sem vel, molestie odio. Nunc dictum maximus diam, eu commodo elit ullamcorper eu. Nam hendrerit scelerisque hendrerit. Integer neque orci, finibus id elementum iaculis, posuere ut neque. Ut tristique eros ac mollis vestibulum. Mauris bibendum, neque et posuere blandit, velit urna dapibus ex, sed sagittis nunc lorem in felis. Donec sit amet mattis nunc, non venenatis arcu. Integer odio purus, gravida facilisis nibh ac, gravida porta dui. Curabitur a leo erat. Sed leo metus, interdum et nisi eu, rhoncus finibus mi. Vestibulum porttitor luctus congue. Pellentesque mollis consectetur neque, vel ultricies felis hendrerit vel. Ut aliquam fringilla ex, id hendrerit est ullamcorper id"
+          }
+        ]
+      }
+    ],
+    "sluttDato": "2023-10-01"
+  }
+}
