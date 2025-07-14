@@ -9,6 +9,7 @@ Repository for templates for generating PDF's from Oppfolgingsplaner.
 Creating a docker image should be as simple as `docker build -t syfopdfgen .`
 
 ## Getting started
+
 ### Run in development mode
 To run the application with templates, data and fonts locally mounted you can use
 ```bash
@@ -42,6 +43,16 @@ Example url:
 
 ### Run in development mode windows
 For running on windows: `./run_development_windows.sh`
+
+### Run in development mode using docker-compose
+```bash
+docker-compose -f docker-compose.yml up -d
+```
+Stop them all again
+```bash
+docker-compose -f docker-compose.yml down
+```
+The service is exposed on port 9001 when running through docker-compose
 
 ### Notes on developing templates on Windows
 It is a known issue that pdfgen's output documents look different depending on whether the template
