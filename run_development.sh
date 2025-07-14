@@ -12,4 +12,4 @@ docker run \
         -e DEV_MODE=true \
         -it \
         --rm \
-        ghcr.io/navikt/pdfgen:2.0.63
+        ghcr.io/navikt/pdfgen:2.0.85
