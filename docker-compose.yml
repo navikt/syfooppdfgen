@@ -1,0 +1,14 @@
+services:
+  oppdfgen:
+    image: ghcr.io/navikt/pdfgen:2.0.85
+    ports:
+      - "9091:8080"
+    restart: always
+    environment:
+      DISABLE_PDF_GET: false
+      DEV_MODE: true
+    volumes:
+      - ./templates:/app/templates
+      - ./fonts:/app/fonts
+      - ./data:/app/data
+      - ./resources:/app/resources

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        @page { margin: 46px; }
+        * { font-family: "Source Sans Pro", Arial, sans-serif; color: #3E3832; }
+        h1, h2 { font-weight: 500; page-break-after: avoid; }
+        h1 { font-size: 24px; line-height: 28px; }
+        h2 { font-size: 20px; line-height: 25px; margin-top: 50px; }
+        h3 { margin-top: 10px; margin-bottom: 0; font-size: 14px; font-weight: bolder; }
+        p { width: 100%; margin-top: 10px; margin-bottom: 0; font-size: 12px; letter-spacing: 0.2px; }
+        .avoidPageBreakInside { page-break-inside: avoid; }
+        .horiszontal { border-style: none; border-bottom: 1px solid #ccc; width: 100%; }
+    </style>
+    <title>Oppfølgingsplan</title>
+</head>
+<body>
+<h1>Oppfølgingsplan v{{oppfolgingsplan.version}}</h1>
+<p>Sluttdato: {{oppfolgingsplan.sluttDato}}</p>
+
+{{#each oppfolgingsplan.sections}}
+    <div class="avoidPageBreakInside">
+        <h2>{{title}}</h2>
+        <p>{{description}}</p>
+        {{#each textInputFields}}
+            {{#if value}}
+                <h3>{{title}}</h3>
+                <p><strong>{{description}}</strong></p>
+                <p>{{value}}</p>
+                <p class="horiszontal"></p>
+            {{/if}}
+        {{/each}}
+    </div>
+{{/each}}
+</body>
+</html>
