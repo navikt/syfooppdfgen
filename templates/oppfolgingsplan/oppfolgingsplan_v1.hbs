@@ -16,8 +16,23 @@
     <title>Oppfølgingsplan</title>
 </head>
 <body>
-<h1>Oppfølgingsplan v{{oppfolgingsplan.version}}</h1>
-<p>Sluttdato: {{oppfolgingsplan.sluttDato}}</p>
+<h1>Oppfølgingsplan</h1>
+
+<h2>Om denne planen</h2>
+<p><strong>Opprettet dato:</strong> {{oppfolgingsplan.createdDate}}</p>
+<p><strong>Evalueres:</strong> {{oppfolgingsplan.sluttDato}}</p>
+<p><strong>Ansatt har medvirket:</strong> {{#if oppfolgingsplan.employeeHasParticipated}}Ja{{else}}Nei{{/if}}</p>
+
+<h2>Om den ansatte</h2>
+<p><strong>Navn:</strong> {{oppfolgingsplan.sykemeldt.name}}</p>
+<p><strong>Fødselsnummer:</strong> {{oppfolgingsplan.sykemeldt.fnr}}</p>
+
+<h2>Om virksomheten</h2>
+<p><strong>Navn:</strong> {{oppfolgingsplan.employer.name}}</p>
+<p><strong>Organisasjonsnummer:</strong> {{oppfolgingsplan.employer.orgnr}}</p>
+<p><strong>Nærmeste leder:</strong> {{oppfolgingsplan.employer.narmesteLederName}}</p>
+
+<div style="page-break-after: always;"></div>
 
 {{#each oppfolgingsplan.sections}}
     <div class="avoidPageBreakInside">
