@@ -45,6 +45,7 @@ spec:
   accessPolicy:
     inbound:
       rules:
+        - application: followupplan-backend
         - application: meroppfolging-backend
         - application: syfooppfolgingsplanservice
           namespace: team-esyfo
