@@ -16,6 +16,31 @@
 
     "sections": [
       {
+        "id": "arbeidsoppgaver",
+        "title": "Arbeidsoppgaver",
+        "description": "I dette steget ønsker vi at dere skal beskrive hvordan en vanlig arbeidsdag utspiller seg, hvilke oppgaver som kan og ikke kan utføres.  Det kan gjøre det enklere for både arbeidsgiver, arbeidstaker og fastlegen å følge opp på en god måte.",
+        "textInputFields": [
+          {
+            "id": "arbeidsdag",
+            "title": "Hvordan ser en vanlig arbeidsdag ut?",
+            "description": "Beskriv en vanlig arbeidsdag og hvilke oppgaver arbeidstaker gjør på jobben",
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec leo porta, rhoncus sem vel, molestie odio. Nunc dictum maximus diam, eu commodo elit ullamcorper eu. Nam hendrerit scelerisque hendrerit. Integer neque orci, finibus id elementum iaculis, posuere ut neque. Ut tristique eros ac mollis vestibulum. Mauris bibendum, neque et posuere blandit, velit urna dapibus ex, sed sagittis nunc lorem in felis. Donec sit amet mattis nunc, non venenatis arcu. Integer odio purus, gravida facilisis nibh ac, gravida porta dui. Curabitur a leo erat. Sed leo metus, interdum et nisi eu, rhoncus finibus mi. Vestibulum porttitor luctus congue. Pellentesque mollis consectetur neque, vel ultricies felis hendrerit vel. Ut aliquam fringilla ex, id hendrerit est ullamcorper id"
+          },
+          {
+            "id": "kanUtføres",
+            "title": "Hvilke ordinære arbeidsoppgaver kan forstatt utføres? ",
+            "description": "Beskriv hvilke oppgaver arbeidstaker fortsatt kan gjøre med eller uten tilpasninger.",
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec leo porta, rhoncus sem vel, molestie odio. Nunc dictum maximus diam, eu commodo elit ullamcorper eu. Nam hendrerit scelerisque hendrerit. Integer neque orci, finibus id elementum iaculis, posuere ut neque. Ut tristique eros ac mollis vestibulum. Mauris bibendum, neque et posuere blandit, velit urna dapibus ex, sed sagittis nunc lorem in felis. Donec sit amet mattis nunc, non venenatis arcu. Integer odio purus, gravida facilisis nibh ac, gravida porta dui. Curabitur a leo erat. Sed leo metus, interdum et nisi eu, rhoncus finibus mi. Vestibulum porttitor luctus congue. Pellentesque mollis consectetur neque, vel ultricies felis hendrerit vel. Ut aliquam fringilla ex, id hendrerit est ullamcorper id"
+          },
+          {
+            "id": "kanIkkeUtføres",
+            "title": "Hvilke ordinære arbeidsoppgaver kan ikke utføres? ",
+            "description": "Er det noen oppgaver som er helt umulige å utføre?",
+            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec leo porta, rhoncus sem vel, molestie odio. Nunc dictum maximus diam, eu commodo elit ullamcorper eu. Nam hendrerit scelerisque hendrerit. Integer neque orci, finibus id elementum iaculis, posuere ut neque. Ut tristique eros ac mollis vestibulum. Mauris bibendum, neque et posuere blandit, velit urna dapibus ex, sed sagittis nunc lorem in felis. Donec sit amet mattis nunc, non venenatis arcu. Integer odio purus, gravida facilisis nibh ac, gravida porta dui. Curabitur a leo erat. Sed leo metus, interdum et nisi eu, rhoncus finibus mi. Vestibulum porttitor luctus congue. Pellentesque mollis consectetur neque, vel ultricies felis hendrerit vel. Ut aliquam fringilla ex, id hendrerit est ullamcorper id"
+          }
+        ]
+      },
+      {
         "id": "tilpassing",
         "title": "Tilpasning av arbeidsoppgaver",
         "description": "I denne delen av planen er det fint å kartlegge hvilke tilpasninger som er muligheter å gjøre i arbeidsoppgaver.",
@@ -34,25 +59,18 @@
         ]
       },
       {
-        "id": "arbeidsoppgaver",
-        "title": "Arbeidsoppgaver",
-        "description": "Viktige opplysninger om arbeidstaker og arbeidsgiver.",
+        "id": "oppfolging",
+        "title": "Oppfølging og medvirkning",
+        "description": "Hvordan skal du følge opp avtalt tilrettelegging på arbeidsplassen? Hvem skal gjøre hva og når skal du vurdere om tiltakene har effekt?",
         "textInputFields": [
           {
-            "id": "arbeidsdag",
-            "title": "Hvordan ser en vanlig arbeidsdag ut?",
-            "description": "Beskriv en vanlig arbeidsdag og hvilke oppgaver arbeidstaker gjør på jobben",
-            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec leo porta, rhoncus sem vel, molestie odio. Nunc dictum maximus diam, eu commodo elit ullamcorper eu. Nam hendrerit scelerisque hendrerit. Integer neque orci, finibus id elementum iaculis, posuere ut neque. Ut tristique eros ac mollis vestibulum. Mauris bibendum, neque et posuere blandit, velit urna dapibus ex, sed sagittis nunc lorem in felis. Donec sit amet mattis nunc, non venenatis arcu. Integer odio purus, gravida facilisis nibh ac, gravida porta dui. Curabitur a leo erat. Sed leo metus, interdum et nisi eu, rhoncus finibus mi. Vestibulum porttitor luctus congue. Pellentesque mollis consectetur neque, vel ultricies felis hendrerit vel. Ut aliquam fringilla ex, id hendrerit est ullamcorper id"
-          },
-          {
-            "id": "kanUtføres",
-            "title": "Hvilke ordinære arbeidsoppgaver kan forstatt utføres? ",
-            "description": "Er det noen oppgaver som er helt umulige å utføre?",
+            "id": "hvordanFølgeOpp",
+            "title": "Hvordan skal du følge opp avtalt tilrettelegging?",
+            "description": null,
             "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec leo porta, rhoncus sem vel, molestie odio. Nunc dictum maximus diam, eu commodo elit ullamcorper eu. Nam hendrerit scelerisque hendrerit. Integer neque orci, finibus id elementum iaculis, posuere ut neque. Ut tristique eros ac mollis vestibulum. Mauris bibendum, neque et posuere blandit, velit urna dapibus ex, sed sagittis nunc lorem in felis. Donec sit amet mattis nunc, non venenatis arcu. Integer odio purus, gravida facilisis nibh ac, gravida porta dui. Curabitur a leo erat. Sed leo metus, interdum et nisi eu, rhoncus finibus mi. Vestibulum porttitor luctus congue. Pellentesque mollis consectetur neque, vel ultricies felis hendrerit vel. Ut aliquam fringilla ex, id hendrerit est ullamcorper id"
           }
         ]
       }
-    ],
-    "sluttDato": "2023-10-01"
+    ]
   }
 }
