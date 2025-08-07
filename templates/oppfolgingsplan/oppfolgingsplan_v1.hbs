@@ -4,14 +4,14 @@
     <meta charset="UTF-8"/>
     <style>
         @page {
-            margin: 46px;
+            margin: 48px;
             @bottom-left {
                 content: element(footer);
             }
         }
         * { font-family: "Source Sans Pro", Arial, sans-serif; color: #3E3832; }
         h1, h2 { font-weight: 500; page-break-after: avoid; }
-        h1 { font-size: 24px; line-height: 28px; padding-bottom: 10px; }
+        h1 { font-size: 24px; line-height: 28px; padding-bottom: 10px; padding-top: 10px; }
         h2 { font-size: 20px; line-height: 25px; margin-top: 50px; padding-top: 10px}
         h3 { margin-top: 10px; margin-bottom: 0; font-size: 14px; font-weight: bolder; }
         p { width: 100%; margin-top: 10px; margin-bottom: 0; font-size: 12px; letter-spacing: 0.2px; }
@@ -21,7 +21,6 @@
             position: running(footer);
             font-size: 12px;
             margin-top: -25px;
-            padding-left: 0.6cm;
         }
         .sidetall {
             float: right;
@@ -32,17 +31,19 @@
         #pagecount:before {
             content: counter(pages)
         }
+        .title { background-color: #E6F0FF }
     </style>
     <title>Oppfølgingsplan</title>
 </head>
 <body>
-<h1>Oppfølgingsplan for {{oppfolgingsplan.sykemeldt.name}} og {{oppfolgingsplan.employer.name}}</h1>
+<div class="title">
+    <h1>Oppfølgingsplan for {{oppfolgingsplan.sykemeldt.name}} og {{oppfolgingsplan.employer.name}}</h1>
+</div>
 
 <p><strong>Opprettet:</strong> {{oppfolgingsplan.createdDate}}</p>
 <p><strong>Evalueres:</strong> {{oppfolgingsplan.evaluationDate}}</p>
 <p><strong>Arbeidstakers navn:</strong> {{oppfolgingsplan.sykemeldt.name}}</p>
 <p><strong>Arbeidstakers fødselsnummer:</strong> {{oppfolgingsplan.sykemeldt.fnr}}</p>
-<p><strong>Arbeidstaker har medvirket:</strong> {{#if oppfolgingsplan.employeeHasParticipated}}Ja{{else}}Nei{{/if}}</p>
 <p><strong>Bedriftens navn:</strong> {{oppfolgingsplan.employer.name}}</p>
 <p><strong>Organisasjonsnummer:</strong> {{oppfolgingsplan.employer.orgnr}}</p>
 <p><strong>Nærmeste leder:</strong> {{oppfolgingsplan.employer.narmesteLederName}}</p>

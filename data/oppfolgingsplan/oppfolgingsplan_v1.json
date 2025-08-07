@@ -3,7 +3,6 @@
     "version": "1.0",
     "createdDate": "2023-10-01",
     "evaluationDate": "2023-10-15",
-    "employeeHasParticipated": true,
     "sykemeldt": {
       "name": "Ansatt Hansen",
       "fnr": "12345678901"
