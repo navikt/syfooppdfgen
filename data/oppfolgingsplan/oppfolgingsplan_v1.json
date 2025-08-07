@@ -1,18 +1,13 @@
 {
+  "version": "1.0",
   "oppfolgingsplan": {
-    "version": "1.0",
     "createdDate": "2023-10-01",
     "evaluationDate": "2023-10-15",
-    "sykemeldt": {
-      "name": "Ansatt Hansen",
-      "fnr": "12345678901"
-    },
-    "employer": {
-      "name": "Eksempel AS",
-      "orgnr": "987654321",
-      "narmesteLederName": "Leder Larsen"
-    },
-
+    "sykmeldtName": "Ansatt Hansen",
+    "sykmeldtFnr": "12345678901",
+    "orgName": "Eksempel AS",
+    "orgnummer": "987654321",
+    "narmesteLederName": "Leder Larsen",
     "sections": [
       {
         "id": "arbeidsoppgaver",

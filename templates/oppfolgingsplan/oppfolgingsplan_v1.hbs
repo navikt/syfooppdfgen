@@ -37,18 +37,18 @@
 </head>
 <body>
 <div class="title">
-    <h1>Oppfølgingsplan for {{oppfolgingsplan.sykemeldt.name}} og {{oppfolgingsplan.employer.name}}</h1>
+    <h1>Oppfølgingsplan for {{oppfolgingsplan.sykmeldtName}} og {{oppfolgingsplan.orgName}}</h1>
 </div>
 
 <p><strong>Opprettet:</strong> {{oppfolgingsplan.createdDate}}</p>
-<p><strong>Evalueres:</strong> {{oppfolgingsplan.evaluationDate}}</p>
-<p><strong>Arbeidstakers navn:</strong> {{oppfolgingsplan.sykemeldt.name}}</p>
-<p><strong>Arbeidstakers fødselsnummer:</strong> {{oppfolgingsplan.sykemeldt.fnr}}</p>
-<p><strong>Bedriftens navn:</strong> {{oppfolgingsplan.employer.name}}</p>
-<p><strong>Organisasjonsnummer:</strong> {{oppfolgingsplan.employer.orgnr}}</p>
-<p><strong>Nærmeste leder:</strong> {{oppfolgingsplan.employer.narmesteLederName}}</p>
+<p><strong>Dato for evaluering:</strong> {{oppfolgingsplan.evaluationDate}}</p>
+<p><strong>Arbeidstakers navn:</strong> {{oppfolgingsplan.sykmeldtName}}</p>
+<p><strong>Arbeidstakers fødselsnummer:</strong> {{oppfolgingsplan.sykmeldtFnr}}</p>
+<p><strong>Bedriftens navn:</strong> {{oppfolgingsplan.orgName}}</p>
+<p><strong>Organisasjonsnummer:</strong> {{oppfolgingsplan.orgnummer}}</p>
+<p><strong>Nærmeste leder:</strong> {{oppfolgingsplan.narmesteLederName}}</p>
 <div id="footer">
-    <span>Oppfølgingsplan for {{oppfolgingsplan.sykemeldt.name}} og {{oppfolgingsplan.employer.name}}</span>
+    <span>Oppfølgingsplan for {{oppfolgingsplan.sykmeldtName}} og {{oppfolgingsplan.orgName}}</span>
     <span class="sidetall">side <span id="pagenumber"></span> av <span id="pagecount"></span></span>
 </div>
 {{#each oppfolgingsplan.sections}}
