@@ -5,15 +5,15 @@
     "evaluationDate": "2023-10-15",
     "sykmeldtName": "Ansatt Hansen",
     "sykmeldtFnr": "12345678901",
-    "orgName": "Eksempel AS",
-    "orgnummer": "987654321",
+    "organisasjonsnavn": "Eksempel AS",
+    "organisasjonsnummer": "987654321",
     "narmesteLederName": "Leder Larsen",
     "sections": [
       {
         "id": "arbeidsoppgaver",
         "title": "Arbeidsoppgaver",
         "description": "I dette steget ønsker vi at dere skal beskrive hvordan en vanlig arbeidsdag utspiller seg, hvilke oppgaver som kan og ikke kan utføres.  Det kan gjøre det enklere for både arbeidsgiver, arbeidstaker og fastlegen å følge opp på en god måte.",
-        "textInputFields": [
+        "inputFields": [
           {
             "id": "arbeidsdag",
             "title": "Hvordan ser en vanlig arbeidsdag ut?",
@@ -38,7 +38,7 @@
         "id": "tilpassing",
         "title": "Tilpasning av arbeidsoppgaver",
         "description": "I denne delen av planen er det fint å kartlegge hvilke tilpasninger som er muligheter å gjøre i arbeidsoppgaver.",
-        "textInputFields": [
+        "inputFields": [
           {
             "id": "forsøktHittil",
             "title": "Hva har dere forsøkt så langt i sykefraværet?",
@@ -56,7 +56,7 @@
         "id": "oppfolging",
         "title": "Oppfølging og medvirkning",
         "description": "Hvordan skal du følge opp avtalt tilrettelegging på arbeidsplassen? Hvem skal gjøre hva og når skal du vurdere om tiltakene har effekt?",
-        "textInputFields": [
+        "inputFields": [
           {
             "id": "hvordanFølgeOpp",
             "title": "Hvordan skal du følge opp avtalt tilrettelegging?",
