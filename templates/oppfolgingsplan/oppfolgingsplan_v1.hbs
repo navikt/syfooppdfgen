@@ -37,15 +37,15 @@
 </head>
 <body>
 <div class="title">
-    <h1>Oppfølgingsplan for {{oppfolgingsplan.sykmeldtName}} og {{oppfolgingsplan.orgName}}</h1>
+    <h1>Oppfølgingsplan for {{oppfolgingsplan.sykmeldtName}} og {{oppfolgingsplan.organisasjonsnavn}}</h1>
 </div>
 
 <p><strong>Opprettet:</strong> {{oppfolgingsplan.createdDate}}</p>
 <p><strong>Dato for evaluering:</strong> {{oppfolgingsplan.evaluationDate}}</p>
 <p><strong>Arbeidstakers navn:</strong> {{oppfolgingsplan.sykmeldtName}}</p>
 <p><strong>Arbeidstakers fødselsnummer:</strong> {{oppfolgingsplan.sykmeldtFnr}}</p>
-<p><strong>Bedriftens navn:</strong> {{oppfolgingsplan.orgName}}</p>
-<p><strong>Organisasjonsnummer:</strong> {{oppfolgingsplan.orgnummer}}</p>
+<p><strong>Bedriftens navn:</strong> {{oppfolgingsplan.organisasjonsnavn}}</p>
+<p><strong>Organisasjonsnummer:</strong> {{oppfolgingsplan.organisasjonsnummer}}</p>
 <p><strong>Nærmeste leder:</strong> {{oppfolgingsplan.narmesteLederName}}</p>
 <div id="footer">
     <span>Oppfølgingsplan for {{oppfolgingsplan.sykmeldtName}} og {{oppfolgingsplan.orgName}}</span>
@@ -55,7 +55,7 @@
     <div class="avoidPageBreakInside">
         <h2>{{title}}</h2>
         <p>{{description}}</p>
-        {{#each textInputFields}}
+        {{#each inputFields}}
             {{#if value}}
                 <p class="horiszontal"></p>
                 <h3>{{title}}</h3>
