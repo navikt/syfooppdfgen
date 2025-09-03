@@ -3,12 +3,32 @@
     hasDescription=true
 }}
     {{#*inline "description"}}
+        {{#if maxdatoFormatted}}
+        Din maksdato er beregnet til å være {{ maxdatoFormatted }}. Åpne kortet for å lese mer.
+        {{else}}
         Din maksdato er beregnet til å være {{ iso_to_long_date maxdatoISO }}. Åpne kortet for å lese mer.
+        {{/if}}
     {{/inline}}
 
     {{#*inline "content"}}
-        <p>
-            Du kan maksimalt få sykepenger fra Nav i 52 uker. Grensen er den samme enten du er helt eller delvis sykmeldt. Den siste datoen du kan få sykepenger kalles maksdato. Din maksdato ble sist oppdatert {{ iso_to_long_date utbetaltTomISO }}. Maksdatoen gjelder fortsatt hvis du har vært sammenhengende sykmeldt og mottatt sykepenger siden da. Den vil forskyve seg til en senere dato hvis du har perioder etter {{ iso_to_long_date utbetaltTomISO }} der du ikke mottar sykepenger. Det kan skje hvis du er frisk i perioder eller hvis du tar ferie.
-    </p>
+        {{#if utbetaltTomFormatted}}
+            <p>
+                Du kan maksimalt få sykepenger fra Nav i 52 uker. Grensen er den samme enten du er helt eller delvis
+                sykmeldt. Den siste datoen du kan få sykepenger kalles maksdato. Din maksdato ble sist
+                oppdatert {{ utbetaltTomFormatted }}. Maksdatoen gjelder fortsatt hvis du har vært sammenhengende sykmeldt og
+                mottatt sykepenger siden da. Den vil forskyve seg til en senere dato hvis du har perioder
+                etter {{ utbetaltTomFormatted }} der du ikke mottar sykepenger. Det kan skje hvis du er frisk i perioder
+                eller hvis du tar ferie.
+            </p>
+        {{else}}
+            <p>
+                Du kan maksimalt få sykepenger fra Nav i 52 uker. Grensen er den samme enten du er helt eller delvis
+                sykmeldt. Den siste datoen du kan få sykepenger kalles maksdato. Din maksdato ble sist
+                oppdatert {{ iso_to_long_date utbetaltTomISO }}. Maksdatoen gjelder fortsatt hvis du har vært sammenhengende sykmeldt og
+                mottatt sykepenger siden da. Den vil forskyve seg til en senere dato hvis du har perioder
+                etter {{ iso_to_long_date utbetaltTomISO }} der du ikke mottar sykepenger. Det kan skje hvis du er frisk i perioder
+                eller hvis du tar ferie.
+            </p>
+        {{/if}}
     {{/inline}}
 {{/senoppfolging/partials/expansionCard}}

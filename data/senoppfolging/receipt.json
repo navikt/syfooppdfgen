@@ -8,6 +8,9 @@
     "submissionDateISO": "2024-12-11",
     "maxdatoISO": "2025-03-12",
     "utbetaltTomISO": "2024-12-06",
+    "submissionDateFormatted": "11. desember 2024",
+    "maxdatoFormatted": "12. mars 2025",
+    "utbetaltTomFormatted": "2024-12-06",
     "daysUntilMaxDate": "77"
   }
 }

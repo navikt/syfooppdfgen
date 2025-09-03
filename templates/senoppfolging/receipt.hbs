@@ -48,9 +48,10 @@
 <body style="page-break-inside: avoid;">
     <div style="border-style: solid; border-radius: 4px; padding: 0.25rem 1rem; background-color: rgb(204, 241, 214)">
         <p class="text--bold" style="margin-bottom: 0">Takk, svarene dine er sendt til Nav.</p>
-        {{#if brevdata.submissionDateISO}}
-        <p style="margin-top: 0">Sendt: {{ iso_to_long_date brevdata.submissionDateISO }}</p>
+        {{#if brevdata.submissionDateFormatted}}
+            <p style="margin-top: 0">Sendt: {{ brevdata.submissionDateFormatted }}</p>
         {{else}}
+            <p style="margin-top: 0">Sendt: {{ iso_to_long_date brevdata.submissionDateISO }}</p>
         {{/if}}
     </div>
 
@@ -82,7 +83,9 @@
 
     {{> senoppfolging/partials/maxdatoInfoExpansionCard
         maxdatoISO=brevdata.maxdatoISO
+        maxdatoFormatted=brevdata.maxdatoFormatted
         utbetaltTomISO=brevdata.utbetaltTomISO
+        utbetaltTomFormatted=brevdata.utbetaltTomFormatted
     }}
 
     <h2>Informasjon fra Nav som være nyttig for deg</h2>
