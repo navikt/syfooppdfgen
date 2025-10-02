@@ -17,7 +17,6 @@
         .question-block { margin: 0 0 1.25rem 0; }
         .question-label { margin: 0 0 0.5rem 0; font-weight: 600; }
         .info-box { border-style: solid; border-radius: 4px; padding: 0.25rem 1rem; background-color: rgb(204, 241, 214); }
-        .muted { color: #6A6A6A; font-size: 14px; line-height: 20px; }
         /* Radio button visual container to mirror senoppfolging style */
         .radio-buttons-container > * { margin-bottom: 0.5rem; }
         .radio-buttons-container img.radio-button-image { height: 1.5rem; float: left; display: inline-block; margin-right: 0.25rem; }
@@ -37,29 +36,21 @@
     </div>
     <h2>Oppsummering av dine svar</h2>
     <div class="summary-container">
-        {{#if brevdata.fieldSnapshots}}
-            {{#each brevdata.fieldSnapshots}}
-                <div class="question-block">
-                    <p class="question-label">{{label}}</p>
-                    {{#if options}}
-                        <div class="radio-buttons-container">
-                            {{#each options}}
-                                {{#if wasSelected}}
-                                    {{> kartlegging/partials/radioButton value="SELECTED" checkedIfValueEquals="SELECTED" label=optionLabel }}
-                                {{else}}
-                                    {{> kartlegging/partials/radioButton value="NOT_SELECTED" checkedIfValueEquals="SELECTED" label=optionLabel }}
-                                {{/if}}
-                            {{/each}}
-                        </div>
-                    {{else}}
-                        <p class="muted">(Ingen alternativer)</p>
-                    {{/if}}
+        {{#each brevdata.fieldSnapshots}}
+            <div class="question-block">
+                <p class="question-label">{{label}}</p>
+                <div class="radio-buttons-container">
+                    {{#each options}}
+                        {{#if wasSelected}}
+                            {{> kartlegging/partials/radioButton value="SELECTED" checkedIfValueEquals="SELECTED" label=optionLabel }}
+                        {{else}}
+                            {{> kartlegging/partials/radioButton value="NOT_SELECTED" checkedIfValueEquals="SELECTED" label=optionLabel }}
+                        {{/if}}
+                    {{/each}}
                 </div>
-                {{#unless @last}}<hr class="question-separator" />{{/unless}}
-            {{/each}}
-        {{else}}
-            <p class="muted">Ingen spørsmål å vise.</p>
-        {{/if}}
+            </div>
+            {{#unless @last}}<hr class="question-separator" />{{/unless}}
+        {{/each}}
     </div>
 </body>
 </html>
