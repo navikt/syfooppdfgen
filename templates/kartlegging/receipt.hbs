@@ -41,11 +41,7 @@
                 <p class="question-label">{{label}}</p>
                 <div class="radio-buttons-container">
                     {{#each options}}
-                        {{#if wasSelected}}
-                            {{> kartlegging/partials/radioButton value="SELECTED" checkedIfValueEquals="SELECTED" label=optionLabel }}
-                        {{else}}
-                            {{> kartlegging/partials/radioButton value="NOT_SELECTED" checkedIfValueEquals="SELECTED" label=optionLabel }}
-                        {{/if}}
+                        {{> kartlegging/partials/radioButton value=wasSelected checkedIfValueEquals="true" label=optionLabel }}
                     {{/each}}
                 </div>
             </div>
