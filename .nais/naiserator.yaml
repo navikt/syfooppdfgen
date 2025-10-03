@@ -47,6 +47,8 @@ spec:
       rules:
         - application: syfo-oppfolgingsplan-backend
         - application: meroppfolging-backend
+        - application: ismeroppfolging
+          namespace: teamsykefravr
         - application: syfooppfolgingsplanservice
           namespace: team-esyfo
           cluster: {{syfooppfolgingsplanservice_cluster}}
