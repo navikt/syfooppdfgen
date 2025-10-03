@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Kartlegging – Kvittering på ditt svar" />
+    <meta name="author" content="syfooppdfgen"/>
+    <meta name="subject" content="Kartlegging"/>
+    <title>Kartlegging – Kvittering på ditt svar</title>
+    <style>
+        * { font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif; color: #262626; font-style: normal; font-size: 18px; font-weight: 400; line-height: 28px; }
+        h1, h2 { font-weight: 600; page-break-after: avoid; }
+        h1 { font-size: 32px; line-height: 40px; }
+        h2 { font-size: 20px; line-height: 20px; }
+        a { color: rgb(0, 103, 197); }
+        .text--bold { font-weight: 600; }
+        .summary-container { border-radius: 4px; padding: 0.25rem 1rem; }
+        .question-block { margin: 0 0 1.25rem 0; }
+        .question-label { margin: 0 0 0.5rem 0; font-weight: 600; }
+        .info-box { border-style: solid; border-radius: 4px; padding: 0.25rem 1rem; background-color: rgb(204, 241, 214); }
+        /* Radio button visual container to mirror senoppfolging style */
+        .radio-buttons-container > * { margin-bottom: 0.5rem; }
+        .radio-buttons-container img.radio-button-image { height: 1.5rem; float: left; display: inline-block; margin-right: 0.25rem; }
+        .radio-buttons-container .radio-button-label .selected-option-help-text { color: #00459C; }
+        .question-separator { border: none; border-top: 1px solid #D2D2D2; margin: 1rem 0; }
+    </style>
+</head>
+<body style="page-break-inside: avoid;">
+    <p>Sendt: {{ brevdata.createdAt }}</p>
+    <h1>Din situasjon – behovsrettet oppfølging</h1>
+    <p>Du har vært sykmeldt en stund, og vi ønsker å følge deg opp på best mulig måte. Derfor ber vi deg svare på tre
+        korte spørsmål om din situasjon. Spørsmålene hjelper oss med å gi deg riktig støtte videre, og svarene dine blir
+        sett av veilederen din ved ditt Nav-kontor.
+    </p>
+    <div class="summary-container">
+    <div class="question-block">
+        <p class="question-label">
+            Hvor sannsynlig er det at du kommer tilbake i jobben du ble sykmeldt fra?
+        </p>
+        <div class="radio-buttons-container">
+            {{> kartlegging/partials/radioButton
+                    value="false"
+                    checkedIfValueEquals="true"
+                    label="Jeg tror det er veldig sannsynlig"
+            }}
+            {{> kartlegging/partials/radioButton
+                    value="false"
+                    checkedIfValueEquals="true"
+                    label="Jeg tror det er lite sannsynlig"
+            }}
+            {{> kartlegging/partials/radioButton
+                    value="false"
+                    checkedIfValueEquals="true"
+                    label="Jeg er usikker"
+            }}
+        </div>
+        <hr class="question-separator" />
+        <p class="question-label">
+            Hvordan vil du beskrive samarbeidet og relasjonen mellom deg og arbeidsgiveren din?
+        </p>
+        <div class="radio-buttons-container">
+            {{> kartlegging/partials/radioButton
+                    value="false"
+                    checkedIfValueEquals="true"
+                    label="Jeg opplever forholdet vårt som godt"
+            }}
+            {{> kartlegging/partials/radioButton
+                    value="false"
+                    checkedIfValueEquals="true"
+                    label="Jeg opplever ikke forholdet vårt som godt"
+            }}
+        </div>
+        <hr class="question-separator" />
+        <p class="question-label">
+            Hvor lenge tror du at du har behov for å være sykmeldt?
+        </p>
+        <div class="radio-buttons-container">
+            {{> kartlegging/partials/radioButton
+                    value="false"
+                    checkedIfValueEquals="true"
+                    label="Mindre enn 26 uker (6 måneder) totalt"
+            }}
+            {{> kartlegging/partials/radioButton
+                    value="false"
+                    checkedIfValueEquals="true"
+                    label="Mer enn 26 uker (6 måneder) totalt"
+            }}
+        </div>
+    </div>
+    </div>
+</body>
+</html>
