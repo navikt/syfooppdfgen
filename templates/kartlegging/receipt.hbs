@@ -13,8 +13,7 @@
         h2 { font-size: 20px; line-height: 20px; }
         a { color: rgb(0, 103, 197); }
         .text--bold { font-weight: 600; }
-        .summary-container { border-radius: 4px; padding: 0.25rem 1rem; }
-        .question-block { margin: 0 0 1.25rem 0; }
+        .question-block { margin: 0 0 1.25rem 1.25rem; }
         .question-label { margin: 0 0 0.5rem 0; font-weight: 600; }
         .info-box { border-style: solid; border-radius: 4px; padding: 0.25rem 1rem; background-color: rgb(204, 241, 214); }
         /* Radio button visual container to mirror senoppfolging style */
@@ -25,28 +24,36 @@
     </style>
 </head>
 <body style="page-break-inside: avoid;">
-    <h1>Din situasjon – behovsrettet oppfølging</h1>
-    <p>Du har vært sykmeldt en stund, og vi ønsker å følge deg opp på best mulig måte. Derfor ber vi deg svare på tre
-        korte spørsmål om din situasjon. Spørsmålene hjelper oss med å gi deg riktig støtte videre, og svarene dine blir
-        sett av veilederen din ved ditt Nav-kontor.
-    </p>
+    <p>{{ brevdata.createdAt }}</p>
+    <h1>Kartlegging av din situasjon</h1>
     <div class="info-box">
         <p class="text--bold" style="margin: 0 0 0.25rem 0">Takk, svarene dine er sendt til Nav.</p>
-        <p style="margin: 0">Motatt: {{ brevdata.createdAt }}</p>
+        <p style="margin: 0">Sendt: {{ brevdata.createdAt }}</p>
     </div>
+    <p>Svarene dine gir Nav innsikt i hvordan vi skal følge deg opp fremover. Om vi ser behovet for tettere oppfølging enn det arbeidsgiveren din skal gi deg, vil du bli kontaktet av en Nav-veileder.
+    </p>
+
+    <h2>Informasjon fra Nav som kan være nyttig for deg</h2>
+    <ul>
+    <li>Ditt ansvar når du er sykmeldt</li>
+    <li>Arbeidsgiver sitt oppfølgingsansvar</li>
+    </ul>
+
+    <h2>Har du andre spørsmål?</h2>
+    <p>
+        Du kan ta kontakt med oss på telefon 55 55 33 33 eller skriv til oss her på nav.no hvis det skulle være noe du lurer på.</p>
+
     <h2>Oppsummering av dine svar</h2>
-    <div class="summary-container">
-        {{#each brevdata.fieldSnapshots}}
-            <div class="question-block">
-                <p class="question-label">{{label}}</p>
-                <div class="radio-buttons-container">
-                    {{#each options}}
-                        {{> kartlegging/partials/radioButton value=wasSelected checkedIfValueEquals="true" label=optionLabel }}
-                    {{/each}}
-                </div>
+    {{#each brevdata.fieldSnapshots}}
+        <div class="question-block">
+            <p class="question-label">{{label}}</p>
+            <div class="radio-buttons-container">
+                {{#each options}}
+                    {{> kartlegging/partials/radioButton value=wasSelected checkedIfValueEquals="true" label=optionLabel }}
+                {{/each}}
             </div>
-            {{#unless @last}}<hr class="question-separator" />{{/unless}}
-        {{/each}}
-    </div>
+        </div>
+        {{#unless @last}}<hr class="question-separator" />{{/unless}}
+    {{/each}}
 </body>
 </html>
