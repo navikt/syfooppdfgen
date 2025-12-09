@@ -15,8 +15,8 @@
         h2 { font-size: 20px; line-height: 25px; margin-top: 50px; padding-top: 10px}
         h3 { margin-top: 10px; margin-bottom: 0; font-size: 14px; font-weight: bolder; }
         p { width: 100%; margin-top: 10px; margin-bottom: 0; font-size: 12px; letter-spacing: 0.2px; }
-        .avoidPageBreakInside { page-break-inside: avoid; }
-        .horiszontal { border-style: none; border-bottom: 1px solid #ccc; width: 100% }
+        .horizontal { border-style: none; border-bottom: 1px solid #ccc; width: 100% }
+        .handle-newlines { white-space: pre-wrap; }
         #footer {
             position: running(footer);
             font-size: 12px;
@@ -52,15 +52,15 @@
     <span class="sidetall">side <span id="pagenumber"></span> av <span id="pagecount"></span></span>
 </div>
 {{#each oppfolgingsplan.sections}}
-    <div class="avoidPageBreakInside">
+    <div>
         <h2>{{title}}</h2>
         <p>{{description}}</p>
         {{#each inputFields}}
             {{#if value}}
-                <p class="horiszontal"></p>
+                <p class="horizontal"></p>
                 <h3>{{title}}</h3>
                 <p><strong>{{description}}</strong></p>
-                <p>{{value}}</p>
+                <p class="handle-newlines">{{value}}</p>
             {{/if}}
         {{/each}}
     </div>
