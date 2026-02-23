@@ -1,6 +1,7 @@
 services:
   oppdfgen:
-    image: ghcr.io/navikt/pdfgen:2.0.85
+    platform: linux/amd64
+    image: ghcr.io/navikt/pdfgen:2.0.109
     ports:
       - "9091:8080"
     restart: always
