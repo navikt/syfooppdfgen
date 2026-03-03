@@ -33,17 +33,7 @@
     <p>Svarene dine gir Nav innsikt i hvordan vi skal følge deg opp fremover. Om vi ser behovet for tettere oppfølging enn det arbeidsgiveren din skal gi deg, vil du bli kontaktet av en Nav-veileder.
     </p>
 
-    <h2>Informasjon fra Nav som kan være nyttig for deg</h2>
-    <ul>
-    <li>Ditt ansvar når du er sykmeldt</li>
-    <li>Arbeidsgiver sitt oppfølgingsansvar</li>
-    </ul>
-
-    <h2>Har du andre spørsmål?</h2>
-    <p>
-        Du kan ta kontakt med oss på telefon 55 55 33 33 eller skriv til oss her på nav.no hvis det skulle være noe du lurer på.</p>
-
-    <h2>Oppsummering av dine svar</h2>
+    <h2>Dette svarte du</h2>
     {{#each brevdata.fieldSnapshots}}
         <div class="question-block">
             <p class="question-label">{{label}}</p>
@@ -55,5 +45,14 @@
         </div>
         {{#unless @last}}<hr class="question-separator" />{{/unless}}
     {{/each}}
+
+    <h2>Informasjon fra Nav som kan være nyttig for deg</h2>
+    <ul>
+        <li><a href="https://www.nav.no/sykmeldt#sykmeldiditt-ansvar-nar-du-er-sykmeldtngen">Ditt ansvar når du er sykmeldt</a></li>
+        <li><a href="https://www.nav.no/sykepenger#oppfolging">Arbeidsgiver sitt oppfølgingsansvar</a></li>
+    </ul>
+
+    <h2>Har du andre spørsmål?</h2>
+    <p>Du kan ta kontakt med oss på telefon 55 55 33 33 eller <a href="https://www.nav.no/kontaktoss#skriv-til-oss">skriv til oss her på nav.no</a> hvis det skulle være noe du lurer på.</p>
 </body>
 </html>
