@@ -16,6 +16,7 @@
         .summary-container { border-radius: 4px; padding: 0.25rem 1rem; }
         .question-block { margin: 0 0 1.25rem 0; }
         .question-label { margin: 0 0 0.5rem 0; font-weight: 600; }
+        .question-description { margin: 0 0 0.5rem 0; }
         .info-box { border-style: solid; border-radius: 4px; padding: 0.25rem 1rem; background-color: rgb(204, 241, 214); }
         /* Radio button visual container to mirror senoppfolging style */
         .radio-buttons-container > * { margin-bottom: 0.5rem; }
@@ -32,6 +33,7 @@
     <p>
         Svarene dine blir kun delt med Nav.
     </p>
+
     <div class="summary-container">
     <div class="question-block">
         <p class="question-label">
@@ -54,10 +56,13 @@
                     label="Jeg er usikker"
             }}
         </div>
+
         <hr class="question-separator" />
+
         <p class="question-label">
             Hvordan vil du beskrive samarbeidet og relasjonen mellom deg og arbeidsgiveren din?
         </p>
+        <p class="question-description">Svaret blir ikke delt med din arbeidsgiver.</p>
         <div class="radio-buttons-container">
             {{> kartlegging/partials/radioButton
                     value="false"
@@ -70,7 +75,9 @@
                     label="Jeg opplever samarbeidet og relasjonen som dårlig"
             }}
         </div>
+        
         <hr class="question-separator" />
+
         <p class="question-label">
             Hvor lenge tror du at du kommer til å være sykmeldt?
         </p>
