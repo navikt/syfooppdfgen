@@ -40,6 +40,7 @@ Example url:
 `http://localhost:8080/api/v1/genpdf/oppfolging/mer_veiledning_for_reserverte` <br>
 `http://localhost:8080/api/v1/genpdf/oppfolging/oppfolgingsplanlps` <br>
 `http://localhost:8080/api/v1/genpdf/oppfolgingsplan/oppfolgingsplan_v1` <br>
+`http://localhost:8080/api/v1/genpdf/kartlegging/utsending` <br>
 
 ### Run in development mode windows
 For running on windows: `./run_development_windows.sh`
