@@ -20,6 +20,7 @@
         .radio-buttons-container > * { margin-bottom: 0.5rem; }
         .radio-buttons-container img.radio-button-image { height: 1.5rem; float: left; display: inline-block; margin-right: 0.25rem; }
         .radio-buttons-container .radio-button-label .selected-option-help-text { color: #00459C; }
+        .question-description { margin: 0 0 0.5rem 0; font-style: italic; }
         .question-separator { border: none; border-top: 1px solid #D2D2D2; margin: 1rem 0; }
     </style>
 </head>
@@ -37,11 +38,19 @@
     {{#each brevdata.fieldSnapshots}}
         <div class="question-block">
             <p class="question-label">{{label}}</p>
+            {{#eq fieldType "RADIO_GROUP"}}
             <div class="radio-buttons-container">
                 {{#each options}}
                     {{> kartlegging/partials/radioButton value=wasSelected checkedIfValueEquals="true" label=optionLabel }}
                 {{/each}}
             </div>
+            {{/eq}}
+            {{#eq fieldType "TEXT"}}
+            {{#if description}}
+            <p class="question-description">{{description}}</p>
+            {{/if}}
+            <p>{{value}}</p>
+            {{/eq}}
         </div>
         {{#unless @last}}<hr class="question-separator" />{{/unless}}
     {{/each}}
