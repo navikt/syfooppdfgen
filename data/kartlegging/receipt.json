@@ -9,10 +9,17 @@
         "description": null,
         "fieldId": "hvorSannsynligTilbakeTilJobben",
         "options": [
-          { "optionId": "1a", "optionLabel": "Jeg tror det er veldig sannsynlig", "wasSelected": true },
+          { "optionId": "1a", "optionLabel": "Jeg tror det er veldig sannsynlig", "wasSelected": false },
           { "optionId": "1b", "optionLabel": "Jeg tror det er lite sannsynlig", "wasSelected": false },
-          { "optionId": "1c", "optionLabel": "Jeg er usikker", "wasSelected": false }
+          { "optionId": "1c", "optionLabel": "Jeg er usikker", "wasSelected": true }
         ]
+      },
+      {
+        "fieldType": "TEXT",
+        "label": "Hvis du ønsker det kan du her utdype svaret ditt på forrige spørsmål.\nDet er valgfritt.",
+        "description": "Svaret blir ikke delt med arbeidsgiveren din.",
+        "fieldId": "hvorSannsynligTilbakeTilJobbenBegrunnelse",
+        "value": "Jeg tror det er lite sannsynlig fordi de ikke kan tilrettelegge for meg."
       },
       {
         "fieldType": "RADIO_GROUP",
