@@ -81,20 +81,9 @@ Repoet bruker [mise](https://mise.jdx.dev/) som inngang for lokale utvikleroppga
 - Docker Desktop eller Colima med fungerende Docker-daemon
 - `mise`
 
-### Nyttige oppgaver
-
-| Kommando                    | Beskrivelse                                                         |
-| --------------------------- | ------------------------------------------------------------------- |
-| `mise tasks`                | Vis tilgjengelige oppgaver                                          |
-| `mise run dev`              | Start tjenesten og vis logger i terminalen                          |
-| `mise run dev-detached`     | Start tjenesten i bakgrunnen                                        |
-| `mise run stop`             | Stopp lokal kjøring                                                 |
-| `mise run build`            | Bygg Docker-imaget fra `Dockerfile`                                 |
-| `mise run open-example-pdf` | Åpne en eksempel-PDF lokalt i nettleseren og skriv ut ferske logger |
-
 ### Vanlig arbeidsflyt
 
-For vanlig lokal utvikling holder det som regel å bruke `mise run open-example-pdf` for å starte tjenesten ved behov, åpne en eksempel-PDF og skrive ut ferske logger.
+Bruk `mise tasks` for å se tilgjengelige oppgaver. For vanlig lokal utvikling holder det som regel å bruke `mise run open-example-pdf` for å starte tjenesten ved behov, åpne en eksempel-PDF og skrive ut ferske logger.
 
 Bak dette ligger Docker Compose med disse lokale mountene:
 
