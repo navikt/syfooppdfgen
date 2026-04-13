@@ -1,64 +1,44 @@
 # Syfooppdfgen
-Repository for templates for generating PDF's from Oppfolgingsplaner.
 
-## Technologies & Tools
+[![Build Status](https://github.com/navikt/syfooppdfgen/actions/workflows/build-and-deploy.yaml/badge.svg)](https://github.com/navikt/syfooppdfgen/actions/workflows/build-and-deploy.yaml)
 
-* [pdfgen](https://github.com/navikt/pdfgen)
+## Miljøer
 
-#### Creating a docker image
-Creating a docker image should be as simple as `docker build -t syfopdfgen .`
+[🚀 Produksjon](https://syfooppdfgen.intern.nav.no)
 
-## Getting started
+[🛠️ Utvikling](https://syfooppdfgen.intern.dev.nav.no)
 
-### Run in development mode
-To run the application with templates, data and fonts locally mounted you can use
-```bash
-docker run \
-        -v /full/path/to/templates:/app/templates \
-        -v /full/path/to/fonts:/app/fonts \
-        -v /full/path/to/data:/app/data \
-        -v /full/path/to/resources:/app/resources \
-        -p 8080:8080 \
-        -e DISABLE_PDF_GET=false \
-        -it \
-        --rm \
-        navikt/pdfgen
+## Formålet med repoet
+
+`syfooppdfgen` er en delt PDF-tjeneste for sykefraværsoppfølging. Repoet bygger på [pdfgen](https://github.com/navikt/pdfgen) og inneholder maler, eksempeldata, fonter og statiske ressurser som brukes til å rendre PDF-er for flere applikasjoner.
+
+Tjenesten deployes på NAIS og eksponerer PDF-endepunkter på formen `/api/v1/genpdf/<application>/<template>`.
+
+## Oversikt
+
+```mermaid
+graph TD
+    Konsumenter[Konsumerende apper] -->|HTTP POST| Syfooppdfgen[syfooppdfgen]
+    Syfooppdfgen --> Maler[templates/]
+    Syfooppdfgen --> Data[data/]
+    Syfooppdfgen --> Fonter[fonts/]
+    Syfooppdfgen --> Ressurser[resources/]
+    Syfooppdfgen --> PDF[Generert PDF]
 ```
 
-Or you can use the convenience script `./run_development.sh` or `./run_development_windows.sh`
+## Innhold i repoet
 
-When running the application you can use the env var `DISABLE_PDF_GET` to enable GET requests at
-`/api/v1/genpdf/<application>/<template>` which looks for test data at `data/<application>/<template>.json` and outputs
-a PDF to your browser. Additionally, the template folder will be fetched on every request, and reflect any changes made
-since the last GET, making this ideal for developing new templates for your application.
+| Katalog | Innhold |
+| --- | --- |
+| `templates/` | Handlebars-maler organisert som `<application>/<template>.hbs` |
+| `data/` | Eksempeldata for lokal utvikling og forhåndsvisning, organisert som `<application>/<template>.json` |
+| `fonts/` | Fonter som brukes når PDF-ene rendres |
+| `resources/` | Statiske filer som SVG-er og bilder brukt i malene |
 
-The template and data directory structure both follow the `<application>/<template>` structure.
-Example url: 
+## Drift og deploy
 
-`http://localhost:8080/api/v1/genpdf/opservice/oppfolgingsplanlps` <br>
-`http://localhost:8080/api/v1/genpdf/oppfolging/mer_veiledning_for_digitale` <br>
-`http://localhost:8080/api/v1/genpdf/oppfolging/mer_veiledning_for_reserverte` <br>
-`http://localhost:8080/api/v1/genpdf/oppfolging/oppfolgingsplanlps` <br>
-`http://localhost:8080/api/v1/genpdf/oppfolgingsplan/oppfolgingsplan_v1` <br>
-`http://localhost:8080/api/v1/genpdf/kartlegging/utsending` <br>
+Docker-imaget bygges i GitHub Actions og deployes til NAIS for dev og prod. Applikasjonen eksponerer health checks og Prometheus-metrikker, og er tilgjengelig for et begrenset sett med interne konsumenter via access policy.
 
-### Run in development mode windows
-For running on windows: `./run_development_windows.sh`
+## Kontakt
 
-### Run in development mode using docker-compose
-```bash
-docker-compose -f docker-compose.yml up -d
-```
-Stop them all again
-```bash
-docker-compose -f docker-compose.yml down
-```
-The service is exposed on port 9001 when running through docker-compose
-
-### Notes on developing templates on Windows
-It is a known issue that pdfgen's output documents look different depending on whether the template
-has `\r\n` or `\n` as line endings. Therefore, it is strongly recommended to configure Git to not convert newlines, as well as ensure that your editor ends its lines with LF (`\n`) and not CRLF (`\r\n`), as the former will accurately show what your
-templates will look like in production.
-
-### For NAV employees
-We are available at the Slack channel #esyfo
+For NAV-ansatte: ta kontakt i Slack-kanalen `#esyfo`.
