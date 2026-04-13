@@ -74,7 +74,7 @@ Malene i dette repoet brukes av andre applikasjoner som sender JSON til `syfoopp
 
 ## Lokal utvikling med mise
 
-Repoet bruker [mise](https://mise.jdx.dev/) som inngang for lokale utvikleroppgaver. Installer `mise` lokalt, og bruk `mise tasks ls` for å se hvilke kommandoer som er tilgjengelige i repoet.
+Repoet bruker [mise](https://mise.jdx.dev/) som inngang for lokale utvikleroppgaver. Installer `mise` lokalt, og bruk `mise tasks` for å se hvilke kommandoer som er tilgjengelige i repoet.
 
 ### Forutsetninger
 
@@ -85,7 +85,7 @@ Repoet bruker [mise](https://mise.jdx.dev/) som inngang for lokale utvikleroppga
 
 | Kommando | Beskrivelse |
 | --- | --- |
-| `mise tasks ls` | Vis tilgjengelige oppgaver |
+| `mise tasks` | Vis tilgjengelige oppgaver |
 | `mise run dev` | Start tjenesten og vis logger i terminalen |
 | `mise run dev-detached` | Start tjenesten i bakgrunnen |
 | `mise run stop` | Stopp lokal kjøring |
@@ -94,7 +94,7 @@ Repoet bruker [mise](https://mise.jdx.dev/) som inngang for lokale utvikleroppga
 ### Vanlig arbeidsflyt
 
 ```bash
-mise tasks ls
+mise tasks
 mise run dev-detached
 ```
 
