@@ -1,0 +1,15 @@
+[tasks.dev]
+description = "Start syfooppdfgen lokalt med Docker Compose"
+run = "docker compose up"
+
+[tasks.dev-detached]
+description = "Start syfooppdfgen lokalt i bakgrunnen"
+run = "docker compose up -d"
+
+[tasks.stop]
+description = "Stopp lokal syfooppdfgen"
+run = "docker compose down"
+
+[tasks.build]
+description = "Bygg Docker-imaget for syfooppdfgen"
+run = "docker build -t syfooppdfgen ."
