@@ -111,6 +111,22 @@ Containeren kjører med `DEV_MODE=true` og `DISABLE_PDF_GET=false`. Det gjør at
 
 `http://localhost:9091/api/v1/genpdf/<application>/<template>`
 
+### Eksempelflyt: generer en PDF lokalt
+
+1. Start tjenesten:
+
+   ```bash
+   mise run dev-detached
+   ```
+
+2. Åpne for eksempel denne URL-en i nettleseren:
+
+   `http://localhost:9091/api/v1/genpdf/oppfolgingsplan/oppfolgingsplan_v1`
+
+3. `pdfgen` leser da malen fra `templates/oppfolgingsplan/oppfolgingsplan_v1.hbs` og eksempeldata fra `data/oppfolgingsplan/oppfolgingsplan_v1.json`.
+
+4. Resultatet returneres som en PDF direkte i nettleseren.
+
 Eksempler:
 
 - `http://localhost:9091/api/v1/genpdf/oppfolging/oppfolgingsplanlps`
