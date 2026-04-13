@@ -114,15 +114,7 @@ Containeren kjører med `DEV_MODE=true` og `DISABLE_PDF_GET=false`. Det gjør at
 
 ### Eksempelflyt: generer en PDF lokalt
 
-```bash
-# Start tjenesten
-mise run dev-detached
-
-# Åpne en eksempel-PDF i nettleseren
-mise run open-example-pdf
-```
-
-Da leser `pdfgen` malen fra `templates/oppfolgingsplan/oppfolgingsplan_v1.hbs` og eksempeldata fra `data/oppfolgingsplan/oppfolgingsplan_v1.json`, og returnerer PDF-en direkte i nettleseren.
+Bruk `mise run open-example-pdf` for å starte lokal kjøring ved behov og åpne en eksempel-PDF i nettleseren. Oppgaven bruker malen `templates/oppfolgingsplan/oppfolgingsplan_v1.hbs` sammen med eksempeldata fra `data/oppfolgingsplan/oppfolgingsplan_v1.json`.
 
 Eksempler:
 
