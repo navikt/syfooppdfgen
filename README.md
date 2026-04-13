@@ -35,6 +35,30 @@ graph TD
 | `fonts/` | Fonter som brukes når PDF-ene rendres |
 | `resources/` | Statiske filer som SVG-er og bilder brukt i malene |
 
+## Hvordan malene fungerer
+
+Både `templates/` og `data/` følger samme struktur: `<application>/<template>`. Det gjør at én mal og ett eksempeldata-sett kan kobles direkte sammen under lokal utvikling.
+
+Eksempler fra repoet:
+
+| Type | Eksempel |
+| --- | --- |
+| Mal | `templates/oppfolging/oppfolgingsplanlps.hbs` |
+| Eksempeldata | `data/oppfolging/oppfolgingsplanlps.json` |
+| Mal | `templates/oppfolgingsplan/oppfolgingsplan_v1.hbs` |
+| Eksempeldata | `data/oppfolgingsplan/oppfolgingsplan_v1.json` |
+| Mal | `templates/kartlegging/utsending.hbs` |
+| Eksempeldata | `data/kartlegging/utsending.json` |
+
+Flyten er i praksis:
+
+1. En konsument sender JSON til `POST /api/v1/genpdf/<application>/<template>`.
+2. `pdfgen` finner riktig Handlebars-mal i `templates/`.
+3. Malen rendres med data fra requesten, samt fonter og ressurser fra repoet.
+4. Resultatet returneres som PDF.
+
+Under lokal utvikling kan du i tillegg bruke `GET /api/v1/genpdf/<application>/<template>` når `DISABLE_PDF_GET=false`. Da brukes eksempeldata fra `data/<application>/<template>.json`, som gjør det enkelt å iterere på en mal og oppdatere PDF-forhåndsvisningen i nettleseren.
+
 ## Hvor malene brukes
 
 Malene i dette repoet brukes av andre applikasjoner som sender JSON til `syfooppdfgen` og får PDF tilbake som byte-array fra et `genpdf`-endepunkt.
