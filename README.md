@@ -35,6 +35,22 @@ graph TD
 | `fonts/` | Fonter som brukes når PDF-ene rendres |
 | `resources/` | Statiske filer som SVG-er og bilder brukt i malene |
 
+## Hvor malene brukes
+
+Malene i dette repoet brukes av andre applikasjoner som sender JSON til `syfooppdfgen` og får PDF tilbake som byte-array fra et `genpdf`-endepunkt.
+
+### Verifiserte konsumenter
+
+| Applikasjon | Bruksområde | Endepunkt |
+| --- | --- | --- |
+| `syfo-oppfolgingsplan-backend` | PDF for oppfolgingsplan | `/api/v1/genpdf/oppfolgingsplan/oppfolgingsplan_v1` |
+| `meroppfolging-backend` | Brev og kvitteringer i mer oppfølging | `/api/v1/genpdf/oppfolging/mer_veiledning_for_reserverte` og `senoppfolging/*` |
+| `ismeroppfolging` | Kartlegging | `/api/v1/genpdf/kartlegging/utsending` |
+
+### Andre kjente innkommende konsumenter
+
+NAIS access policy viser også at `lps-oppfolgingsplan-mottak` har tilgang til tjenesten. `syfooppfolgingsplanservice` ligger fortsatt i access policy, men er legacy og forventes fjernet, så den bør ikke regnes som en fremtidsrettet hovedkonsument.
+
 ## Drift og deploy
 
 Docker-imaget bygges i GitHub Actions og deployes til NAIS for dev og prod. Applikasjonen eksponerer health checks og Prometheus-metrikker, og er tilgjengelig for et begrenset sett med interne konsumenter via access policy.
