@@ -16,4 +16,5 @@ run = "docker build -t syfooppdfgen ."
 
 [tasks.open-example-pdf]
 description = "Åpne en lokal eksempel-PDF i nettleseren"
+depends = ["dev-detached"]
 run = "open http://localhost:9091/api/v1/genpdf/oppfolgingsplan/oppfolgingsplan_v1"
