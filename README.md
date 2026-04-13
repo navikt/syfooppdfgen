@@ -90,6 +90,7 @@ Repoet bruker [mise](https://mise.jdx.dev/) som inngang for lokale utvikleroppga
 | `mise run dev-detached` | Start tjenesten i bakgrunnen |
 | `mise run stop` | Stopp lokal kjøring |
 | `mise run build` | Bygg Docker-imaget fra `Dockerfile` |
+| `mise run open-example-pdf` | Åpne en eksempel-PDF lokalt i nettleseren |
 
 ### Vanlig arbeidsflyt
 
@@ -117,8 +118,8 @@ Containeren kjører med `DEV_MODE=true` og `DISABLE_PDF_GET=false`. Det gjør at
 # Start tjenesten
 mise run dev-detached
 
-# Åpne denne URL-en i nettleseren for å generere en PDF
-open http://localhost:9091/api/v1/genpdf/oppfolgingsplan/oppfolgingsplan_v1
+# Åpne en eksempel-PDF i nettleseren
+mise run open-example-pdf
 ```
 
 Da leser `pdfgen` malen fra `templates/oppfolgingsplan/oppfolgingsplan_v1.hbs` og eksempeldata fra `data/oppfolgingsplan/oppfolgingsplan_v1.json`, og returnerer PDF-en direkte i nettleseren.

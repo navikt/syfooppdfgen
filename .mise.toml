@@ -13,3 +13,7 @@ run = "docker compose down"
 [tasks.build]
 description = "Bygg Docker-imaget for syfooppdfgen"
 run = "docker build -t syfooppdfgen ."
+
+[tasks.open-example-pdf]
+description = "Åpne en lokal eksempel-PDF i nettleseren"
+run = "open http://localhost:9091/api/v1/genpdf/oppfolgingsplan/oppfolgingsplan_v1"
