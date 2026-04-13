@@ -89,10 +89,9 @@ Docker Compose monterer disse katalogene lokalt:
 
 Med `DEV_MODE=true` og `DISABLE_PDF_GET=false` kan du også åpne testdata direkte i nettleseren på `http://localhost:9091/api/v1/genpdf/<application>/<template>`.
 
-Eksempler på lokale preview-URL-er:
+Andre urleksempler:
 
 - `http://localhost:9091/api/v1/genpdf/oppfolging/oppfolgingsplanlps`
-- `http://localhost:9091/api/v1/genpdf/oppfolgingsplan/oppfolgingsplan_v1`
 - `http://localhost:9091/api/v1/genpdf/kartlegging/utsending`
 
 Når du er ferdig, stopp med `mise run stop`.
