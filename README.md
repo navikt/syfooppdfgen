@@ -74,18 +74,11 @@ Malene i dette repoet brukes av andre applikasjoner som sender JSON til `syfoopp
 
 ## Lokal utvikling med mise
 
-Repoet bruker [mise](https://mise.jdx.dev/) som inngang for lokale utvikleroppgaver. Installer `mise` lokalt, og bruk `mise tasks` for å se hvilke kommandoer som er tilgjengelige i repoet.
+Installer [mise](https://mise.jdx.dev/) og sørg for at Docker Desktop eller Colima kjører. Bruk `mise tasks` for å se tilgjengelige oppgaver.
 
-### Forutsetninger
+For vanlig lokal utvikling holder det som regel å bruke `mise run open-example-pdf`. Da startes tjenesten ved behov, en eksempel-PDF åpnes i nettleseren, og ferske `pdfgen`-logger skrives ut i terminalen.
 
-- Docker Desktop eller Colima med fungerende Docker-daemon
-- `mise`
-
-### Vanlig arbeidsflyt
-
-Bruk `mise tasks` for å se tilgjengelige oppgaver. For vanlig lokal utvikling holder det som regel å bruke `mise run open-example-pdf` for å starte tjenesten ved behov, åpne en eksempel-PDF og skrive ut ferske logger.
-
-Bak dette ligger Docker Compose med disse lokale mountene:
+Docker Compose monterer disse katalogene lokalt:
 
 | Lokal katalog | Mount i container |
 | ------------- | ----------------- |
@@ -94,25 +87,15 @@ Bak dette ligger Docker Compose med disse lokale mountene:
 | `data/`       | `/app/data`       |
 | `resources/`  | `/app/resources`  |
 
-Containeren kjører med `DEV_MODE=true` og `DISABLE_PDF_GET=false`. Det gjør at du kan åpne testdata direkte i nettleseren på:
+Med `DEV_MODE=true` og `DISABLE_PDF_GET=false` kan du også åpne testdata direkte i nettleseren på `http://localhost:9091/api/v1/genpdf/<application>/<template>`.
 
-`http://localhost:9091/api/v1/genpdf/<application>/<template>`
-
-### Eksempelflyt: generer en PDF lokalt
-
-Bruk `mise run open-example-pdf` for å starte lokal kjøring ved behov, åpne en eksempel-PDF i nettleseren og skrive ut ferske `pdfgen`-logger i terminalen. Oppgaven bruker malen `templates/oppfolgingsplan/oppfolgingsplan_v1.hbs` sammen med eksempeldata fra `data/oppfolgingsplan/oppfolgingsplan_v1.json`, uten å lagre PDF-en lokalt.
-
-Eksempler:
+Eksempler på lokale preview-URL-er:
 
 - `http://localhost:9091/api/v1/genpdf/oppfolging/oppfolgingsplanlps`
 - `http://localhost:9091/api/v1/genpdf/oppfolgingsplan/oppfolgingsplan_v1`
 - `http://localhost:9091/api/v1/genpdf/kartlegging/utsending`
 
-Når du er ferdig:
-
-```bash
-mise run stop
-```
+Når du er ferdig, stopp med `mise run stop`.
 
 ## Drift og deploy
 
