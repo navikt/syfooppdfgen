@@ -51,9 +51,46 @@ Malene i dette repoet brukes av andre applikasjoner som sender JSON til `syfoopp
 
 NAIS access policy viser også at `lps-oppfolgingsplan-mottak` har tilgang til tjenesten. `syfooppfolgingsplanservice` ligger fortsatt i access policy, men er legacy og forventes fjernet, så den bør ikke regnes som en fremtidsrettet hovedkonsument.
 
-## Lokale oppgaver med mise
+## Lokal utvikling med mise
 
-Repoet bruker [mise](https://mise.jdx.dev/) som inngang for lokale utvikleroppgaver. Tilgjengelige kommandoer ligger i `.mise.toml`, og du kan se dem med `mise tasks ls`.
+Repoet bruker [mise](https://mise.jdx.dev/) som inngang for lokale utvikleroppgaver. Installer `mise` lokalt, og bruk `mise tasks ls` for å se hvilke kommandoer som er tilgjengelige i repoet.
+
+### Forutsetninger
+
+- Docker eller Colima med fungerende Docker-daemon
+- `mise`
+
+### Vanlig arbeidsflyt
+
+```bash
+mise tasks ls
+mise run dev-detached
+```
+
+Dette starter `pdfgen` via Docker Compose med disse lokale mountene:
+
+| Lokal katalog | Mount i container |
+| --- | --- |
+| `templates/` | `/app/templates` |
+| `fonts/` | `/app/fonts` |
+| `data/` | `/app/data` |
+| `resources/` | `/app/resources` |
+
+Containeren kjører med `DEV_MODE=true` og `DISABLE_PDF_GET=false`. Det gjør at du kan åpne testdata direkte i nettleseren på:
+
+`http://localhost:9091/api/v1/genpdf/<application>/<template>`
+
+Når du er ferdig:
+
+```bash
+mise run stop
+```
+
+Hvis du vil se loggene i terminalen mens du jobber, bruk `mise run dev` i stedet for `mise run dev-detached`.
+
+### Windows
+
+Windows er ikke prioritert utviklingsplattform lenger. Hvis du likevel kjører lokalt på Windows, bør du fortsatt passe på at malfilene bruker LF-linjeskift (`\n`) og ikke CRLF (`\r\n`), siden dette kan påvirke hvordan PDF-ene rendres.
 
 ## Drift og deploy
 
