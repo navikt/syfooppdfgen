@@ -28,12 +28,12 @@ graph TD
 
 ## Innhold i repoet
 
-| Katalog | Innhold |
-| --- | --- |
-| `templates/` | Handlebars-maler organisert som `<application>/<template>.hbs` |
-| `data/` | Eksempeldata for lokal utvikling og forhåndsvisning, organisert som `<application>/<template>.json` |
-| `fonts/` | Fonter som brukes når PDF-ene rendres |
-| `resources/` | Statiske filer som SVG-er og bilder brukt i malene |
+| Katalog      | Innhold                                                                                             |
+| ------------ | --------------------------------------------------------------------------------------------------- |
+| `templates/` | Handlebars-maler organisert som `<application>/<template>.hbs`                                      |
+| `data/`      | Eksempeldata for lokal utvikling og forhåndsvisning, organisert som `<application>/<template>.json` |
+| `fonts/`     | Fonter som brukes når PDF-ene rendres                                                               |
+| `resources/` | Statiske filer som SVG-er og bilder brukt i malene                                                  |
 
 ## Hvordan malene fungerer
 
@@ -41,14 +41,14 @@ Både `templates/` og `data/` følger samme struktur: `<application>/<template>`
 
 Eksempler fra repoet:
 
-| Type | Eksempel |
-| --- | --- |
-| Mal | `templates/oppfolging/oppfolgingsplanlps.hbs` |
-| Eksempeldata | `data/oppfolging/oppfolgingsplanlps.json` |
-| Mal | `templates/oppfolgingsplan/oppfolgingsplan_v1.hbs` |
-| Eksempeldata | `data/oppfolgingsplan/oppfolgingsplan_v1.json` |
-| Mal | `templates/kartlegging/utsending.hbs` |
-| Eksempeldata | `data/kartlegging/utsending.json` |
+| Type         | Eksempel                                           |
+| ------------ | -------------------------------------------------- |
+| Mal          | `templates/oppfolging/oppfolgingsplanlps.hbs`      |
+| Eksempeldata | `data/oppfolging/oppfolgingsplanlps.json`          |
+| Mal          | `templates/oppfolgingsplan/oppfolgingsplan_v1.hbs` |
+| Eksempeldata | `data/oppfolgingsplan/oppfolgingsplan_v1.json`     |
+| Mal          | `templates/kartlegging/utsending.hbs`              |
+| Eksempeldata | `data/kartlegging/utsending.json`                  |
 
 Flyten er i praksis:
 
@@ -65,12 +65,12 @@ Malene i dette repoet brukes av andre applikasjoner som sender JSON til `syfoopp
 
 ### Verifiserte konsumenter
 
-| Applikasjon | Bruksområde | Endepunkt |
-| --- | --- | --- |
-| `syfo-oppfolgingsplan-backend` | PDF for oppfolgingsplan | `/api/v1/genpdf/oppfolgingsplan/oppfolgingsplan_v1` |
-| `meroppfolging-backend` | Brev og kvitteringer i mer oppfølging | `/api/v1/genpdf/oppfolging/mer_veiledning_for_reserverte` og `senoppfolging/*` |
-| `ismeroppfolging` | Kartlegging | `/api/v1/genpdf/kartlegging/utsending` |
-| `lps-oppfolgingsplan-mottak` | Mottak og videre behandling av oppfølgingsplan fra LPS | Tilgang er definert i NAIS access policy, eksakt endepunkt er ikke verifisert her |
+| Applikasjon                    | Bruksområde                                            | Endepunkt                                                                         |
+| ------------------------------ | ------------------------------------------------------ | --------------------------------------------------------------------------------- |
+| `syfo-oppfolgingsplan-backend` | PDF for oppfolgingsplan                                | `/api/v1/genpdf/oppfolgingsplan/oppfolgingsplan_v1`                               |
+| `meroppfolging-backend`        | Brev og kvitteringer i mer oppfølging                  | `/api/v1/genpdf/oppfolging/mer_veiledning_for_reserverte` og `senoppfolging/*`    |
+| `ismeroppfolging`              | Kartlegging                                            | `/api/v1/genpdf/kartlegging/utsending`                                            |
+| `lps-oppfolgingsplan-mottak`   | Mottak og videre behandling av oppfølgingsplan fra LPS | Tilgang er definert i NAIS access policy, eksakt endepunkt er ikke verifisert her |
 
 ## Lokal utvikling med mise
 
@@ -83,30 +83,27 @@ Repoet bruker [mise](https://mise.jdx.dev/) som inngang for lokale utvikleroppga
 
 ### Nyttige oppgaver
 
-| Kommando | Beskrivelse |
-| --- | --- |
-| `mise tasks` | Vis tilgjengelige oppgaver |
-| `mise run dev` | Start tjenesten og vis logger i terminalen |
-| `mise run dev-detached` | Start tjenesten i bakgrunnen |
-| `mise run stop` | Stopp lokal kjøring |
-| `mise run build` | Bygg Docker-imaget fra `Dockerfile` |
+| Kommando                    | Beskrivelse                                                         |
+| --------------------------- | ------------------------------------------------------------------- |
+| `mise tasks`                | Vis tilgjengelige oppgaver                                          |
+| `mise run dev`              | Start tjenesten og vis logger i terminalen                          |
+| `mise run dev-detached`     | Start tjenesten i bakgrunnen                                        |
+| `mise run stop`             | Stopp lokal kjøring                                                 |
+| `mise run build`            | Bygg Docker-imaget fra `Dockerfile`                                 |
 | `mise run open-example-pdf` | Åpne en eksempel-PDF lokalt i nettleseren og skriv ut ferske logger |
 
 ### Vanlig arbeidsflyt
 
-```bash
-mise tasks
-mise run dev-detached
-```
+For vanlig lokal utvikling holder det som regel å bruke `mise run open-example-pdf` for å starte tjenesten ved behov, åpne en eksempel-PDF og skrive ut ferske logger.
 
-Dette starter `pdfgen` via Docker Compose med disse lokale mountene:
+Bak dette ligger Docker Compose med disse lokale mountene:
 
 | Lokal katalog | Mount i container |
-| --- | --- |
-| `templates/` | `/app/templates` |
-| `fonts/` | `/app/fonts` |
-| `data/` | `/app/data` |
-| `resources/` | `/app/resources` |
+| ------------- | ----------------- |
+| `templates/`  | `/app/templates`  |
+| `fonts/`      | `/app/fonts`      |
+| `data/`       | `/app/data`       |
+| `resources/`  | `/app/resources`  |
 
 Containeren kjører med `DEV_MODE=true` og `DISABLE_PDF_GET=false`. Det gjør at du kan åpne testdata direkte i nettleseren på:
 
