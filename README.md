@@ -114,8 +114,6 @@ Når du er ferdig:
 mise run stop
 ```
 
-Hvis du vil se loggene i terminalen mens du jobber, bruk `mise run dev` i stedet for `mise run dev-detached`.
-
 ## Drift og deploy
 
 Docker-imaget bygges i GitHub Actions og deployes til NAIS for dev og prod. I image-builden kopieres `templates/`, `fonts/` og `resources/` inn i containeren, mens `data/` primært brukes til lokal utvikling. Applikasjonen eksponerer health checks og Prometheus-metrikker, og er tilgjengelig for et begrenset sett med interne konsumenter via access policy.

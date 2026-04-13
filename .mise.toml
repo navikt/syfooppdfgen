@@ -1,9 +1,9 @@
 [tasks.dev]
-description = "Start syfooppdfgen lokalt med Docker Compose"
+description = "Start syfooppdfgen lokalt og vis løpende Docker Compose-logger i terminalen"
 run = "docker compose up"
 
 [tasks.dev-detached]
-description = "Start syfooppdfgen lokalt i bakgrunnen"
+description = "Start syfooppdfgen lokalt i bakgrunnen uten å holde terminalen opptatt"
 run = "docker compose up -d"
 
 [tasks.stop]
@@ -15,7 +15,7 @@ description = "Bygg Docker-imaget for syfooppdfgen"
 run = "docker build -t syfooppdfgen ."
 
 [tasks.open-example-pdf]
-description = "Åpne en lokal eksempel-PDF i nettleseren og skriv ut logger"
+description = "Start tjenesten ved behov, åpne en eksempel-PDF i nettleseren og skriv ut ferske logger"
 depends = ["dev-detached"]
 run = '''
 for i in $(seq 1 30); do
