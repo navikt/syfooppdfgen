@@ -125,10 +125,6 @@ mise run stop
 
 Hvis du vil se loggene i terminalen mens du jobber, bruk `mise run dev` i stedet for `mise run dev-detached`.
 
-### Windows
-
-Windows er ikke prioritert utviklingsplattform lenger. Hvis du likevel kjører lokalt på Windows, bør du fortsatt passe på at malfilene bruker LF-linjeskift (`\n`) og ikke CRLF (`\r\n`), siden dette kan påvirke hvordan PDF-ene rendres.
-
 ## Drift og deploy
 
 Docker-imaget bygges i GitHub Actions og deployes til NAIS for dev og prod. I image-builden kopieres `templates/`, `fonts/` og `resources/` inn i containeren, mens `data/` primært brukes til lokal utvikling. Applikasjonen eksponerer health checks og Prometheus-metrikker, og er tilgjengelig for et begrenset sett med interne konsumenter via access policy.
