@@ -81,8 +81,18 @@ Repoet bruker [mise](https://mise.jdx.dev/) som inngang for lokale utvikleroppga
 
 ### Forutsetninger
 
-- Docker eller Colima med fungerende Docker-daemon
+- Docker Desktop eller Colima med fungerende Docker-daemon
 - `mise`
+
+### Nyttige oppgaver
+
+| Kommando | Beskrivelse |
+| --- | --- |
+| `mise tasks ls` | Vis tilgjengelige oppgaver |
+| `mise run dev` | Start tjenesten og vis logger i terminalen |
+| `mise run dev-detached` | Start tjenesten i bakgrunnen |
+| `mise run stop` | Stopp lokal kjøring |
+| `mise run build` | Bygg Docker-imaget fra `Dockerfile` |
 
 ### Vanlig arbeidsflyt
 
@@ -104,6 +114,12 @@ Containeren kjører med `DEV_MODE=true` og `DISABLE_PDF_GET=false`. Det gjør at
 
 `http://localhost:9091/api/v1/genpdf/<application>/<template>`
 
+Eksempler:
+
+- `http://localhost:9091/api/v1/genpdf/oppfolging/oppfolgingsplanlps`
+- `http://localhost:9091/api/v1/genpdf/oppfolgingsplan/oppfolgingsplan_v1`
+- `http://localhost:9091/api/v1/genpdf/kartlegging/utsending`
+
 Når du er ferdig:
 
 ```bash
@@ -118,7 +134,7 @@ Windows er ikke prioritert utviklingsplattform lenger. Hvis du likevel kjører l
 
 ## Drift og deploy
 
-Docker-imaget bygges i GitHub Actions og deployes til NAIS for dev og prod. Applikasjonen eksponerer health checks og Prometheus-metrikker, og er tilgjengelig for et begrenset sett med interne konsumenter via access policy.
+Docker-imaget bygges i GitHub Actions og deployes til NAIS for dev og prod. I image-builden kopieres `templates/`, `fonts/` og `resources/` inn i containeren, mens `data/` primært brukes til lokal utvikling. Applikasjonen eksponerer health checks og Prometheus-metrikker, og er tilgjengelig for et begrenset sett med interne konsumenter via access policy.
 
 ## Kontakt
 
