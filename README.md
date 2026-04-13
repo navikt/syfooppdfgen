@@ -70,10 +70,7 @@ Malene i dette repoet brukes av andre applikasjoner som sender JSON til `syfoopp
 | `syfo-oppfolgingsplan-backend` | PDF for oppfolgingsplan | `/api/v1/genpdf/oppfolgingsplan/oppfolgingsplan_v1` |
 | `meroppfolging-backend` | Brev og kvitteringer i mer oppfølging | `/api/v1/genpdf/oppfolging/mer_veiledning_for_reserverte` og `senoppfolging/*` |
 | `ismeroppfolging` | Kartlegging | `/api/v1/genpdf/kartlegging/utsending` |
-
-### Andre kjente innkommende konsumenter
-
-NAIS access policy viser også at `lps-oppfolgingsplan-mottak` har tilgang til tjenesten. `syfooppfolgingsplanservice` ligger fortsatt i access policy, men er legacy og forventes fjernet, så den bør ikke regnes som en fremtidsrettet hovedkonsument.
+| `lps-oppfolgingsplan-mottak` | Mottak og videre behandling av oppfølgingsplan fra LPS | Tilgang er definert i NAIS access policy, eksakt endepunkt er ikke verifisert her |
 
 ## Lokal utvikling med mise
 
