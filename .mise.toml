@@ -1,0 +1,33 @@
+[tasks.dev]
+description = "Start syfooppdfgen lokalt og vis løpende Docker Compose-logger i terminalen"
+run = "docker compose up"
+
+[tasks.dev-detached]
+description = "Start syfooppdfgen lokalt i bakgrunnen uten å holde terminalen opptatt"
+run = "docker compose up -d"
+
+[tasks.stop]
+description = "Stopp lokal syfooppdfgen"
+run = "docker compose down"
+
+[tasks.build]
+description = "Bygg Docker-imaget for syfooppdfgen"
+run = "docker build -t syfooppdfgen ."
+
+[tasks.open-example-pdf]
+description = "Start tjenesten ved behov, åpne en eksempel-PDF i nettleseren og skriv ut ferske logger"
+depends = ["dev-detached"]
+run = '''
+for i in $(seq 1 30); do
+  if curl --silent --fail http://localhost:9091/internal/is_ready >/dev/null; then
+    open http://localhost:9091/api/v1/genpdf/oppfolgingsplan/oppfolgingsplan_v1
+    sleep 2
+    docker compose logs --since=10s oppdfgen
+    exit 0
+  fi
+  sleep 1
+done
+
+echo "syfooppdfgen ble ikke klar i tide" >&2
+exit 1
+'''
