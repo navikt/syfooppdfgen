@@ -42,6 +42,9 @@
 
 <p><strong>Opprettet:</strong> {{oppfolgingsplan.createdDate}}</p>
 <p><strong>Dato for evaluering:</strong> {{oppfolgingsplan.evaluationDate}}</p>
+{{#if oppfolgingsplan.stillingstittel}}
+    <p><strong>Stilling:</strong> {{oppfolgingsplan.stillingstittel}} i {{oppfolgingsplan.organisasjonsnavn}}{{#if oppfolgingsplan.stillingsprosent}} i {{oppfolgingsplan.stillingsprosent}}% stilling{{/if}}</p>
+{{/if}}
 <p><strong>Arbeidstakers navn:</strong> {{oppfolgingsplan.sykmeldtName}}</p>
 <p><strong>Arbeidstakers fødselsnummer:</strong> {{oppfolgingsplan.sykmeldtFnr}}</p>
 <p><strong>Bedriftens navn:</strong> {{oppfolgingsplan.organisasjonsnavn}}</p>
