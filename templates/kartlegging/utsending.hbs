@@ -17,7 +17,13 @@
         .question-block { margin: 0 0 1.25rem 0; }
         .question-label { margin: 0 0 0.5rem 0; font-weight: 600; }
         .question-description { margin: 0 0 0.5rem 0; }
-        .info-box { border-style: solid; border-radius: 4px; padding: 0.25rem 1rem; background-color: rgb(204, 241, 214); }
+        .info-box {
+            border: 1px solid #457c9d;
+            border-radius: 12px;
+            padding: 0.5rem 0.75rem;
+            background-color: #e3eff7;
+        }
+        .info-icon { float: left; margin-right: 0.75rem; }
         /* Radio button visual container to mirror senoppfolging style */
         .radio-buttons-container > * { margin-bottom: 0.5rem; }
         .radio-buttons-container img.radio-button-image { height: 1.5rem; float: left; display: inline-block; margin-right: 0.25rem; }
@@ -35,9 +41,12 @@
         bedre forståelse av om vi skal gi deg oppfølging i tillegg til den du
         skal få fra arbeidsgiveren din.
       </p>
-    <p>
-        Svarene blir kun synlige for Nav, og deles ikke med din
-        arbeidsgiver.
+
+    <p class="info-box">
+            <img alt="info icon" class="info-icon" src="{{ image "info-icon.svg" }} "/>
+        <span>
+            Svarene blir kun synlige for Nav, og deles ikke med din arbeidsgiver.
+        </span>
     </p>
 
     <div class="summary-container">
