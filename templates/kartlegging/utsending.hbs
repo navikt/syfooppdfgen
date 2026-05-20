@@ -16,7 +16,7 @@
         .summary-container { border-radius: 4px; padding: 0.25rem 1rem; }
         .question-block { margin: 0 0 1.25rem 0; }
         .question-label { margin: 0 0 0.5rem 0; font-weight: 600; }
-        .question-description { margin: 0 0 0.5rem 0; }
+        .question-description { margin: 0 0 0.5rem 0; font-style: italic; }
         .info-box {
             border: 1px solid #457c9d;
             border-radius: 12px;
@@ -49,65 +49,17 @@
         </span>
     </p>
 
-    <div class="summary-container">
-    <div class="question-block">
-        <p class="question-label">
-            Hvor sannsynlig er det at du kommer tilbake i jobben du ble sykmeldt fra?
-        </p>
-        <div class="radio-buttons-container">
-            {{> kartlegging/partials/radioButton
-                    value="false"
-                    checkedIfValueEquals="true"
-                    label="Jeg tror det er veldig sannsynlig"
-            }}
-            {{> kartlegging/partials/radioButton
-                    value="false"
-                    checkedIfValueEquals="true"
-                    label="Jeg tror det er lite sannsynlig"
-            }}
-            {{> kartlegging/partials/radioButton
-                    value="false"
-                    checkedIfValueEquals="true"
-                    label="Jeg er usikker"
-            }}
-        </div>
-
-        <hr class="question-separator" />
-
-        <p class="question-label">
-            Hvordan vil du beskrive samarbeidet og relasjonen mellom deg og arbeidsgiveren din?
-        </p>
-        <div class="radio-buttons-container">
-            {{> kartlegging/partials/radioButton
-                    value="false"
-                    checkedIfValueEquals="true"
-                    label="Jeg opplever samarbeidet og relasjonen som god"
-            }}
-            {{> kartlegging/partials/radioButton
-                    value="false"
-                    checkedIfValueEquals="true"
-                    label="Jeg opplever samarbeidet og relasjonen som dårlig"
-            }}
-        </div>
-        
-        <hr class="question-separator" />
-
-        <p class="question-label">
-            Hvor lenge tror du at du kommer til å være sykmeldt?
-        </p>
-        <div class="radio-buttons-container">
-            {{> kartlegging/partials/radioButton
-                    value="false"
-                    checkedIfValueEquals="true"
-                    label="Mindre enn seks måneder"
-            }}
-            {{> kartlegging/partials/radioButton
-                    value="false"
-                    checkedIfValueEquals="true"
-                    label="Mer enn seks måneder"
-            }}
-        </div>
-    </div>
-    </div>
+    {{#eq brevdata.skjemavariant null}}
+        {{> kartlegging/skjemavariant/flervalg-default}}
+    {{/eq}}
+    {{#eq brevdata.skjemavariant "FLERVALG_V1"}}
+        {{> kartlegging/skjemavariant/flervalg-default}}
+    {{/eq}}
+    {{#eq brevdata.skjemavariant "FLERVALG_FRITEKST_V1"}}
+        {{> kartlegging/skjemavariant/flervalg-default}}
+    {{/eq}}
+    {{#eq brevdata.skjemavariant "FLERVALG_FRITEKST_V2"}}
+        {{> kartlegging/skjemavariant/flervalg-fritekst-v2}}
+    {{/eq}}
 </body>
 </html>
