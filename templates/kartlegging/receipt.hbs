@@ -98,6 +98,7 @@
 {{#each brevdata.fieldSnapshots}}
     <div class="question-block">
         <p class="question-label">{{label}}</p>
+
         {{#eq fieldType "RADIO_GROUP"}}
             <div class="radio-buttons-container">
                 {{#each options}}
@@ -105,10 +106,8 @@
                 {{/each}}
             </div>
         {{/eq}}
+
         {{#eq fieldType "TEXT"}}
-            {{#if description}}
-                <p class="question-description">{{description}}</p>
-            {{/if}}
             <p>{{value}}</p>
         {{/eq}}
     </div>
