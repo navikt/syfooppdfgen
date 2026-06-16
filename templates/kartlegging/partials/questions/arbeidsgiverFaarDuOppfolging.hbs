@@ -1,0 +1,18 @@
+<p class="question-label">
+    Får du oppfølging av arbeidsgiveren din nå når du er sykmeldt?
+</p>
+<p class="question-description">
+    Arbeidsgiveren din har hovedansvaret for å gjøre tilpasninger og følge deg opp på arbeidsplassen. Arbeidsgiver har for eksempel plikt til å lage en oppfølgingsplan med deg innen du har vært sykmeldt i fire uker. Derfor er det viktig at dere har tett kontakt når du er sykmeldt.
+</p>
+<div class="radio-buttons-container">
+    {{> kartlegging/partials/components/radioButton
+            value="false"
+            checkedIfValueEquals="true"
+            label="Ja, jeg får oppfølging, og har snakket med arbeidsgiver om dette."
+    }}
+    {{> kartlegging/partials/components/radioButton
+            value="false"
+            checkedIfValueEquals="true"
+            label="Nei, jeg opplever manglende oppfølging og at tilpasninger er vanskelig."
+    }}
+</div>

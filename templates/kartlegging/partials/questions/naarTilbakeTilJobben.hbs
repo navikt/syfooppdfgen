@@ -1,0 +1,15 @@
+<p class="question-label">
+    Hvor lenge tror du at du kommer til å være sykmeldt?
+</p>
+<div class="radio-buttons-container">
+    {{> kartlegging/partials/components/radioButton
+            value="false"
+            checkedIfValueEquals="true"
+            label="Mindre enn seks måneder"
+    }}
+    {{> kartlegging/partials/components/radioButton
+            value="false"
+            checkedIfValueEquals="true"
+            label="Mer enn seks måneder"
+    }}
+</div>

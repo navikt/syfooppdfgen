@@ -1,0 +1,20 @@
+<p class="question-label">
+    Hvor sannsynlig er det at du kommer tilbake i jobben du ble sykmeldt fra?
+</p>
+<div class="radio-buttons-container">
+    {{> kartlegging/partials/components/radioButton
+            value="false"
+            checkedIfValueEquals="true"
+            label="Jeg tror det er veldig sannsynlig"
+    }}
+    {{> kartlegging/partials/components/radioButton
+            value="false"
+            checkedIfValueEquals="true"
+            label="Jeg tror det er lite sannsynlig"
+    }}
+    {{> kartlegging/partials/components/radioButton
+            value="false"
+            checkedIfValueEquals="true"
+            label="Jeg er usikker"
+    }}
+</div>
