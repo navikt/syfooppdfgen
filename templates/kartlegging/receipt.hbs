@@ -102,7 +102,7 @@
         {{#eq fieldType "RADIO_GROUP"}}
             <div class="radio-buttons-container">
                 {{#each options}}
-                    {{> kartlegging/partials/components/radioButton value=wasSelected checkedIfValueEquals="true" label=optionLabel }}
+                    {{> kartlegging/receipt/partials/radioButton value=wasSelected checkedIfValueEquals="true" label=optionLabel }}
                 {{/each}}
             </div>
         {{/eq}}
