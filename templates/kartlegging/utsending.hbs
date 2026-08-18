@@ -50,13 +50,16 @@
     </p>
 
     {{#eq brevdata.skjemavariant null}}
-        {{> kartlegging/utsending/partials/skjemavariant/flervalg-default}}
+        {{> kartlegging/utsending/partials/skjemavariant/flervalg-v2}}
     {{/eq}}
     {{#eq brevdata.skjemavariant "FLERVALG_V1"}}
-        {{> kartlegging/utsending/partials/skjemavariant/flervalg-default}}
+        {{> kartlegging/utsending/partials/skjemavariant/flervalg-v1}}
+    {{/eq}}
+    {{#eq brevdata.skjemavariant "FLERVALG_V2"}}
+        {{> kartlegging/utsending/partials/skjemavariant/flervalg-v2}}
     {{/eq}}
     {{#eq brevdata.skjemavariant "FLERVALG_FRITEKST_V1"}}
-        {{> kartlegging/utsending/partials/skjemavariant/flervalg-default}}
+        {{> kartlegging/utsending/partials/skjemavariant/flervalg-v1}}
     {{/eq}}
     {{#eq brevdata.skjemavariant "FLERVALG_FRITEKST_V2"}}
         {{> kartlegging/utsending/partials/skjemavariant/flervalg-fritekst-v2}}
