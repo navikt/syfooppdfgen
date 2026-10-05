@@ -36,11 +36,23 @@
         "fieldType": "RADIO_GROUP",
         "label": "Hvor lenge tror du at du kommer til å være sykmeldt?",
         "wasRequired": true,
-        "description": null,
+        "description": "Vi vil vite hva du selv tror. Du kjenner din egen situasjon best.",
         "fieldId": "naarTilbakeTilJobben",
         "options": [
           { "optionId": "3a", "optionLabel": "Mindre enn seks måneder", "wasSelected": false },
           { "optionId": "3b", "optionLabel": "Mer enn seks måneder", "wasSelected": true }
+        ]
+      },
+      {
+        "fieldType": "RADIO_GROUP",
+        "label": "Hva er grunnen til at du tror det blir mer enn seks måneder?",
+        "wasRequired": true,
+        "description": null,
+        "fieldId": "naarTilbakeHvorforMerEnnSeksManederFlervalg",
+        "options": [
+          { "optionId": "behandling", "optionLabel": "Planlagt eller pågående behandling", "wasSelected": true },
+          { "optionId": "manglende_tilrettelegging", "optionLabel": "Manglende eller uklare muligheter for tilrettelegging på arbeidsplassen", "wasSelected": false },
+          { "optionId": "andre_forhold", "optionLabel": "Andre forhold", "wasSelected": false }
         ]
       }
     ]
