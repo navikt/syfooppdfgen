@@ -51,7 +51,7 @@
         "fieldId": "naarTilbakeHvorforMerEnnSeksManederFlervalg",
         "options": [
           { "optionId": "behandling", "optionLabel": "Planlagt eller pågående behandling", "wasSelected": true },
-          { "optionId": "manglende_tilrettelegging", "optionLabel": "Manglende eller uklare muligheter for tilrettelegging på arbeidsplassen", "wasSelected": false },
+          { "optionId": "manglende_tilpasning", "optionLabel": "Manglende eller uklare muligheter for tilpasning på arbeidsplassen", "wasSelected": false },
           { "optionId": "andre_forhold", "optionLabel": "Andre forhold", "wasSelected": false }
         ]
       }
